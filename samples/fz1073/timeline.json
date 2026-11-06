@@ -1,0 +1,156 @@
+{
+ "fps": 30,
+ "voice": "rohan",
+ "total": 133.338,
+ "scenes": [
+  {
+   "id": "s01_hook",
+   "look": "cockpit",
+   "chapter": "",
+   "phrases": [
+    {
+     "t": 0.4,
+     "text": "34,000 FEET"
+    },
+    {
+     "t": 0.62,
+     "text": "<b>CO-PILOT</b> ATTACKS"
+    }
+   ],
+   "start": 0.0,
+   "dur": 10.492,
+   "vo_at": 0.35,
+   "vo_dur": 9.642,
+   "source": ""
+  },
+  {
+   "id": "s02_title",
+   "look": "plane_cruise",
+   "chapter": "",
+   "phrases": [],
+   "start": 10.492,
+   "dur": 16.573,
+   "vo_at": 11.692,
+   "vo_dur": 14.873,
+   "source": "PEOPLE ON BOARD: REPORTS VARY, 172\u2013182 \u00b7 AIRCRAFT: FLIGHTRADAR24"
+  },
+  {
+   "id": "s03_route",
+   "look": "map",
+   "chapter": "01 \u00b7 THE FLIGHT",
+   "phrases": [
+    {
+     "t": 0.15,
+     "text": "~2 HRS 16 MIN"
+    }
+   ],
+   "start": 27.066,
+   "dur": 9.325,
+   "vo_at": 27.416,
+   "vo_dur": 8.475,
+   "source": "TIMES: FLIGHTRADAR24 (TAKE-OFF 03:05, INCIDENT 05:21 UTC) \u00b7 ROUTE ILLUSTRATIVE"
+  },
+  {
+   "id": "s04_attack",
+   "look": "cockpit_alarm",
+   "chapter": "02 \u00b7 THE ATTACK",
+   "phrases": [
+    {
+     "t": 0.5,
+     "text": "<b>CRASH AXE</b>"
+    },
+    {
+     "t": 0.78,
+     "text": "CAPT. SMIT MACHCHHAR"
+    }
+   ],
+   "start": 36.391,
+   "dur": 12.606,
+   "vo_at": 36.741,
+   "vo_dur": 11.656,
+   "source": "SOURCE: UAE ATTORNEY GENERAL VIA WAM, 9 OCT 2026 \u00b7 WEAPON ACCOUNTS VARY"
+  },
+  {
+   "id": "s05_plunge",
+   "look": "plane_dive",
+   "chapter": "02 \u00b7 THE ATTACK",
+   "phrases": [],
+   "start": 48.997,
+   "dur": 10.682,
+   "vo_at": 49.347,
+   "vo_dur": 9.532,
+   "source": "SOURCE: FLIGHTRADAR24 ADS-B DATA AS REPORTED \u00b7 CHART SIMPLIFIED"
+  },
+  {
+   "id": "s06_door",
+   "look": "cockpit_door",
+   "chapter": "03 \u00b7 THE DOOR",
+   "phrases": [],
+   "start": 59.679,
+   "dur": 11.781,
+   "vo_at": 60.029,
+   "vo_dur": 10.931,
+   "source": ""
+  },
+  {
+   "id": "s07_heroes",
+   "look": "heroes",
+   "chapter": "04 \u00b7 THE HEROES",
+   "phrases": [],
+   "start": 71.46,
+   "dur": 14.62,
+   "vo_at": 71.81,
+   "vo_dur": 13.77,
+   "source": ""
+  },
+  {
+   "id": "s08_landing",
+   "look": "map_tabuk",
+   "chapter": "04 \u00b7 THE HEROES",
+   "phrases": [
+    {
+     "t": 0.7,
+     "text": "<b>SAFE</b> LANDING"
+    }
+   ],
+   "start": 86.08,
+   "dur": 9.047,
+   "vo_at": 86.43,
+   "vo_dur": 8.197,
+   "source": "SOURCE: FLYDUBAI STATEMENT; GULF NEWS"
+  },
+  {
+   "id": "s09_probe",
+   "look": "probe",
+   "chapter": "05 \u00b7 THE INVESTIGATION",
+   "phrases": [],
+   "start": 95.127,
+   "dur": 17.163,
+   "vo_at": 95.477,
+   "vo_dur": 16.313,
+   "source": "SOURCES: WAM / HAARETZ (9 OCT) \u00b7 NIA VIA BUSINESS TODAY (10 OCT)"
+  },
+  {
+   "id": "s10_question",
+   "look": "question",
+   "chapter": "",
+   "phrases": [],
+   "start": 112.29,
+   "dur": 11.497,
+   "vo_at": 113.29,
+   "vo_dur": 9.997,
+   "source": ""
+  },
+  {
+   "id": "s11_end",
+   "look": "end",
+   "chapter": "",
+   "phrases": [],
+   "start": 123.787,
+   "dur": 9.552,
+   "vo_at": 124.137,
+   "vo_dur": 7.402,
+   "source": ""
+  }
+ ]
+}
