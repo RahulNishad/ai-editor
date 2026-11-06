@@ -17,6 +17,8 @@ for s in d["scenes"]:
         chap = s["chapter"]; L += [f"### {chap}", ""]
     L.append(f"**{s['n']:02d}.mp4** · Shot {s['shot']} · {LAY[s['layout']]}")
     L.append(f"> {s['text']}")
+    if s.get("text_dev"):
+        L.append(">"); L.append(f"> {s['text_dev']}")
     L.append(f"_Direction: {s['direction']}_")
     L.append("")
 L += ["---", "Sign-off is scene 23. Sources for every on-screen fact are in `README.md`."]
