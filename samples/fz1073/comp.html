@@ -94,6 +94,10 @@ body.modeL #credit{max-width:1040px}
 .split .col img{width:100%;height:190px;object-fit:cover;display:block;margin-bottom:22px;filter:saturate(.9)}
 .gcard .doc{width:230px;margin:0;transform:rotate(2.5deg);box-shadow:0 18px 40px rgba(0,0,0,.6);border:1px solid #444}
 .gcard .doccap{font:500 14px/1.35 Inter;letter-spacing:.06em;color:#9aa3ad;margin-top:16px}
+
+.gcard.lower{position:absolute;left:72px;bottom:150px;max-width:880px;padding:30px 38px;background:rgba(14,17,21,.86)}
+.gcard.lower .name{font-size:66px}.gcard.lower .what{font-size:26px}.gcard.lower .icon{display:none}
+body.modeL .gcard.lower{max-width:760px}
 </style>
 <script src="/node_modules/topojson-client/dist/topojson-client.min.js"></script>
 <script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js"}}</script>
@@ -397,7 +401,7 @@ function screenPos(v,cam){const p=v.clone().project(cam);return[(p.x*.5+.5)*W,(-
 for(const id of ['h1','h2','h3'])$(id).dataset.base='translate(-50%,-50%)';
 
 /* ---------------- photo layer ---------------- */
-const PIMG={};function pimg(k){return '/assets/photos/'+k+'.jpg';}
+const PIMG={};function pimg(k){return k.startsWith('ai/')?'/assets/'+k+'.jpg':'/assets/photos/'+k+'.jpg';}
 let pState={a:null,b:null};
 function kb(el,kind,u){u=clamp(u);const e=easeIO(u);let sc=1.06,tx=0,ty=0;
   if(kind==='out')sc=lerp(1.18,1.05,e);else if(kind==='left'){sc=1.14;tx=lerp(2.5,-2.5,e);}else if(kind==='right'){sc=1.14;tx=lerp(-2.5,2.5,e);}else if(kind==='up'){sc=1.14;ty=lerp(2,-2,e);}else sc=lerp(1.04,1.17,e);
@@ -405,7 +409,7 @@ function kb(el,kind,u){u=clamp(u);const e=easeIO(u);let sc=1.06,tx=0,ty=0;
 function photoLayer(sc,lt,d,mode){const P=sc.photos||[];const box=$('photo');
   if(!P.length){box.style.display='none';$('credit').innerHTML='';document.body.classList.remove('hasCredit');return false;}
   const u=lt/d;let i=-1;P.forEach((p,k)=>{if(u>=(p.at||0))i=k;});
-  if(i<0){box.style.display='none';$('credit').innerHTML='';document.body.classList.remove('hasCredit');return false;}
+  if(i<0||!P[i].src){box.style.display='none';$('credit').innerHTML='';document.body.classList.remove('hasCredit');return false;}
   box.style.display='block';const cur=P[i],start=(cur.at||0)*d,end=i+1<P.length?P[i+1].at*d:d;
   const A=$('pa'),B=$('pb');
   if(A.dataset.k!==cur.src){if(A.dataset.k){B.src=A.src;B.dataset.k=A.dataset.k;B.dataset.kb=A.dataset.kb;B.dataset.s=A.dataset.s;B.dataset.e=A.dataset.e;}A.src=pimg(cur.src);A.dataset.k=cur.src;A.dataset.kb=cur.kb||'in';A.dataset.s=start;A.dataset.e=end;}
@@ -418,7 +422,8 @@ function photoLayer(sc,lt,d,mode){const P=sc.photos||[];const box=$('photo');
   A.style.filter=B.style.filter=ff;$('pgrad').style.opacity=style==='full'?1:.4;
   const al=sc.alarm!=null&&u>=sc.alarm?((Math.floor(lt*3)%2)?.55:1):0;$('alarm').style.opacity=al;
   const c=CREDITS[cur.src];
-  if(c&&style!=='blur'){const by=c.artist.replace(/\s+/g,' ').slice(0,60);$('credit').innerHTML=`${cur.label?`<div class="ptag">${cur.label}</div><br>`:''}PHOTO: ${by} · WIKIMEDIA COMMONS · ${c.license}`;document.body.classList.add('hasCredit');}
+  if(c&&c.ai&&style!=='blur'){$('credit').innerHTML=`<div class="ptag">${cur.label||'AI RECONSTRUCTION'}</div><br>AI-GENERATED ILLUSTRATION · NOT ACTUAL FOOTAGE OF THE INCIDENT`;document.body.classList.add('hasCredit');}
+  else if(c&&style!=='blur'){const by=c.artist.replace(/\s+/g,' ').slice(0,60);$('credit').innerHTML=`${cur.label?`<div class="ptag">${cur.label}</div><br>`:''}PHOTO: ${by} · WIKIMEDIA COMMONS · ${c.license}`;document.body.classList.add('hasCredit');}
   else{$('credit').innerHTML=cur.label&&style!=='blur'?`<div class="ptag">${cur.label}</div>`:'';document.body.classList.remove('hasCredit');}
   return true;}
 
@@ -432,7 +437,7 @@ const ICONS={
 const icon=k=>ICONS[k]?`<div class="icon"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#e0312e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[k]}</svg></div>`:'';
 function genHTML(sc){const p=sc.params||{};
   if(sc.look==='card'){const body=`${icon(p.icon)}<div class="role">${p.role}</div><div class="name">${p.name}</div><div class="what">${p.what}</div>${p.tag?`<div><span class="tagc">${p.tag}</span></div>`:''}<div class="src">${p.src||''}</div>`;
-    return p.doc?`<div class="gcard" data-in="0.06" style="display:flex;gap:40px;align-items:flex-start"><div style="flex:1">${body}</div><div style="width:230px"><img class="doc" src="${pimg(p.doc)}"><div class="doccap">${p.doccap||''}</div></div></div>`:`<div class="gcard" data-in="0.06">${body}</div>`;}
+    return p.doc?`<div class="gcard" data-in="0.06" style="display:flex;gap:40px;align-items:flex-start"><div style="flex:1">${body}</div><div style="width:230px"><img class="doc" src="${pimg(p.doc)}"><div class="doccap">${p.doccap||''}</div></div></div>`:`<div class="gcard ${p.pos==='lower'?'lower':''}" data-in="${p.card_at??0.06}">${body}</div>`;}
   if(sc.look==='stat')return `<div style="text-align:${document.body.classList.contains('modeL')?'left':'center'}"><div class="gkick" data-in="0.02">${p.kicker}</div><div class="gbig" data-in="0.08">${p.big}</div><div class="gsub" data-in="0.3" style="margin-left:auto;margin-right:auto">${p.sub}</div><div class="gsrc" data-in="0.3">${p.src||''}</div></div>`;
   if(sc.look==='split'){const col=(c,r,at)=>`<div class="col ${r?'r':''}" data-in="${at}">${c.img?`<img src="${pimg(c.img)}">`:''}<div class="head">${c.head}</div>${c.lines.map(l=>`<div class="ln">${l}</div>`).join('')}<div class="gsrc">${c.src||''}</div></div>`;
     return `<div class="gtitle" data-in="0.02">${p.title}</div><div class="split">${col(p.left,0,0.1)}<div class="vs" data-in="0.45">${p.vs||'VS'}</div>${col(p.right,1,0.5)}</div>`;}
@@ -456,15 +461,7 @@ function lookPlaneCruise(lt,d,f){
   fadeIn($('t_kick'),(lt-.6)/.6);fadeIn($('t_big'),(lt-1.2)/.6,40);fadeIn($('t_sub'),(lt-d*.62)/.6);
   const o=1-ease((lt-(d-.6))/.5);$('ov_title').style.opacity=o;
 }
-function lookPlaneDive(lt,d,f){
-  const u=clamp(lt/d);const k=easeIO(clamp((u-.08)/.55));
-  plane.rotation.set(-k*.55+Math.sin(lt*9)*.01*k,0,Math.sin(lt*3)*.25*k);
-  const R=rng(f);const sh=k*.18*(1-clamp((u-.75)/.25));
-  camPlane.position.set(9.5+(R()-.5)*sh,3.6+(R()-.5)*sh,7+(R()-.5)*sh);camPlane.lookAt(0,-.4,-1);
-  const vy=k*55;clouds.children.forEach(s=>{s.position.y=s.userData.base.y+((lt*vy)%60);s.position.z=((s.userData.base.z+lt*14+130)%260)-130;});
-  clouds2.children.forEach(s=>{s.position.y=s.userData.base.y+((lt*vy*.7)%60);});
-  plane.userData.beacon.visible=(Math.floor(lt*1.2)%2)===0;
-  renderer.render(sPlane,camPlane);
+function altOverlay(lt,d){const u=clamp(lt/d);
   showOnly(['ov_alt']);$('ov_alt').style.opacity=ease(lt/.5)*(1-ease((lt-(d-.5))/.5));
   const alt=lerp(34000,15000,easeIO(clamp((u-.08)/.62)));$('altnum').textContent=(Math.round(alt/100)*100).toLocaleString('en-US');
   $('altnum').style.color=u>.1&&u<.8?'#ff3b36':'#f4f5f7';
@@ -475,6 +472,17 @@ function lookPlaneDive(lt,d,f){
   const y=(a)=>lerp(70,250,(34000-a)/19000);
   c.strokeStyle='#ff3b36';c.lineWidth=4;c.beginPath();const pts=120,lim=Math.floor(pts*clamp(u/.85));
   for(let i=0;i<=lim;i++){const q=i/pts;let a=q<.15?34000:q<.32?lerp(34000,19500,(q-.15)/.17):q<.4?lerp(19500,21000,(q-.32)/.08):lerp(21000,15000,easeIO((q-.4)/.6));const X=lerp(90,730,q);i?c.lineTo(X,y(a)):c.moveTo(X,y(a));}c.stroke();
+}
+function lookPlaneDive(lt,d,f){
+  const u=clamp(lt/d);const k=easeIO(clamp((u-.08)/.55));
+  plane.rotation.set(-k*.55+Math.sin(lt*9)*.01*k,0,Math.sin(lt*3)*.25*k);
+  const R=rng(f);const sh=k*.18*(1-clamp((u-.75)/.25));
+  camPlane.position.set(9.5+(R()-.5)*sh,3.6+(R()-.5)*sh,7+(R()-.5)*sh);camPlane.lookAt(0,-.4,-1);
+  const vy=k*55;clouds.children.forEach(s=>{s.position.y=s.userData.base.y+((lt*vy)%60);s.position.z=((s.userData.base.z+lt*14+130)%260)-130;});
+  clouds2.children.forEach(s=>{s.position.y=s.userData.base.y+((lt*vy*.7)%60);});
+  plane.userData.beacon.visible=(Math.floor(lt*1.2)%2)===0;
+  renderer.render(sPlane,camPlane);
+  altOverlay(lt,d);
 }
 let mapState={};
 function lookMap(lt,d,f,mode){
@@ -552,7 +560,9 @@ function lookEnd(lt,d,f){lookBg(lt,d,f);showOnly(['ov_end']);fadeIn($('e1'),(lt-
 function lookHeroesPilots(lt,d,f){} // pilots card appears over tabuk map (see below)
 
 function lookPlaneBg(lt,d,f){lookPlaneCruise(lt,d,f);showOnly([]);}
-function lookPhoto(lt,d,f,sc){showOnly(sc.params&&sc.params.overlay==='title'?['ov_title']:[]);
+function lookPhoto(lt,d,f,sc){const ovl=sc.params&&sc.params.overlay;showOnly(ovl==='title'?['ov_title']:[]);
+  if(ovl==='alt')altOverlay(lt,d);
+  if(ovl==='quote'){showOnly(['ov_quote']);const q=$('q_card'),u=lt/d;q.style.opacity=ease((u-(sc.params.quote_at||.45))/.08);q.style.transform=`translateY(${(1-ease((u-(sc.params.quote_at||.45))/.08))*30}px)`;}
   if(sc.params&&sc.params.overlay==='title'){const t0=(sc.dim_at||0)*d;fadeIn($('t_kick'),(lt-t0-.3)/.6);fadeIn($('t_big'),(lt-t0-.7)/.6,40);fadeIn($('t_sub'),(lt-t0-.7-(d-t0)*.35)/.6);$('ov_title').style.opacity=1-ease((lt-(d-.6))/.5);}}
 const LOOKS={
   bg:(lt,d,f)=>{lookBg(lt,d,f);showOnly([]);}, plane_bg:lookPlaneBg, photo:lookPhoto,

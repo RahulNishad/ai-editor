@@ -1,0 +1,13 @@
+{
+ "style": "photorealistic documentary photograph, shot on a full-frame camera, 35mm lens, natural film grain, realistic lighting, high detail, no text, no logos, no watermark",
+ "shots": {
+  "r_struggle": {"prompt": "inside a Boeing 737 flight deck at night seen from behind the two pilot seats, red master warning lights glowing on the glareshield, two pilots in white uniform shirts grappling between the seats, heavy motion blur, faces not visible, dark and tense", "seed": 11},
+  "r_dive": {"prompt": "a plain white twin-engine narrow-body airliner with no markings descending steeply nose down through clouds at night, moonlit cloud tops, motion blur, aviation photography from a chase plane", "seed": 21},
+  "r_door_hand": {"prompt": "close-up of an airline captain's arm in a white short-sleeve uniform shirt with four gold stripes on the epaulette, his hand gripping the cockpit door handle, dim red emergency light, shallow depth of field, face not in frame", "seed": 31},
+  "r_aisle": {"prompt": "view down the aisle of a narrow-body airliner cabin at night toward the front, the cockpit door flung open with bright light pouring out, silhouettes of passengers standing up and rushing forward, motion blur, faces not visible", "seed": 41},
+  "r_restrain": {"prompt": "in the cramped forward galley of an airliner, a man in a casual t-shirt pinning down a man in a white pilot uniform shirt against the floor from behind, both seen from the back, faces not visible, dramatic low cabin light, motion blur, photojournalism", "seed": 51},
+  "r_aid": {"prompt": "inside an airliner galley, a passenger kneeling and pressing a folded grey blanket to the forearm of an injured pilot in a white uniform shirt sitting on the floor, an oxygen mask nearby, only hands and torsos visible, warm cabin light, no blood", "seed": 61},
+  "r_approach": {"prompt": "view through the cockpit windshield of an airliner on final approach at night, bright runway approach lights in a dark desert ahead, silhouettes of two pilots from behind, glowing instrument displays", "seed": 71},
+  "r_apron": {"prompt": "a plain white narrow-body airliner with no markings parked on a remote desert airport apron at dawn, fire trucks and ambulances with flashing lights surrounding it, emergency crew walking, wide shot", "seed": 81}
+ }
+}

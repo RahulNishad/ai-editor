@@ -34,6 +34,12 @@
      "src": "cockpit_night",
      "kb": "in",
      "label": "REPRESENTATIVE IMAGE · 737 FLIGHT DECK AT NIGHT"
+    },
+    {
+     "src": "ai/r_struggle",
+     "at": 0.62,
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
    ],
    "alarm": 0.55,
@@ -158,6 +164,12 @@
      "src": "cockpit_max",
      "kb": "in",
      "label": "REPRESENTATIVE IMAGE · BOEING 737 MAX FLIGHT DECK"
+    },
+    {
+     "src": "ai/r_struggle",
+     "at": 0.55,
+     "kb": "out",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
    ],
    "alarm": 0.3,
@@ -193,14 +205,25 @@
    "n": 8,
    "id": "plunge",
    "layout": "F",
-   "look": "plane_dive",
+   "look": "photo",
    "chapter": "02 · THE ATTACK",
    "shot": "A",
    "direction": "Thodi tez aawaz, tension ke saath.",
    "text": "Hamle ke dauraan plane tezi se neeche girne laga. Flightradar24 ke data ke mutabik, plane 34,000 feet se kuch hi minuton mein lagbhag 15,000 feet tak aa gaya. Passengers ke liye yeh zindagi aur maut ke beech ke pal the.",
    "source": "SOURCE: FLIGHTRADAR24 ADS-B DATA AS REPORTED · CHART SIMPLIFIED",
    "text_dev": "हमले के दौरान प्लेन तेज़ी से नीचे गिरने लगा। फ़्लाइटरडार चौबीस के डेटा के मुताबिक़, प्लेन चौंतीस हज़ार फ़ीट से कुछ ही मिनटों में लगभग पंद्रह हज़ार फ़ीट तक आ गया। पैसेंजर्स के लिए ये ज़िंदगी और मौत के बीच के पल थे।",
-   "expression": "Voice only. Tense and slightly faster. Let 'zindagi aur maut' land with a pause before it."
+   "expression": "Voice only. Tense and slightly faster. Let 'zindagi aur maut' land with a pause before it.",
+   "photo_style": "full",
+   "params": {
+    "overlay": "alt"
+   },
+   "photos": [
+    {
+     "src": "ai/r_dive",
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    }
+   ]
   },
   {
    "n": 9,
@@ -238,14 +261,26 @@
    "n": 10,
    "id": "door",
    "layout": "L",
-   "look": "cockpit_door",
+   "look": "photo",
    "chapter": "03 · THE DOOR",
    "shot": "B",
    "direction": "Emotional, dheere. English quote ko waise hi boliye.",
    "text": "Ghayal hone ke bawajood, Captain Smit ne aakhri koshish ki. Unke mutabik, unhone khud se kaha: This is the last push, Smit. Do it, the door is right there. Aur darwaaza khul gaya.",
    "source": "QUOTE: CAPT. MACHCHHAR'S ACCOUNT AS REPORTED BY FOX NEWS, CBC",
    "text_dev": "घायल होने के बावजूद, कैप्टन स्मित ने आख़िरी कोशिश की। उनके मुताबिक़, उन्होंने ख़ुद से कहा: दिस इज़ द लास्ट पुश, स्मित। डू इट, द डोर इज़ राइट देयर। और दरवाज़ा खुल गया।",
-   "expression": "Emotional and slow, close-up. Soft eyes. Say the English quote with quiet determination, a slight clench. Then exhale with relief on 'aur darwaaza khul gaya' and give one small nod."
+   "expression": "Emotional and slow, close-up. Soft eyes. Say the English quote with quiet determination, a slight clench. Then exhale with relief on 'aur darwaaza khul gaya' and give one small nod.",
+   "photo_style": "full",
+   "params": {
+    "overlay": "quote",
+    "quote_at": 0.45
+   },
+   "photos": [
+    {
+     "src": "ai/r_door_hand",
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    }
+   ]
   },
   {
    "n": 11,
@@ -260,14 +295,23 @@
     "role": "PASSENGER · PLUMBER FROM ISRAEL",
     "name": "YANIV HAYOUN",
     "what": "Grabbed the attacker in a chokehold and pulled him out of the cockpit.",
-    "src": "SOURCE: AP, WION REPORTS, 1 OCT 2026"
+    "src": "SOURCE: AP, WION REPORTS, 1 OCT 2026",
+    "pos": "lower",
+    "card_at": 0.48
    },
    "text": "Darwaaza khulte hi aam passengers andar ghuse. Reports ke mutabik, Israel ke ek plumber, Yaniv Hayoun ne, hamlavar ko chokehold mein pakda, aur cockpit se bahar kheench liya.",
-   "photo_style": "blur",
+   "photo_style": "full",
    "photos": [
     {
-     "src": "cabin",
-     "kb": "in"
+     "src": "ai/r_aisle",
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
+     "src": "ai/r_restrain",
+     "at": 0.42,
+     "kb": "left",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
    ],
    "text_dev": "दरवाज़ा खुलते ही आम पैसेंजर्स अंदर घुसे। रिपोर्ट्स के मुताबिक़, इज़राइल के एक प्लंबर, यानिव हायून ने, हमलावर को चोकहोल्ड में पकड़ा, और कॉकपिट से बाहर खींच लिया।",
@@ -286,14 +330,17 @@
     "role": "PASSENGER · DENTIST",
     "name": "DR. SHOTA MUSAEV",
     "what": "Helped restrain the attacker, then treated the wounded captain and stopped his bleeding.",
-    "src": "SOURCE: AP, WION REPORTS, 1 OCT 2026"
+    "src": "SOURCE: AP, WION REPORTS, 1 OCT 2026",
+    "pos": "lower",
+    "card_at": 0.3
    },
    "text": "Ek dentist, Dr. Shota Musaev ne, hamlavar ko qaabu karne mein madad ki, aur phir ghayal captain ka khoon rokne mein lag gaye.",
-   "photo_style": "blur",
+   "photo_style": "full",
    "photos": [
     {
-     "src": "cabin",
-     "kb": "out"
+     "src": "ai/r_aid",
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
    ],
    "text_dev": "एक डेंटिस्ट, डॉक्टर शोता मुसाएव ने, हमलावर को क़ाबू करने में मदद की, और फिर घायल कैप्टन का ख़ून रोकने में लग गए।",
@@ -312,10 +359,19 @@
    "photo_style": "full",
    "photos": [
     {
-     "src": "tabuk",
-     "at": 0.66,
+     "src": "ai/r_approach",
      "kb": "in",
-     "label": "TABUK, SAUDI ARABIA · FILE PHOTO"
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
+     "src": null,
+     "at": 0.3
+    },
+    {
+     "src": "ai/r_apron",
+     "at": 0.74,
+     "kb": "out",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE · AFTER LANDING AT TABUK"
     }
    ],
    "text_dev": "लेकिन प्लेन अब भी हवा में था। क़िस्मत से, फ़्लाइट पर फ़्लाईदुबई के दो ऑफ़-ड्यूटी पायलट्स भी थे, हेंसन स्टीवन और रोवन टूथ। उन्होंने कंट्रोल्स सँभाले, और प्लेन को सऊदी अरब के तबूक में सुरक्षित उतार दिया।",
