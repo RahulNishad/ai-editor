@@ -44,16 +44,17 @@ if sys.argv[1] == "search":
 elif sys.argv[1] == "get":
     r = info([sys.argv[2]])[0]; key = sys.argv[3]
     if not OK.match(r["license"]): sys.exit(f"license not allowed: {r['license']}")
-    dst = os.path.join(HERE, "assets", "photos", key + ".jpg"); tmp = dst + ".src" + os.path.splitext(r["orig"])[1].lower()
-    import time, subprocess
-    for i in range(6):
-        try:
-            with urllib.request.urlopen(urllib.request.Request(r["orig"], headers=UA), timeout=120) as f: open(tmp, "wb").write(f.read())
-            break
-        except urllib.error.HTTPError as e:
-            if e.code != 429: raise
-            time.sleep(3 * 2 ** i)
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", tmp, "-vf", "scale='min(3200,iw)':-2", "-q:v", "3", dst], check=True); os.remove(tmp)
+    dst = os.path.join(HERE, "assets", "photos", key + ".jpg"); tmp = dst + ".src" + os.path.splitext(urllib.parse.urlparse(r["orig"]).path)[1].lower()
+    import subprocess
+    import time
+    url = r["orig"].split("?")[0]
+    tw = 1920 if r["w"] > 1920 else 1280 if r["w"] > 1280 else None
+    if tw:  # Wikimedia asks automated clients to use standard thumbnail widths, not originals
+        base = url.rsplit("/", 1)[1]
+        url = url.replace("/wikipedia/commons/", "/wikipedia/commons/thumb/") + f"/{tw}px-{base}"
+    subprocess.run(["curl", "-sS", "-f", "-A", UA["User-Agent"], "--retry", "3", "--retry-delay", "20", "-o", tmp, url], check=True)
+    time.sleep(12)
+    subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-i", tmp, "-vf", "scale='min(3200,iw)':-2", "-q:v", "3", dst], check=True); os.remove(tmp)
     cp = os.path.join(HERE, "assets", "photos", "credits.json")
     cr = json.load(open(cp)) if os.path.exists(cp) else {}
     cr[key] = {k: r[k] for k in ("title", "page", "license", "artist", "date")}

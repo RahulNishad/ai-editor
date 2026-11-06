@@ -7,6 +7,6 @@ door|File:Cockpit Door - Boeing 757 (26311617499).jpg
 door_switch|File:Cockpit door lock toggle switch Airbus A319-100 D-AKNM Germanwings.jpg
 dxb|File:Dubai International Airport Terminal three.JPG
 tlv|File:Tel Aviv, Ben Gurion Airport, Departure Hall.jpg
-tabuk|File:TUU 0456 (4647926379).jpg
 daipx|File:Germanwings A320 (D-AIPX) at Düsseldorf Airport.jpg
 house_res|File:2026 US House Resolution - Honoring Captain Smit Machchhar - page 1.jpg
+tabuk|File:Tabuk desert.jpg

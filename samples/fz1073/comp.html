@@ -414,7 +414,8 @@ function photoLayer(sc,lt,d,mode){const P=sc.photos||[];const box=$('photo');
   B.style.opacity=fa<1&&B.dataset.k&&i>0?1:0;if(B.dataset.k)kb(B,B.dataset.kb,(lt-parseFloat(B.dataset.s))/Math.max(parseFloat(B.dataset.e)-parseFloat(B.dataset.s),.1));
   const style=mode==='C'?'blur':(sc.photo_style||'full');
   const f={full:'brightness(.86) contrast(1.05) saturate(.92)',dim:'brightness(.42) saturate(.8)',blur:'blur(14px) brightness(.5) saturate(.85)'}[style];
-  A.style.filter=B.style.filter=f;$('pgrad').style.opacity=style==='full'?1:.4;
+  let ff=f;if(sc.dim_at!=null&&style==='full'){const k=ease((lt-sc.dim_at*d)/.7);ff=`brightness(${lerp(.86,.36,k)}) contrast(1.05) saturate(${lerp(.92,.7,k)})`;}
+  A.style.filter=B.style.filter=ff;$('pgrad').style.opacity=style==='full'?1:.4;
   const al=sc.alarm!=null&&u>=sc.alarm?((Math.floor(lt*3)%2)?.55:1):0;$('alarm').style.opacity=al;
   const c=CREDITS[cur.src];
   if(c&&style!=='blur'){const by=c.artist.replace(/\s+/g,' ').slice(0,60);$('credit').innerHTML=`${cur.label?`<div class="ptag">${cur.label}</div><br>`:''}PHOTO: ${by} · WIKIMEDIA COMMONS · ${c.license}`;document.body.classList.add('hasCredit');}
@@ -551,7 +552,7 @@ function lookHeroesPilots(lt,d,f){} // pilots card appears over tabuk map (see b
 
 function lookPlaneBg(lt,d,f){lookPlaneCruise(lt,d,f);showOnly([]);}
 function lookPhoto(lt,d,f,sc){showOnly(sc.params&&sc.params.overlay==='title'?['ov_title']:[]);
-  if(sc.params&&sc.params.overlay==='title'){fadeIn($('t_kick'),(lt-.6)/.6);fadeIn($('t_big'),(lt-1.2)/.6,40);fadeIn($('t_sub'),(lt-d*.62)/.6);$('ov_title').style.opacity=1-ease((lt-(d-.6))/.5);}}
+  if(sc.params&&sc.params.overlay==='title'){const t0=(sc.dim_at||0)*d;fadeIn($('t_kick'),(lt-t0-.3)/.6);fadeIn($('t_big'),(lt-t0-.7)/.6,40);fadeIn($('t_sub'),(lt-t0-.7-(d-t0)*.35)/.6);$('ov_title').style.opacity=1-ease((lt-(d-.6))/.5);}}
 const LOOKS={
   bg:(lt,d,f)=>{lookBg(lt,d,f);showOnly([]);}, plane_bg:lookPlaneBg, photo:lookPhoto,
   card:lookGeneric, stat:lookGeneric, split:lookGeneric, list:lookGeneric,
