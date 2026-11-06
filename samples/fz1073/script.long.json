@@ -114,6 +114,12 @@
     {
      "src": "dxb",
      "kb": "right"
+    },
+    {
+     "src": "ai/a_globe_flights",
+     "at": 0.45,
+     "kb": "in",
+     "label": "AI ILLUSTRATION"
     }
    ],
    "text_dev": "ये कहानी सिर्फ़ एक फ़्लाइट की नहीं है। हर दिन दुनिया में लाखों लोग प्लेन में बैठते हैं, और हम सब एक ही चीज़ पर भरोसा करते हैं, कि कॉकपिट में बैठे दो लोग हमारी हिफ़ाज़त करेंगे। लेकिन अगर उनमें से ही एक ख़तरा बन जाए, तो?",
@@ -200,12 +206,21 @@
    "photo_style": "dim",
    "photos": [
     {
+     "src": "ai/a_axe",
+     "at": 0,
+     "kb": "in",
+     "label": "AI ILLUSTRATION"
+    }
+   ],
+   "text_dev": "अब आप सोचेंगे, प्लेन में कुल्हाड़ी क्या कर रही थी? असल में क्रैश ऐक्स एक ज़रूरी इमरजेंसी टूल है। आग लगने पर पैनल तोड़ने के लिए, या फँसे हुए दरवाज़े को खोलने के लिए। नियमों के मुताबिक़ ये कॉकपिट के अंदर रखी जाती है, जहाँ पैसेंजर्स का हाथ ना पहुँचे। लेकिन इस बार, ख़तरा पैसेंजर नहीं था।",
+   "expression": "Voice only. Curious, explaining tone, a little lighter. Slow down on the last line, 'khatra passenger nahi tha'.",
+   "fallback_photos": [
+    {
      "src": "cockpit_max",
      "kb": "out"
     }
    ],
-   "text_dev": "अब आप सोचेंगे, प्लेन में कुल्हाड़ी क्या कर रही थी? असल में क्रैश ऐक्स एक ज़रूरी इमरजेंसी टूल है। आग लगने पर पैनल तोड़ने के लिए, या फँसे हुए दरवाज़े को खोलने के लिए। नियमों के मुताबिक़ ये कॉकपिट के अंदर रखी जाती है, जहाँ पैसेंजर्स का हाथ ना पहुँचे। लेकिन इस बार, ख़तरा पैसेंजर नहीं था।",
-   "expression": "Voice only. Curious, explaining tone, a little lighter. Slow down on the last line, 'khatra passenger nahi tha'."
+   "fallback_style": "dim"
   },
   {
    "n": 8,
@@ -231,8 +246,14 @@
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     },
     {
+     "src": "ai/a_altimeter",
+     "at": 0.3,
+     "kb": "in",
+     "label": "AI ILLUSTRATION"
+    },
+    {
      "src": "ai/r_dive_window",
-     "at": 0.55,
+     "at": 0.6,
      "kb": "left",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
@@ -262,8 +283,14 @@
      "label": "REPRESENTATIVE IMAGE · COCKPIT DOOR"
     },
     {
+     "src": "ai/a_door_lock",
+     "at": 0.3,
+     "kb": "in",
+     "label": "AI ILLUSTRATION"
+    },
+    {
      "src": "door_switch",
-     "at": 0.55,
+     "at": 0.65,
      "kb": "left",
      "label": "REPRESENTATIVE IMAGE · DOOR LOCK SWITCH ON THE FLIGHT DECK"
     }
@@ -524,12 +551,21 @@
    "photo_style": "blur",
    "photos": [
     {
+     "src": "ai/a_screening",
+     "at": 0,
+     "kb": "in",
+     "label": "AI ILLUSTRATION"
+    }
+   ],
+   "text_dev": "लेकिन अगर प्लान इतना पुराना था, तो ये पकड़ा क्यों नहीं गया? यू ए ई का कहना है कि एयरलाइन की हायरिंग चेक्स में, कोई कट्टर सोच या टेरर लिंक नहीं मिला। वहीं रॉयटर्स ने, इज़राइली ऑफ़िशियल्स के हवाले से रिपोर्ट किया, कि उसने इन्वेस्टिगेटर्स को बताया, प्लान नौकरी मिलने से पहले का था। अगर दोनों बातें सच हैं, तो सवाल स्क्रीनिंग सिस्टम पर उठता है।",
+   "expression": "Voice only. Questioning tone, measured, no accusation.",
+   "fallback_photos": [
+    {
      "src": "cockpit_night",
      "kb": "out"
     }
    ],
-   "text_dev": "लेकिन अगर प्लान इतना पुराना था, तो ये पकड़ा क्यों नहीं गया? यू ए ई का कहना है कि एयरलाइन की हायरिंग चेक्स में, कोई कट्टर सोच या टेरर लिंक नहीं मिला। वहीं रॉयटर्स ने, इज़राइली ऑफ़िशियल्स के हवाले से रिपोर्ट किया, कि उसने इन्वेस्टिगेटर्स को बताया, प्लान नौकरी मिलने से पहले का था। अगर दोनों बातें सच हैं, तो सवाल स्क्रीनिंग सिस्टम पर उठता है।",
-   "expression": "Voice only. Questioning tone, measured, no accusation."
+   "fallback_style": "blur"
   },
   {
    "n": 17,
@@ -568,7 +604,16 @@
    "text": "Yeh pehli baar nahi hai. 2015 mein Germanwings flight 9525 mein, co-pilot ne captain ko cockpit se bahar lock kar diya tha, aur plane French Alps mein crash kar diya. 150 log maare gaye. Wahan darwaaza band raha. Is baar darwaaza khul gaya. Aur shayad bas yahi farq tha.",
    "source": "PHOTOS: D-AIPX, DÜSSELDORF 2015 (DER SASCHA, CC BY-SA 4.0) · A6-FKF, DUBAI 2026 (UB-TY144, CC BY-SA 4.0) · WIKIMEDIA COMMONS",
    "text_dev": "ये पहली बार नहीं है। दो हज़ार पंद्रह में जर्मनविंग्स फ़्लाइट नाइन फ़ाइव टू फ़ाइव में, को-पायलट ने कैप्टन को कॉकपिट से बाहर लॉक कर दिया था, और प्लेन फ़्रेंच ऐल्प्स में क्रैश कर दिया। एक सौ पचास लोग मारे गए। वहाँ दरवाज़ा बंद रहा। इस बार दरवाज़ा खुल गया। और शायद बस यही फ़र्क़ था।",
-   "expression": "Voice only. Slow and respectful. Pause before and after '150 log maare gaye'. No drama."
+   "expression": "Voice only. Slow and respectful. Pause before and after '150 log maare gaye'. No drama.",
+   "photos": [
+    {
+     "src": "ai/a_alps",
+     "at": 0,
+     "kb": "in",
+     "label": "AI ILLUSTRATION"
+    }
+   ],
+   "photo_style": "blur"
   },
   {
    "n": 18,
@@ -602,12 +647,21 @@
    "photo_style": "blur",
    "photos": [
     {
+     "src": "ai/a_door_lock",
+     "at": 0,
+     "kb": "out",
+     "label": "AI ILLUSTRATION"
+    }
+   ],
+   "text_dev": "जर्मनविंग्स के बाद यूरोप ने सलाह दी थी, कि कॉकपिट में हमेशा दो लोग रहें। लेकिन इस बार तो कॉकपिट में दो लोग पहले से थे। इसलिए एक्सपर्ट्स अब तीन बातों पर बहस कर रहे हैं। पहली, क्या ये मज़बूत दरवाज़े सिर्फ़ बाहर के ख़तरे के लिए बने हैं? दूसरी, पायलट्स की स्क्रीनिंग और गहरी कैसे हो? और तीसरी, क्या दो लोगों वाला नियम काफ़ी है?",
+   "expression": "Voice only. Clear, structured, like counting three points.",
+   "fallback_photos": [
+    {
      "src": "door",
      "kb": "in"
     }
    ],
-   "text_dev": "जर्मनविंग्स के बाद यूरोप ने सलाह दी थी, कि कॉकपिट में हमेशा दो लोग रहें। लेकिन इस बार तो कॉकपिट में दो लोग पहले से थे। इसलिए एक्सपर्ट्स अब तीन बातों पर बहस कर रहे हैं। पहली, क्या ये मज़बूत दरवाज़े सिर्फ़ बाहर के ख़तरे के लिए बने हैं? दूसरी, पायलट्स की स्क्रीनिंग और गहरी कैसे हो? और तीसरी, क्या दो लोगों वाला नियम काफ़ी है?",
-   "expression": "Voice only. Clear, structured, like counting three points."
+   "fallback_style": "blur"
   },
   {
    "n": 19,
@@ -620,7 +674,16 @@
    "text": "Bharat ke liye yeh kahani aur bhi khaas hai. Saudi Arabia ne aaropi ko UAE ko saunp diya, aur UAE ne 9 October ko apne daave saamne rakhe. Hamari NIA ne bhi Anti-Hijacking Act 2016 aur UAPA ke tahat case darj kiya hai, taaki kisi badi saazish ki jaanch ho sake. Jaanch abhi jaari hai.",
    "source": "SOURCES: WAM, HAARETZ (9 OCT) · NIA VIA BUSINESS TODAY (10 OCT)",
    "text_dev": "भारत के लिए ये कहानी और भी ख़ास है। सऊदी अरब ने आरोपी को यू ए ई को सौंप दिया, और यू ए ई ने नौ अक्टूबर को अपने दावे सामने रखे। हमारी एन आई ए ने भी एंटी-हाइजैकिंग एक्ट दो हज़ार सोलह और यू ए पी ए के तहत केस दर्ज किया है, ताकि किसी बड़ी साज़िश की जाँच हो सके। जाँच अभी जारी है।",
-   "expression": "Voice only. Straight, official tone."
+   "expression": "Voice only. Straight, official tone.",
+   "photos": [
+    {
+     "src": "ai/a_investigation",
+     "at": 0,
+     "kb": "in",
+     "label": "AI ILLUSTRATION"
+    }
+   ],
+   "photo_style": "dim"
   },
   {
    "n": 20,
