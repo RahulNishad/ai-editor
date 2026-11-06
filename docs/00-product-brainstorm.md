@@ -15,6 +15,18 @@ Two things were verified live during this session and are treated as facts below
 
 ---
 
+## 0. Update: Claude generates the animation, Figma is optional
+
+Decision from discussion: avoid depending on Figma. Claude both directs and generates.
+
+Proven in `spikes/claude-3d-render`: Claude writes a Three.js scene, headless Chromium renders it frame by frame, FFmpeg encodes it. A 6 s 1080p 3D clip rendered in about 100 s on a 4-CPU container with no GPU and no credits.
+
+What this covers well: 3D data scenes, maps and routes, timelines, counters, charts, headline and document cards, flow diagrams, stylised 3D environments (aircraft, cockpit, city, boardroom), camera moves, particles, parallax. Every number is exact, every clip is editable and re-renderable, any length.
+
+What it does not cover: photoreal footage of people and places. For that, use licensed stock or real footage. A diffusion model such as Veo stays an optional plug-in, not a dependency.
+
+So the generator classes in §1.4 become: **Claude 3D/motion scene (default)**, **template card (same renderer)**, **optional external AI video**.
+
 ## 1. What changes versus the original brief
 
 ### 1.1 The footage model is multi-take, vertical, and matted

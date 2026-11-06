@@ -1,0 +1,1 @@
+{ "name": "claude-3d-render-spike", "private": true, "dependencies": { "three": "0.170.0" } }
