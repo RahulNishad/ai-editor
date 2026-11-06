@@ -2,7 +2,7 @@
 
 _Ek ghayal Indian captain, ek plumber, ek dentist aur do off-duty pilots ne 170 se zyada zindagiyan kaise bachaayi_
 
-**23 scenes · 992 words · about 7 minutes at 140 words per minute**
+**23 scenes · 1013 words · about 7 minutes at 140 words per minute**
 
 ## How to record
 
@@ -106,7 +106,7 @@ _Direction: Teen points, ungliyon par ginte hue._
 _Direction: Seedha, official tone._
 
 **20.mp4** · Shot B · You on the right, graphic on the left
-> Aur Captain Smit? Israel ke Rashtrapati Isaac Herzog ne ailaan kiya hai, ki unhe Israel ka Presidential Award for Civilian Heroism diya jaayega, jaise hi woh theek ho jaate hain. Herzog ne chhe Israeli passengers ko bhi medal diye. UAE mein Bharatiya embassy ke mutabik, Captain Smit ab theek ho rahe hain.
+> Aur Captain Smit? Israel ke Rashtrapati Isaac Herzog ne ailaan kiya hai, ki unhe Israel ka Presidential Award for Civilian Heroism diya jaayega, jaise hi woh theek ho jaate hain. Herzog ne chhe Israeli passengers ko bhi medal diye. America ki House of Representatives mein bhi, unke aur crew aur passengers ke sammaan mein ek resolution pesh kiya gaya hai. UAE mein Bharatiya embassy ke mutabik, Captain Smit ab theek ho rahe hain.
 _Direction: Garv ke saath, halki muskurahat._
 
 **21.mp4** · Shot B · You on screen, centred

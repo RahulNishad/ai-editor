@@ -492,11 +492,14 @@
     "icon": "award",
     "role": "ISRAEL · PRESIDENTIAL AWARD FOR CIVILIAN HEROISM",
     "name": "CAPT. SMIT MACHCHHAR",
-    "what": "To be presented once he recovers. President Herzog also gave medals to six Israeli passengers.",
-    "src": "SOURCE: KHALEEJ TIMES, GULF NEWS, 4–9 OCT 2026"
+    "what": "Israel: to be presented once he recovers; six Israeli passengers also received medals. In the US House, a resolution honouring him and the crew and passengers was submitted.",
+    "src": "SOURCE: KHALEEJ TIMES, GULF NEWS, 4–9 OCT 2026",
+    "doc": "house_res",
+    "doccap": "US HOUSE RESOLUTION SUBMITTED BY REP. GOTTHEIMER · REFERRED TO COMMITTEE · PUBLIC DOMAIN"
    },
-   "text": "Aur Captain Smit? Israel ke Rashtrapati Isaac Herzog ne ailaan kiya hai, ki unhe Israel ka Presidential Award for Civilian Heroism diya jaayega, jaise hi woh theek ho jaate hain. Herzog ne chhe Israeli passengers ko bhi medal diye. UAE mein Bharatiya embassy ke mutabik, Captain Smit ab theek ho rahe hain.",
-   "text_dev": "और कैप्टन स्मित? इज़राइल के राष्ट्रपति आइज़ैक हर्ज़ोग ने ऐलान किया है, कि उन्हें इज़राइल का प्रेसिडेंशियल अवॉर्ड फ़ॉर सिविलियन हीरोइज़्म दिया जाएगा, जैसे ही वो ठीक हो जाते हैं। हर्ज़ोग ने छह इज़राइली पैसेंजर्स को भी मेडल दिए। यू ए ई में भारतीय एम्बेसी के मुताबिक़, कैप्टन स्मित अब ठीक हो रहे हैं।"
+   "text": "Aur Captain Smit? Israel ke Rashtrapati Isaac Herzog ne ailaan kiya hai, ki unhe Israel ka Presidential Award for Civilian Heroism diya jaayega, jaise hi woh theek ho jaate hain. Herzog ne chhe Israeli passengers ko bhi medal diye. America ki House of Representatives mein bhi, unke aur crew aur passengers ke sammaan mein ek resolution pesh kiya gaya hai. UAE mein Bharatiya embassy ke mutabik, Captain Smit ab theek ho rahe hain.",
+   "text_dev": "और कैप्टन स्मित? इज़राइल के राष्ट्रपति आइज़ैक हर्ज़ोग ने ऐलान किया है, कि उन्हें इज़राइल का प्रेसिडेंशियल अवॉर्ड फ़ॉर सिविलियन हीरोइज़्म दिया जाएगा, जैसे ही वो ठीक हो जाते हैं। हर्ज़ोग ने छह इज़राइली पैसेंजर्स को भी मेडल दिए। अमेरिका की हाउस ऑफ़ रिप्रेज़ेंटेटिव्स में भी, उनके और क्रू और पैसेंजर्स के सम्मान में एक रेज़ोल्यूशन पेश किया गया है। यू ए ई में भारतीय एम्बेसी के मुताबिक़, कैप्टन स्मित अब ठीक हो रहे हैं।",
+   "source": "SOURCES: KHALEEJ TIMES, GULF NEWS (4–9 OCT 2026) · H. RES. TEXT VIA WIKIMEDIA COMMONS"
   },
   {
    "n": 21,
