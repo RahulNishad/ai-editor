@@ -46,6 +46,38 @@ canvas#gl{position:absolute;inset:0}
 .maplabel{position:absolute;font:600 22px/1 Inter;letter-spacing:.22em;color:#fff;transform:translate(-50%,-50%);white-space:nowrap;text-shadow:0 2px 10px #000}
 .maplabel .pin{display:block;width:16px;height:16px;border-radius:50%;background:#fff;margin:0 auto 12px;box-shadow:0 0 0 6px rgba(255,255,255,.18)}
 .maplabel.red .pin{background:var(--red);box-shadow:0 0 0 8px rgba(224,49,46,.25)}
+
+#ov_gen{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 120px;box-sizing:border-box}
+body.modeL #ov_gen{padding:0 700px 0 90px;align-items:flex-start}
+body.modeL .center{right:640px}
+body.modeL #illus{right:auto;left:72px;top:104px}
+body.modeL #source{right:auto;left:72px;text-align:left;max-width:1060px}
+body.modeC #phrase{max-width:540px;font-size:76px;line-height:1.02}
+body.modeC #source{right:auto;left:72px;text-align:left;max-width:520px}
+.gcard{position:relative;background:rgba(22,26,32,.94);outline:1px solid rgba(255,255,255,.06);border-left:8px solid var(--red);padding:44px 52px;box-shadow:0 30px 80px rgba(0,0,0,.55);max-width:1100px}
+body.modeL .gcard{max-width:1000px}
+.gcard .role{font:600 22px/1.3 Inter;letter-spacing:.24em;color:var(--red)}
+.gcard .name{font:400 92px/1.02 Anton;margin-top:16px}
+.gcard .what{font:400 32px/1.4 Inter;color:#d6dae0;margin-top:20px}
+.gcard .src,.gsrc{font:500 16px/1.3 Inter;letter-spacing:.1em;color:#8b939d;margin-top:24px}
+.tagc{display:inline-block;font:600 18px/1 Inter;letter-spacing:.2em;background:var(--red);color:#fff;padding:9px 12px;margin-top:22px}
+.gtitle{font:400 96px/1 Anton;margin-bottom:56px;text-align:center}
+body.modeL .gtitle{text-align:left;font-size:80px}
+.gkick{font:600 26px/1 Inter;letter-spacing:.3em;color:var(--grey);margin-bottom:26px}
+.gbig{font:400 210px/.92 Anton;color:#fff}
+.gbig b{color:var(--red);font-weight:400}
+.gsub{font:400 36px/1.4 Inter;color:#d6dae0;margin-top:34px;max-width:1300px}
+.split{display:flex;align-items:stretch;gap:40px;width:100%;max-width:1640px}
+.split .col{flex:1;background:rgba(22,26,32,.94);border-top:6px solid #5b636d;padding:40px 44px}
+.split .col.r{border-top-color:var(--red)}
+.split .head{font:400 64px/1.05 Anton}
+.split .ln{font:400 32px/1.4 Inter;color:#d6dae0;margin-top:16px}
+.split .vs{align-self:center;font:400 64px/1 Anton;color:var(--red)}
+.glist{width:100%;max-width:1500px}
+.gitem{display:flex;gap:36px;align-items:flex-start;background:rgba(22,26,32,.9);padding:30px 40px;margin-bottom:22px;border-left:6px solid var(--red)}
+.gitem .num{font:400 90px/1 Anton;color:var(--red);min-width:70px}
+.gitem .h{font:400 52px/1.05 Anton}
+.gitem .t{font:400 30px/1.4 Inter;color:#d6dae0;margin-top:10px}
 </style>
 <script src="/node_modules/topojson-client/dist/topojson-client.min.js"></script>
 <script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js"}}</script>
@@ -119,7 +151,7 @@ canvas#gl{position:absolute;inset:0}
   </div>
 </div>
 
-<div id="lowgrad" style="position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,0));opacity:0"></div><div id="phrase"></div>
+<div id="lowgrad" style="position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,0));opacity:0"></div><div id="ov_gen" class="layer hide"></div><div id="phrase"></div>
 <div id="chapter" class="hide"><div class="bar"></div><div id="chtext"></div></div>
 <div id="illus" class="hide">ILLUSTRATION · RECONSTRUCTION</div>
 <div id="source"></div>
@@ -130,7 +162,7 @@ canvas#gl{position:absolute;inset:0}
 
 <script type="module">
 import * as THREE from 'three';
-const TL = await (await fetch('/timeline.json')).json();
+const TL = await (await fetch('/'+(new URLSearchParams(location.search).get('tl')||'timeline.json'))).json();
 await Promise.all(['600 44px Inter','400 40px Inter','400 80px Anton','800 20px Inter'].map(f=>document.fonts.load(f)));
 const FPS = TL.fps, W = 1920, H = 1080;
 const DEG = Math.PI/180;
@@ -217,7 +249,7 @@ const proj=(lon,lat)=>[(lon-LON0)*KX,(LAT1-lat)*KY];
 const PLANE_W=40, PLANE_H=PLANE_W*MAPH/MAPW;
 const toWorld=(lon,lat)=>{const [x,y]=proj(lon,lat);return new THREE.Vector3((x/MAPW-.5)*PLANE_W,0,(y/MAPH-.5)*PLANE_H)};
 const mapBase=document.createElement('canvas');mapBase.width=MAPW;mapBase.height=MAPH;
-const mapRoute=document.createElement('canvas');mapRoute.width=MAPW;mapRoute.height=MAPH;
+const mapRoute=document.createElement('canvas');mapRoute.width=MAPW/2;mapRoute.height=MAPH/2;
 const world=await (await fetch('/node_modules/world-atlas/countries-50m.json')).json();
 const countries=topojson.feature(world,world.objects.countries).features;
 {const x=mapBase.getContext('2d');
@@ -251,11 +283,11 @@ INC_F=Math.max(.6,INC_F-.04);
 const INC=routePt(INC_F);
 function divertPt(f){const a=INC,b=CITY.TUU;const mx=(a[0]+b[0])/2+0.9,my=(a[1]+b[1])/2+0.5;const u=1-f;return[u*u*a[0]+2*u*f*mx+f*f*b[0],u*u*a[1]+2*u*f*my+f*f*b[1]]}
 function drawRoute(mainF,divF,pulse){
-  const x=mapRoute.getContext('2d');x.clearRect(0,0,MAPW,MAPH);x.lineCap='round';
+  const x=mapRoute.getContext('2d');x.setTransform(.5,0,0,.5,0,0);x.clearRect(0,0,MAPW,MAPH);x.lineCap='round';
   const[a0,b0]=proj(...CITY.DXB),[a1,b1]=proj(...CITY.TLV);
   x.setLineDash([22,22]);x.strokeStyle='rgba(255,255,255,.55)';x.lineWidth=7;x.beginPath();x.moveTo(a0,b0);x.lineTo(a1,b1);x.stroke();x.setLineDash([]);
   const seg=(fn,f1,col,w)=>{if(f1<=0)return;x.strokeStyle=col;x.lineWidth=w;x.beginPath();for(let f=0;f<=f1+1e-6;f+=.01){const[a,b]=proj(...fn(Math.min(f,f1)));f?x.lineTo(a,b):x.moveTo(a,b);}x.stroke();};
-  x.shadowColor='rgba(224,49,46,.9)';x.shadowBlur=30;
+  x.shadowColor='rgba(224,49,46,.9)';x.shadowBlur=15;
   seg(routePt,Math.min(mainF,INC_F),'#ff3b36',13);
   seg(divertPt,divF,'#ff3b36',13);
   x.shadowBlur=0;
@@ -345,6 +377,26 @@ function win(lt,a,b,fi=.35,fo=.35){return Math.min(ease((lt-a)/fi),1-ease((lt-(b
 function mapLabels(list){$('ov_map').innerHTML=list.map(l=>`<div class="maplabel ${l.red?'red':''}" style="left:${l.x}px;top:${l.y}px;opacity:${l.o}"><span class="pin"></span>${l.t}</div>`).join('');}
 function screenPos(v,cam){const p=v.clone().project(cam);return[(p.x*.5+.5)*W,(-p.y*.5+.5)*H];}
 for(const id of ['h1','h2','h3'])$(id).dataset.base='translate(-50%,-50%)';
+
+/* ---------------- generic data-driven templates ---------------- */
+const ICONS={
+ wrench:'<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+ cross:'<path d="M12 5v14M5 12h14"/>',
+ user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>',
+ award:'<circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/>',
+ plane:'<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>'};
+const icon=k=>ICONS[k]?`<div class="icon"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#e0312e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[k]}</svg></div>`:'';
+function genHTML(sc){const p=sc.params||{};
+  if(sc.look==='card')return `<div class="gcard" data-in="0.06">${icon(p.icon)}<div class="role">${p.role}</div><div class="name">${p.name}</div><div class="what">${p.what}</div>${p.tag?`<div><span class="tagc">${p.tag}</span></div>`:''}<div class="src">${p.src||''}</div></div>`;
+  if(sc.look==='stat')return `<div style="text-align:${document.body.classList.contains('modeL')?'left':'center'}"><div class="gkick" data-in="0.02">${p.kicker}</div><div class="gbig" data-in="0.08">${p.big}</div><div class="gsub" data-in="0.3" style="margin-left:auto;margin-right:auto">${p.sub}</div><div class="gsrc" data-in="0.3">${p.src||''}</div></div>`;
+  if(sc.look==='split'){const col=(c,r,at)=>`<div class="col ${r?'r':''}" data-in="${at}"><div class="head">${c.head}</div>${c.lines.map(l=>`<div class="ln">${l}</div>`).join('')}<div class="gsrc">${c.src||''}</div></div>`;
+    return `<div class="gtitle" data-in="0.02">${p.title}</div><div class="split">${col(p.left,0,0.1)}<div class="vs" data-in="0.45">${p.vs||'VS'}</div>${col(p.right,1,0.5)}</div>`;}
+  if(sc.look==='list')return `<div class="gtitle" data-in="0.02">${p.title}</div><div class="glist">${p.items.map((it,i)=>`<div class="gitem" data-in="${[0.28,0.5,0.75][i]??0.3}"><div class="num">${i+1}</div><div><div class="h">${it.head}</div><div class="t">${it.text}</div><div class="gsrc">${it.src||''}</div></div></div>`).join('')}</div>`;
+  return '';}
+let genFor=null;
+function lookGeneric(lt,d,f,sc){lookBg(lt,d,f);showOnly(['ov_gen']);const g=$('ov_gen');
+  if(genFor!==sc.id){g.innerHTML=genHTML(sc);genFor=sc.id;}
+  g.querySelectorAll('[data-in]').forEach(el=>{const t=(lt-d*parseFloat(el.dataset.in))/.45;el.style.opacity=ease(t);el.style.transform=`translateY(${(1-ease(t))*26}px)`;});}
 
 /* ---------------- look renderers ---------------- */
 function lookPlaneCruise(lt,d,f){
@@ -448,13 +500,16 @@ function lookProbe(lt,d,f){lookBg(lt,d,f);showOnly(['ov_probe']);
   const fill=[12,37,63,88];let w=0;for(let i=0;i<4;i++){const t=ease((lt-d*marks[i])/.45);if(t>0)w=lerp(i?fill[i-1]:0,fill[i],t);}
   $('tlfill').style.width=`calc(${w}% - ${w*3}px)`;
 }
-function lookQuestion(lt,d,f){lookBg(lt,d,f);showOnly(['ov_question']);
+function lookQuestion(lt,d,f,sc){const p=(sc&&sc.params)||null;if(p&&$('q1').dataset.set!==sc.id){$('qk').textContent=p.kicker;$('q1').innerHTML=`${p.l1} <span class="redtxt">${p.l1red}</span>`;$('q2').textContent=p.l2;$('q3').textContent=p.cta;$('q1').dataset.set=sc.id;}lookBg(lt,d,f);showOnly(['ov_question']);
   fadeIn($('qk'),(lt-.2)/.5);fadeIn($('q1'),(lt-.9)/.4,40);fadeIn($('q2'),(lt-d*.45)/.4,40);fadeIn($('q3'),(lt-d*.75)/.4);}
 function lookEnd(lt,d,f){lookBg(lt,d,f);showOnly(['ov_end']);fadeIn($('e1'),(lt-.2)/.5,40);fadeIn($('e2'),(lt-d*.55)/.4);fadeIn($('e3'),(lt-d*.7)/.4);
   $('ov_end').style.opacity=1-ease((lt-(d-.5))/.5);}
 function lookHeroesPilots(lt,d,f){} // pilots card appears over tabuk map (see below)
 
+function lookPlaneBg(lt,d,f){lookPlaneCruise(lt,d,f);showOnly([]);}
 const LOOKS={
+  bg:(lt,d,f)=>{lookBg(lt,d,f);showOnly([]);}, plane_bg:lookPlaneBg,
+  card:lookGeneric, stat:lookGeneric, split:lookGeneric, list:lookGeneric,
   cockpit:(lt,d,f)=>lookCockpit(lt,d,f,'hook'),
   cockpit_alarm:(lt,d,f)=>lookCockpit(lt,d,f,'alarm'),
   cockpit_door:(lt,d,f)=>lookCockpit(lt,d,f,'door'),
@@ -471,7 +526,9 @@ window.renderFrame=function(f){
   const t=f/FPS;
   let i=TL.scenes.findIndex(s=>t>=s.start&&t<s.start+s.dur);if(i<0)i=TL.scenes.length-1;
   const sc=TL.scenes[i],lt=t-sc.start,d=sc.dur;
-  LOOKS[sc.look](lt,d,f);
+  const mode=sc.layout||'F';document.body.classList.toggle('modeL',mode==='L');document.body.classList.toggle('modeC',mode==='C');
+  $('gl').style.filter=mode==='C'?'blur(16px) brightness(.55)':'none';
+  LOOKS[sc.look](lt,d,f,sc);
   // chapter tag
   const ch=$('chapter');ch.classList.toggle('hide',!sc.chapter);if(sc.chapter){$('chtext').textContent=sc.chapter;ch.style.opacity=ease(lt/.5);}
   $('illus').classList.toggle('hide',!ILLUS.has(sc.look));

@@ -1,6 +1,8 @@
 node_modules/
 frames/
+frames_long/
 *.mp4
 *.wav
 vo/
 audio/
+timeline.long.json
