@@ -223,7 +223,8 @@
      "kb": "in",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
-   ]
+   ],
+   "fallback_look": "plane_dive"
   },
   {
    "n": 9,
@@ -280,7 +281,8 @@
      "kb": "in",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
-   ]
+   ],
+   "fallback_look": "cockpit_door"
   },
   {
    "n": 11,
@@ -315,7 +317,14 @@
     }
    ],
    "text_dev": "दरवाज़ा खुलते ही आम पैसेंजर्स अंदर घुसे। रिपोर्ट्स के मुताबिक़, इज़राइल के एक प्लंबर, यानिव हायून ने, हमलावर को चोकहोल्ड में पकड़ा, और कॉकपिट से बाहर खींच लिया।",
-   "expression": "Voice only. Energy rising, a sense of relief and admiration."
+   "expression": "Voice only. Energy rising, a sense of relief and admiration.",
+   "fallback_photos": [
+    {
+     "src": "cabin",
+     "kb": "in"
+    }
+   ],
+   "fallback_style": "blur"
   },
   {
    "n": 12,
@@ -344,7 +353,14 @@
     }
    ],
    "text_dev": "एक डेंटिस्ट, डॉक्टर शोता मुसाएव ने, हमलावर को क़ाबू करने में मदद की, और फिर घायल कैप्टन का ख़ून रोकने में लग गए।",
-   "expression": "Voice only. Same rising energy, warm tone."
+   "expression": "Voice only. Same rising energy, warm tone.",
+   "fallback_photos": [
+    {
+     "src": "cabin",
+     "kb": "out"
+    }
+   ],
+   "fallback_style": "blur"
   },
   {
    "n": 13,
@@ -375,7 +391,16 @@
     }
    ],
    "text_dev": "लेकिन प्लेन अब भी हवा में था। क़िस्मत से, फ़्लाइट पर फ़्लाईदुबई के दो ऑफ़-ड्यूटी पायलट्स भी थे, हेंसन स्टीवन और रोवन टूथ। उन्होंने कंट्रोल्स सँभाले, और प्लेन को सऊदी अरब के तबूक में सुरक्षित उतार दिया।",
-   "expression": "Voice only. Relief in the voice. Let a smile come through on 'surakshit utaar diya'."
+   "expression": "Voice only. Relief in the voice. Let a smile come through on 'surakshit utaar diya'.",
+   "fallback_photos": [
+    {
+     "src": "tabuk",
+     "at": 0.66,
+     "kb": "in",
+     "label": "TABUK, SAUDI ARABIA · FILE PHOTO"
+    }
+   ],
+   "fallback_style": "full"
   },
   {
    "n": 14,

@@ -404,6 +404,7 @@ for(const id of ['h1','h2','h3'])$(id).dataset.base='translate(-50%,-50%)';
 const PIMG={};function pimg(k){return k.startsWith('ai/')?'/assets/'+k+'.jpg':'/assets/photos/'+k+'.jpg';}
 let pState={a:null,b:null};
 function kb(el,kind,u){u=clamp(u);const e=easeIO(u);let sc=1.06,tx=0,ty=0;
+  if(kind==='vid'){el.style.transform=`scale(${lerp(1.0,1.04,e)})`;return;}
   if(kind==='out')sc=lerp(1.18,1.05,e);else if(kind==='left'){sc=1.14;tx=lerp(2.5,-2.5,e);}else if(kind==='right'){sc=1.14;tx=lerp(-2.5,2.5,e);}else if(kind==='up'){sc=1.14;ty=lerp(2,-2,e);}else sc=lerp(1.04,1.17,e);
   el.style.transform=`scale(${sc}) translate(${tx}%,${ty}%)`;}
 function photoLayer(sc,lt,d,mode){const P=sc.photos||[];const box=$('photo');
@@ -412,7 +413,9 @@ function photoLayer(sc,lt,d,mode){const P=sc.photos||[];const box=$('photo');
   if(i<0||!P[i].src){box.style.display='none';$('credit').innerHTML='';document.body.classList.remove('hasCredit');return false;}
   box.style.display='block';const cur=P[i],start=(cur.at||0)*d,end=i+1<P.length?P[i+1].at*d:d;
   const A=$('pa'),B=$('pb');
-  if(A.dataset.k!==cur.src){if(A.dataset.k){B.src=A.src;B.dataset.k=A.dataset.k;B.dataset.kb=A.dataset.kb;B.dataset.s=A.dataset.s;B.dataset.e=A.dataset.e;}A.src=pimg(cur.src);A.dataset.k=cur.src;A.dataset.kb=cur.kb||'in';A.dataset.s=start;A.dataset.e=end;}
+  const vsrc=cur.video?`/assets/${cur.src}/${String(Math.min(cur.video,Math.floor((lt-start)*30)+1)).padStart(5,'0')}.jpg`:null;
+  if(vsrc){if(A.dataset.k!==cur.src){if(A.dataset.k){B.src=A.src;B.dataset.k=A.dataset.k;B.dataset.kb=A.dataset.kb;B.dataset.s=A.dataset.s;B.dataset.e=A.dataset.e;}A.dataset.k=cur.src;A.dataset.kb='vid';A.dataset.s=start;A.dataset.e=end;}A.src=vsrc;}
+  else if(A.dataset.k!==cur.src){if(A.dataset.k){B.src=A.src;B.dataset.k=A.dataset.k;B.dataset.kb=A.dataset.kb;B.dataset.s=A.dataset.s;B.dataset.e=A.dataset.e;}A.src=pimg(cur.src);A.dataset.k=cur.src;A.dataset.kb=cur.kb||'in';A.dataset.s=start;A.dataset.e=end;}
   const xf=.6,fa=i===0&&(cur.at||0)===0?1:ease((lt-start)/xf);
   A.style.opacity=fa;kb(A,A.dataset.kb,(lt-start)/Math.max(end-start,.1));
   B.style.opacity=fa<1&&B.dataset.k&&i>0?1:0;if(B.dataset.k)kb(B,B.dataset.kb,(lt-parseFloat(B.dataset.s))/Math.max(parseFloat(B.dataset.e)-parseFloat(B.dataset.s),.1));

@@ -9,6 +9,8 @@ Original takes are only read, never modified.
 """
 import argparse, glob, json, math, os, re, shutil, subprocess, sys, time, wave
 import numpy as np
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import ai_assets
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SR = 48000
@@ -137,9 +139,14 @@ def build_timeline(scenes, durs):
     for s in scenes:
         pre, post = PRE.get(s["id"], 0.35), POST.get(s["id"], 0.5)
         dur = pre + durs[s["n"]] + post
-        out.append({"n": s["n"], "id": s["id"], "look": s["look"], "layout": s.get("layout", "F"),
+        ph = ai_assets.resolve(s.get("photos", []))
+        look, style = s["look"], s.get("photo_style")
+        if not any(x.get("src") for x in ph):
+            ph = s.get("fallback_photos", ph if not s.get("fallback_look") else [])
+            look = s.get("fallback_look", look); style = s.get("fallback_style", style)
+        out.append({"n": s["n"], "id": s["id"], "look": look, "layout": s.get("layout", "F"),
                     "chapter": s.get("chapter", ""), "phrases": s.get("phrases", []), "params": s.get("params"),
-                    "source": s.get("source", ""), "photos": s.get("photos", []), "photo_style": s.get("photo_style"), "alarm": s.get("alarm"), "dim_at": s.get("dim_at"), "start": round(t, 3), "dur": round(dur, 3),
+                    "source": s.get("source", ""), "photos": ph, "photo_style": style, "alarm": s.get("alarm"), "dim_at": s.get("dim_at"), "start": round(t, 3), "dur": round(dur, 3),
                     "vo_at": round(t + pre, 3), "vo_dur": round(durs[s["n"]], 3), "pre": pre, "post": post})
         t += dur
     return {"fps": FPS, "total": round(t, 3), "scenes": out}

@@ -11,3 +11,5 @@ frames_prev/
 sb/
 timeline.preview.json
 assets/photos/*.src*
+samples/fz1073/assets/ai/*/
+samples/fz1073/assets/ai/*.mp4
