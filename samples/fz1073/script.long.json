@@ -36,8 +36,8 @@
      "label": "REPRESENTATIVE IMAGE · 737 FLIGHT DECK AT NIGHT"
     },
     {
-     "src": "ai/r_struggle",
-     "at": 0.62,
+     "src": "ai/r_struggle_1",
+     "at": 0.6,
      "kb": "in",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
@@ -166,9 +166,15 @@
      "label": "REPRESENTATIVE IMAGE · BOEING 737 MAX FLIGHT DECK"
     },
     {
-     "src": "ai/r_struggle",
-     "at": 0.55,
+     "src": "ai/r_struggle_1",
+     "at": 0.45,
      "kb": "out",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
+     "src": "ai/r_struggle_2",
+     "at": 0.75,
+     "kb": "in",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
    ],
@@ -219,8 +225,15 @@
    },
    "photos": [
     {
-     "src": "ai/r_dive",
+     "src": "ai/r_dive_1",
+     "at": 0,
      "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
+     "src": "ai/r_dive_window",
+     "at": 0.55,
+     "kb": "left",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
    ],
@@ -278,6 +291,13 @@
    "photos": [
     {
      "src": "ai/r_door_hand",
+     "at": 0,
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
+     "src": "ai/r_door_open",
+     "at": 0.62,
      "kb": "in",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
@@ -306,13 +326,20 @@
    "photos": [
     {
      "src": "ai/r_aisle",
+     "at": 0,
      "kb": "in",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     },
     {
      "src": "ai/r_restrain",
-     "at": 0.42,
+     "at": 0.38,
      "kb": "left",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
+     "src": "ai/r_galley_hold",
+     "at": 0.72,
+     "kb": "out",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
    ],
@@ -348,7 +375,14 @@
    "photos": [
     {
      "src": "ai/r_aid",
+     "at": 0,
      "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
+     "src": "ai/r_aid_close",
+     "at": 0.55,
+     "kb": "out",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
    ],
@@ -375,17 +409,24 @@
    "photo_style": "full",
    "photos": [
     {
+     "src": "ai/r_takeover",
+     "at": 0,
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
      "src": "ai/r_approach",
+     "at": 0.22,
      "kb": "in",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     },
     {
      "src": null,
-     "at": 0.3
+     "at": 0.42
     },
     {
      "src": "ai/r_apron",
-     "at": 0.74,
+     "at": 0.76,
      "kb": "out",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE · AFTER LANDING AT TABUK"
     }
@@ -620,12 +661,20 @@
    ],
    "photos": [
     {
-     "src": "fz_takeoff",
-     "kb": "out"
+     "src": "ai/r_window_dawn",
+     "at": 0,
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     }
    ],
    "text_dev": "इस कहानी से एक बात साफ़ है। टेक्नोलॉजी, दरवाज़े, नियम, सब ज़रूरी हैं। लेकिन जब सब फ़ेल हो जाए, तो इंसान की हिम्मत ही आख़िरी सुरक्षा होती है। एक घायल कैप्टन ने दरवाज़ा खोला, और आम लोगों ने बाक़ी काम कर दिया।",
-   "expression": "Reflective, close-up, slow. Look slightly down at the start, then lift your eyes to the lens on 'insaan ki himmat' and hold the gaze. This is the most important line of the video."
+   "expression": "Reflective, close-up, slow. Look slightly down at the start, then lift your eyes to the lens on 'insaan ki himmat' and hold the gaze. This is the most important line of the video.",
+   "fallback_photos": [
+    {
+     "src": "fz_takeoff",
+     "kb": "out"
+    }
+   ]
   },
   {
    "n": 22,

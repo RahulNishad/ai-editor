@@ -1,80 +1,107 @@
-# Google Flow prompt pack — FZ1073 reconstructions
+# Google Flow image pack — FZ1073 reconstructions
 
-Eight short clips for the moments nobody filmed. Generate them in Google Flow, download the MP4s, rename them exactly as listed, and upload them here. The video pipeline places them automatically.
+Fifteen still images for the moments nobody filmed. The video cuts between two or three images per moment with slow camera moves and crossfades, so they play like footage.
 
-## Settings for every clip
+Open Flow: https://labs.google/fx/tools/flow
 
-- **Model:** Veo 3 (Quality if your plan allows, otherwise Fast).
-- **Aspect ratio:** 16:9. **Length:** 8 seconds.
-- **Audio:** Any sound Veo adds is ignored. The pipeline uses your voice and its own music.
-- **Best workflow:** First make a still with Flow's image tool and approve it. Then use **Frames to Video** with that still as the first frame. Stills are faster to judge and keep the look consistent.
-- **Generate 2 to 4 variations** of each, keep the most realistic one.
+## How to generate
+
+1. **Aspect ratio 16:9** for every image.
+2. **Make 4 variations** of each prompt and keep the most realistic one. Regenerate if hands, faces or cockpit details look wrong.
+3. **Keep the characters consistent.** First generate the four "character" images below, then attach the right one as a reference (ingredient) when you make each scene image.
+4. **Download** each picked image and **rename it exactly** as listed, e.g. `r_restrain.png`. PNG, JPG or WebP all work.
+5. **Upload** all images here in one zip or as files. Any image you skip falls back to a real photo or the 3D version, so the video never breaks.
 
 ## Rules so the video stays professional and safe
 
-1. **No faces of the real people.** Captain, first officer, plumber, dentist and pilots are shown from behind, in silhouette, as hands, or out of focus. Real people must not be impersonated.
-2. **No blood, no weapon close-ups.** Tension comes from light, motion and framing.
-3. **No airline logos or livery** in reconstructed scenes. Plain white aircraft. The real flydubai photos stay as real photos elsewhere in the video.
-4. **Reference photos:** only upload `assets/photos/cockpit_max.jpg` (CC BY 4.0, credit GeoMancer448 in the description) or public-domain images. Do not upload the CC BY-SA photos as references.
-5. **Disclose on upload:** in YouTube Studio, answer "Yes" to *altered or synthetic content*. The video also labels each clip "AI RECONSTRUCTION".
+- **No faces of the real people.** Captain, first officer, plumber, dentist and pilots appear from behind, in silhouette, cropped at the shoulders, or as hands. Real people must not be impersonated.
+- **No blood, no weapons, no wounds.** Tension comes from light, framing and body language.
+- **No airline logos or livery.** Plain white aircraft, plain cabin. The real flydubai photos stay as real photos elsewhere.
+- **References:** only attach `cockpit_max.jpg` (CC BY 4.0, credited in the description) or images you generated yourself.
+- **On YouTube upload:** answer "Yes" to *altered or synthetic content*. Each image is labelled "AI RECONSTRUCTION" in the video.
 
-Add this line to the end of every prompt:
+Add this to the end of **every** prompt:
 
-> Photorealistic documentary reconstruction, shot on a full-frame cinema camera, 35mm lens, natural film grain, realistic low light, subtle handheld movement. No text, no logos, no faces visible, no blood.
+> Photorealistic documentary photograph, shot on a full-frame camera with a 35mm lens at night, natural film grain, realistic low light, slight motion blur, high detail. No text, no logos, no faces visible, no blood.
 
-## The eight clips
+## Step 1 — character references (not used in the video)
 
-| File | Used in scene | What it shows |
+| Name | Prompt |
+| --- | --- |
+| `ref_captain` | Back view of an airline captain sitting in a cockpit seat, white short-sleeve uniform shirt with four gold stripes on the epaulettes, short black hair, headset around the neck. Face not visible. |
+| `ref_firstofficer` | Back view of an airline first officer, white short-sleeve uniform shirt with three gold stripes on the epaulettes, short dark hair, slim build. Face not visible. |
+| `ref_plumber` | Back view of a stocky man in his forties in a dark grey t-shirt and jeans, broad shoulders, shaved head, standing in an airliner aisle. Face not visible. |
+| `ref_dentist` | Back view of a man in his thirties in a light blue casual shirt with rolled sleeves, kneeling. Face not visible. |
+
+## Step 2 — the fifteen scene images
+
+| File | Scene | Shot |
 | --- | --- | --- |
-| `r_struggle.mp4` | 01 hook, 06 attack | Struggle between the pilot seats, red alarm light |
-| `r_dive.mp4` | 08 plunge | Plain airliner diving through night clouds |
-| `r_door_hand.mp4` | 10 door | Captain's hand pulling the cockpit door handle |
-| `r_aisle.mp4` | 11 plumber | Door bursts open, passengers rush forward |
-| `r_restrain.mp4` | 11 plumber | Passenger pins the first officer to the galley floor |
-| `r_aid.mp4` | 12 dentist | Passenger presses a blanket to the captain's arm |
-| `r_approach.mp4` | 13 landing | Night approach to a desert runway |
-| `r_apron.mp4` | 13 landing | Aircraft on the apron at dawn, emergency vehicles |
+| `r_struggle_1` | 01, 06 | Wide: struggle between the seats |
+| `r_struggle_2` | 06 | Close: hands on the controls, red light |
+| `r_dive_1` | 08 | Aircraft diving through clouds |
+| `r_dive_window` | 08 | Tilted horizon through a cabin window |
+| `r_door_hand` | 10 | Captain's hand on the door handle |
+| `r_door_open` | 10 | Door opening, light flooding in |
+| `r_aisle` | 11 | Passengers rushing up the aisle |
+| `r_restrain` | 11 | Plumber pins the first officer |
+| `r_galley_hold` | 11 | Several passengers holding him down |
+| `r_aid` | 12 | Dentist presses a blanket to the captain's arm |
+| `r_aid_close` | 12 | Close-up of hands and the blanket |
+| `r_takeover` | 13 | Off-duty pilots take the seats |
+| `r_approach` | 13 | Night approach to a desert runway |
+| `r_apron` | 13 | Aircraft on the apron at dawn, emergency vehicles |
+| `r_window_dawn` | 21 | Sunrise over the wing from a cabin window |
 
-### r_struggle.mp4
-- **Mode:** Frames to Video, or Ingredients to Video with `cockpit_max.jpg` as the cockpit reference.
-- **Prompt:** Inside a Boeing 737 flight deck at night, camera behind and between the two pilot seats. Red master warning lights flash on the glareshield. Two pilots in white short-sleeve uniform shirts suddenly grapple between the seats, shoulders and arms colliding, the seats shake. Instrument screens glow blue and green, the windshield is black with faint stars. Camera shakes, the horizon on the display tilts.
-- **Avoid:** faces turning toward camera, weapons, blood.
+### r_struggle_1
+Reference: `cockpit_max.jpg`, `ref_captain`, `ref_firstofficer`.
+> Inside a Boeing 737 cockpit at night, seen from directly behind and between the two pilot seats. Red master warning lights glow on the glareshield. The captain on the left and the first officer on the right are grappling across the centre console, shoulders twisted, arms locked, both seats pushed back. Instrument displays glow blue and green, windshield black with faint stars.
 
-### r_dive.mp4
-- **Mode:** Text to Video.
-- **Prompt:** A plain white twin-engine narrow-body airliner with no markings pitches nose-down and dives steeply through moonlit night clouds. Shot from a chase position slightly above and to the side. Clouds rush past, wingtip navigation lights blink red and green, heavy motion blur, the camera struggles to keep up.
-- **Avoid:** airline logos, explosions, smoke, fire.
+### r_struggle_2
+Reference: `cockpit_max.jpg`, `ref_captain`.
+> Close-up inside a dark cockpit lit by flashing red warning light. A pilot's hand in a white uniform sleeve grips the control column hard while another arm pushes against his shoulder. The primary flight display beside it shows a steep nose-down attitude. Shallow depth of field, tense.
 
-### r_door_hand.mp4
-- **Mode:** Frames to Video.
-- **Prompt:** Extreme close-up inside a dim cockpit lit only by flashing red emergency light. A pilot's forearm in a white short-sleeve uniform shirt with gold-striped epaulette reaches out, trembling, grabs the metal cockpit door handle and pulls hard. The door begins to swing open and warm cabin light spills across the hand. Shallow depth of field.
-- **Avoid:** face in frame, blood, wounds.
+### r_dive_1
+> A plain white twin-engine narrow-body airliner with no markings, nose pitched steeply down, diving through moonlit night clouds. Shot from a chase position above and to the side. Wingtip navigation lights red and green, cloud wisps streaking past, motion blur.
 
-### r_aisle.mp4
-- **Mode:** Text to Video.
-- **Prompt:** View down the aisle of a narrow-body airliner at night from mid-cabin, looking forward. Cabin lights dimmed, passengers in their seats. The cockpit door at the far end flies open and bright light floods out. Two men jump up from the front rows and rush toward it. Overhead bins, seat backs, motion blur. Camera pushes forward urgently.
-- **Avoid:** recognisable faces, airline branding on seats.
+### r_dive_window
+> View through an oval airliner cabin window at night, the horizon steeply tilted, clouds and the wing seen at a sharp angle, the window frame and seat back in the foreground slightly out of focus. Disorienting, dramatic.
 
-### r_restrain.mp4
-- **Mode:** Text to Video.
-- **Prompt:** Cramped forward galley of an airliner, low warm light. A strong man in a casual dark t-shirt holds a man in a white pilot uniform shirt from behind in a firm hold and pins him down to the galley floor. Another passenger helps hold his arms. Seen from behind and above, faces turned away. Galley carts and overhead panels around them. Handheld, chaotic, fast.
-- **Avoid:** faces, blood, punching, weapons.
+### r_door_hand
+Reference: `ref_captain`.
+> Extreme close-up of a captain's forearm in a white short-sleeve uniform shirt with a gold-striped epaulette, his hand reaching for and gripping the metal handle of a cockpit door, trembling. Only flashing red emergency light. Face not in frame.
 
-### r_aid.mp4
-- **Mode:** Text to Video.
-- **Prompt:** Inside an airliner galley, an injured pilot in a white uniform shirt sits on the floor leaning against a galley cart. A passenger kneels beside him and presses a folded grey airline blanket firmly to his forearm, another hand holds a small oxygen mask nearby. Only hands, arms and torsos in frame. Calm, focused, warm cabin light.
-- **Avoid:** blood, wounds, faces.
+### r_door_open
+> From inside a dark cockpit looking back at the cockpit door as it swings open, warm white cabin light flooding in through the doorway, the silhouette of a passenger already stepping forward. Strong backlight, dust in the air.
 
-### r_approach.mp4
-- **Mode:** Text to Video.
-- **Prompt:** View from behind two pilots through an airliner cockpit windshield on final approach at night. Bright runway approach lights and a lit runway ahead in a dark, flat desert landscape. Instrument displays glow. The aircraft descends steadily, runway grows closer. The pilots are silhouettes.
-- **Avoid:** faces, city skylines, mountains.
+### r_aisle
+Reference: `ref_plumber`.
+> View down the aisle of a narrow-body airliner at night from mid-cabin looking forward. Cabin lights dimmed, passengers half-standing in their seats. At the front, the cockpit door is open with bright light pouring out, and a stocky man in a dark grey t-shirt is running toward it, seen from behind.
 
-### r_apron.mp4
-- **Mode:** Text to Video.
-- **Prompt:** Wide shot at dawn of a plain white narrow-body airliner with no markings parked on a remote desert airport apron. Fire trucks and ambulances with flashing lights surround it, ground crew walk toward the aircraft, airstairs attached to the front door. Soft orange sunrise, light dust in the air, slow camera push-in.
-- **Avoid:** airline logos, smoke, damage, crowds of journalists.
+### r_restrain
+Reference: `ref_plumber`, `ref_firstofficer`.
+> In the cramped forward galley of an airliner, a stocky man in a dark grey t-shirt holds a slim man in a white pilot uniform shirt from behind in a firm chokehold and pulls him backward out of the cockpit doorway onto the galley floor. Both faces turned away from camera. Low warm light, galley carts, overhead panels. Chaotic, photojournalistic.
 
-## Upload
+### r_galley_hold
+Reference: `ref_plumber`, `ref_dentist`, `ref_firstofficer`.
+> Overhead view of an airliner galley floor: a man in a white pilot shirt pinned face-down, a stocky man in a dark grey t-shirt kneeling on his back holding his arms, a second passenger in a light blue shirt holding his legs. Faces not visible. Harsh overhead cabin light.
 
-Put the eight MP4 files in one zip, or attach them directly, and send them here. You can send them together with your recorded clips `01.mp4` to `23.mp4`, or separately. Missing reconstruction clips fall back to the real photos, so nothing breaks if one is not ready.
+### r_aid
+Reference: `ref_dentist`, `ref_captain`.
+> Inside an airliner galley, an injured captain in a white uniform shirt sits on the floor leaning against a galley cart, a man in a light blue shirt kneels beside him pressing a folded grey airline blanket firmly against the captain's forearm. Framed at chest height so no faces show. Calm, focused, warm light.
+
+### r_aid_close
+Reference: `ref_dentist`.
+> Close-up of two hands pressing a folded grey airline blanket onto a forearm in a white uniform sleeve, a small yellow oxygen mask lying on the galley floor beside them. No blood, no wounds visible. Shallow depth of field.
+
+### r_takeover
+> From behind, two pilots in plain white shirts without stripes slide into the two cockpit seats of a Boeing 737 at night, one reaching for the control column, the other checking the overhead panel. Red light fading, instrument displays bright.
+
+### r_approach
+> View from behind two pilots through an airliner cockpit windshield on final approach at night: bright runway approach lights and a lit runway ahead in a flat dark desert. Instrument displays glow. Pilots are dark silhouettes.
+
+### r_apron
+> Wide shot at dawn of a plain white narrow-body airliner with no markings parked on a remote desert airport apron, surrounded by fire trucks and ambulances with flashing lights, airstairs at the front door, ground crew walking toward it. Soft orange sunrise, light dust.
+
+### r_window_dawn
+> View through an airliner cabin window at sunrise, the wing glowing orange, calm clouds below, a passenger's hand resting on the window frame. Peaceful, hopeful mood.
