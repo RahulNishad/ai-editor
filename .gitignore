@@ -7,3 +7,6 @@ vo/
 audio/
 timeline.long.json
 __pycache__/
+frames_prev/
+sb/
+timeline.preview.json

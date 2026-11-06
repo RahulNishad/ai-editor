@@ -50,3 +50,18 @@ Deliberately left out: the first officer's name, any motive beyond the UAE's sta
 2. Replace the scratch voice with Rahul's recording. Re-time with Whisper word timestamps.
 3. Decide the headcount wording once the official flydubai figure is confirmed.
 4. Optional: add presenter shots in L/C layout between scenes, per the approved long-form recipe.
+
+## Long video: from your recording to the final upload
+
+1. Read `RECORDING_SCRIPT.md`. `STORYBOARD.jpg` shows what viewers see in every scene and where you appear.
+2. Record one vertical clip per scene: `01.mp4` … `23.mp4`. A retake of scene 5 is `05_2.mp4`; the highest number wins. Leave two seconds of silence at both ends. 1080p at 30 fps keeps uploads small; 4K also works.
+3. Upload the clips here, as files or one zip.
+4. Run:
+
+        python make_long.py --takes <folder> --work <work dir>
+
+   It trims silences and long pauses, transcribes with Whisper, re-times every graphic to your delivery, renders the scenes, places you per layout, builds the music and effects, and exports.
+5. Outputs in `<work dir>/out`: `final.mp4` (1920×1080, about 6.5 Mbps, −14 LUFS), `subtitles.srt` (Whisper text in Devanagari, review before upload), `chapters.txt` for the description, and `report.md` listing each take, how much was trimmed, and any scene whose length looks wrong for its script.
+
+Layouts: **C** you centred over a blurred moving scene, **L** you in a card on the right with the graphic on the left, **F** full-screen graphic with your voice.
+Render time in this cloud container is roughly one minute per 8 seconds of video with three workers.

@@ -49,7 +49,11 @@ canvas#gl{position:absolute;inset:0}
 
 #ov_gen{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 120px;box-sizing:border-box}
 body.modeL #ov_gen{padding:0 700px 0 90px;align-items:flex-start}
-body.modeL .center{right:640px}
+body.modeL .center{right:700px;left:40px}
+body.modeL #e1{font-size:84px!important;white-space:nowrap}
+body.modeL #e2{font-size:50px!important}
+body.modeL #q1{font-size:120px!important}
+body.modeL #q2{font-size:88px!important}
 body.modeL #illus{right:auto;left:72px;top:104px}
 body.modeL #source{right:auto;left:72px;text-align:left;max-width:1060px}
 body.modeC #phrase{max-width:540px;font-size:76px;line-height:1.02}
@@ -370,7 +374,7 @@ function drawLeak(a,u){leakCtx.clearRect(0,0,960,540);if(a<=0){$('leak').style.o
   const cx=lerp(-100,1100,u),g=leakCtx.createRadialGradient(cx,120,0,cx,120,520);g.addColorStop(0,'rgba(255,140,60,.9)');g.addColorStop(.5,'rgba(224,49,46,.35)');g.addColorStop(1,'rgba(0,0,0,0)');leakCtx.fillStyle=g;leakCtx.fillRect(0,0,960,540);}
 
 /* ---------------- DOM helpers ---------------- */
-const OV=['ov_title','ov_map','ov_alt','ov_quote','ov_heroes','ov_probe','ov_question','ov_end'];
+const OV=['ov_title','ov_map','ov_alt','ov_quote','ov_heroes','ov_probe','ov_question','ov_end','ov_gen'];
 function showOnly(ids){for(const o of OV)$(o).classList.toggle('hide',!ids.includes(o));}
 function fadeIn(el,t,dy=24){el.style.opacity=ease(t);el.style.transform=(el.dataset.base||'')+` translateY(${(1-ease(t))*dy}px)`;}
 function win(lt,a,b,fi=.35,fo=.35){return Math.min(ease((lt-a)/fi),1-ease((lt-(b-fo))/fo));}
