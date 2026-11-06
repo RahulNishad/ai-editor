@@ -19,6 +19,7 @@ for s in d["scenes"]:
     L.append(f"> {s['text']}")
     if s.get("text_dev"):
         L.append(">"); L.append(f"> {s['text_dev']}")
+    L.append(f"**Face:** {s['expression']}" if s.get("expression") else "")
     L.append(f"_Direction: {s['direction']}_")
     L.append("")
 L += ["---", "Sign-off is scene 23. Sources for every on-screen fact are in `README.md`."]
