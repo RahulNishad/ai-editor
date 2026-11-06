@@ -6,3 +6,4 @@ frames_long/
 vo/
 audio/
 timeline.long.json
+__pycache__/
