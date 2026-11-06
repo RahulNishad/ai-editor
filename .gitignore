@@ -10,3 +10,4 @@ __pycache__/
 frames_prev/
 sb/
 timeline.preview.json
+assets/photos/*.src*

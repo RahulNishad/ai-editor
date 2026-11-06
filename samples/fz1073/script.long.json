@@ -13,7 +13,7 @@
    "n": 1,
    "id": "hook",
    "layout": "C",
-   "look": "cockpit",
+   "look": "photo",
    "chapter": "",
    "shot": "B",
    "direction": "Seedha camera mein, dheemi aawaz. 'Achanak' se pehle ek pause.",
@@ -27,13 +27,22 @@
      "t": 0.68,
      "text": "<b>CO-PILOT</b> ATTACKS"
     }
-   ]
+   ],
+   "photos": [
+    {
+     "src": "cockpit_night",
+     "kb": "in",
+     "label": "REPRESENTATIVE IMAGE · 737 FLIGHT DECK AT NIGHT"
+    }
+   ],
+   "alarm": 0.55,
+   "text_dev": "सोचिए... आप चौंतीस हज़ार फ़ीट की ऊँचाई पर हैं। बाहर अँधेरा है, प्लेन ऑटोपायलट पर है। और अचानक... कॉकपिट के अंदर, आपका अपना को-पायलट ही, आप पर हमला कर देता है।"
   },
   {
    "n": 2,
    "id": "hook2",
    "layout": "C",
-   "look": "plane_bg",
+   "look": "photo",
    "chapter": "",
    "shot": "B",
    "direction": "Thoda aage jhukiye. Last line mein heroes ko ginte hue ungliyon se gin sakte hain.",
@@ -43,24 +52,43 @@
      "t": 0.2,
      "text": "KHATRA <b>ANDAR</b> THA"
     }
-   ]
+   ],
+   "photos": [
+    {
+     "src": "cabin",
+     "kb": "left"
+    }
+   ],
+   "text_dev": "ना कोई हाइजैकर, ना कोई बाहर का आदमी। ख़तरा उस दरवाज़े के अंदर था, जिसे दुनिया का सबसे सुरक्षित दरवाज़ा माना जाता है। और फिर जो हुआ, वो किसी फ़िल्म से कम नहीं था। एक घायल इंडियन कैप्टन, एक प्लंबर, एक डेंटिस्ट, और दो ऑफ़-ड्यूटी पायलट्स।"
   },
   {
    "n": 3,
    "id": "title",
    "layout": "F",
-   "look": "plane_cruise",
+   "look": "photo",
    "chapter": "",
    "shot": "A",
    "direction": "Sirf aawaz chalegi, screen par title. Saaf, news anchor jaisa tone.",
    "text": "30 September 2026. flydubai ki flight FZ1073. Dubai se Tel Aviv. Ek Boeing 737 MAX, aur usme 170 se zyada log.",
-   "source": "PEOPLE ON BOARD: REPORTS VARY, 172–182 · AIRCRAFT: FLIGHTRADAR24"
+   "source": "PEOPLE ON BOARD: REPORTS VARY, 172–182 · AIRCRAFT: FLIGHTRADAR24",
+   "params": {
+    "overlay": "title"
+   },
+   "photo_style": "full",
+   "photos": [
+    {
+     "src": "a6fkf",
+     "kb": "in",
+     "label": "THE AIRCRAFT INVOLVED · A6-FKF · DUBAI, 2 JAN 2026"
+    }
+   ],
+   "text_dev": "तीस सितंबर, दो हज़ार छब्बीस। फ़्लाईदुबई की फ़्लाइट, एफ़ ज़ेड वन ज़ीरो सेवन थ्री। दुबई से तेल अवीव। एक बोइंग सात सौ सैंतीस मैक्स, और उसमें एक सौ सत्तर से ज़्यादा लोग।"
   },
   {
    "n": 4,
    "id": "why",
    "layout": "C",
-   "look": "bg",
+   "look": "photo",
    "chapter": "",
    "shot": "A",
    "direction": "Viewer se baat karte hue, sawaal wali line par bhauein uthaiye.",
@@ -70,7 +98,14 @@
      "t": 0.72,
      "text": "AGAR WAHI <b>KHATRA</b> HO?"
     }
-   ]
+   ],
+   "photos": [
+    {
+     "src": "dxb",
+     "kb": "right"
+    }
+   ],
+   "text_dev": "ये कहानी सिर्फ़ एक फ़्लाइट की नहीं है। हर दिन दुनिया में लाखों लोग प्लेन में बैठते हैं, और हम सब एक ही चीज़ पर भरोसा करते हैं, कि कॉकपिट में बैठे दो लोग हमारी हिफ़ाज़त करेंगे। लेकिन अगर उनमें से ही एक ख़तरा बन जाए, तो?"
   },
   {
    "n": 5,
@@ -87,13 +122,14 @@
      "t": 0.75,
      "text": "~2 HRS 16 MIN"
     }
-   ]
+   ],
+   "text_dev": "फ़्लाइटरडार चौबीस के डेटा के मुताबिक़, फ़्लाइट ने दुबई से सुबह तीन बजकर पाँच मिनट, यू टी सी टाइम पर उड़ान भरी। प्लेन सऊदी अरब के ऊपर से तेल अवीव की तरफ़ बढ़ रहा था। लगभग सवा दो घंटे तक सब नॉर्मल था।"
   },
   {
    "n": 6,
    "id": "attack",
    "layout": "L",
-   "look": "cockpit_alarm",
+   "look": "photo",
    "chapter": "02 · THE ATTACK",
    "shot": "B",
    "direction": "Gambhir. 'Crash axe' par halka zor.",
@@ -108,7 +144,17 @@
      "t": 0.84,
      "text": "CAPT. SMIT MACHCHHAR"
     }
-   ]
+   ],
+   "photo_style": "full",
+   "photos": [
+    {
+     "src": "cockpit_max",
+     "kb": "in",
+     "label": "REPRESENTATIVE IMAGE · BOEING 737 MAX FLIGHT DECK"
+    }
+   ],
+   "alarm": 0.3,
+   "text_dev": "फिर सुबह पाँच बजकर इक्कीस मिनट पर, प्लेन की ऑल्टिट्यूड अचानक ऊपर नीचे होने लगी। यू ए ई के अटॉर्नी जनरल के मुताबिक़, उनतीस साल के एक ओमानी फ़र्स्ट ऑफ़िसर ने, कॉकपिट में रखी क्रैश ऐक्स से, इंडियन कैप्टन स्मित मच्छर पर हमला किया।"
   },
   {
    "n": 7,
@@ -124,7 +170,15 @@
     "sub": "A required emergency tool on airliners: to break panels in a fire or force a jammed door. Kept inside the cockpit, out of passengers' reach.",
     "src": "SOURCE: FAA AND EASA EQUIPMENT RULES, AS EXPLAINED BY GULF NEWS AND KHALEEJ TIMES"
    },
-   "text": "Ab aap sochenge, plane mein kulhaadi kya kar rahi thi? Asal mein crash axe ek zaroori emergency tool hai. Aag lagne par panel todne ke liye, ya phanse hue darwaaze ko kholne ke liye. Niyamon ke mutabik yeh cockpit ke andar rakhi jaati hai, jahan passengers ka haath na pahunche. Lekin is baar, khatra passenger nahi tha."
+   "text": "Ab aap sochenge, plane mein kulhaadi kya kar rahi thi? Asal mein crash axe ek zaroori emergency tool hai. Aag lagne par panel todne ke liye, ya phanse hue darwaaze ko kholne ke liye. Niyamon ke mutabik yeh cockpit ke andar rakhi jaati hai, jahan passengers ka haath na pahunche. Lekin is baar, khatra passenger nahi tha.",
+   "photo_style": "dim",
+   "photos": [
+    {
+     "src": "cockpit_max",
+     "kb": "out"
+    }
+   ],
+   "text_dev": "अब आप सोचेंगे, प्लेन में कुल्हाड़ी क्या कर रही थी? असल में क्रैश ऐक्स एक ज़रूरी इमरजेंसी टूल है। आग लगने पर पैनल तोड़ने के लिए, या फँसे हुए दरवाज़े को खोलने के लिए। नियमों के मुताबिक़ ये कॉकपिट के अंदर रखी जाती है, जहाँ पैसेंजर्स का हाथ ना पहुँचे। लेकिन इस बार, ख़तरा पैसेंजर नहीं था।"
   },
   {
    "n": 8,
@@ -135,7 +189,8 @@
    "shot": "A",
    "direction": "Thodi tez aawaz, tension ke saath.",
    "text": "Hamle ke dauraan plane tezi se neeche girne laga. Flightradar24 ke data ke mutabik, plane 34,000 feet se kuch hi minuton mein lagbhag 15,000 feet tak aa gaya. Passengers ke liye yeh zindagi aur maut ke beech ke pal the.",
-   "source": "SOURCE: FLIGHTRADAR24 ADS-B DATA AS REPORTED · CHART SIMPLIFIED"
+   "source": "SOURCE: FLIGHTRADAR24 ADS-B DATA AS REPORTED · CHART SIMPLIFIED",
+   "text_dev": "हमले के दौरान प्लेन तेज़ी से नीचे गिरने लगा। फ़्लाइटरडार चौबीस के डेटा के मुताबिक़, प्लेन चौंतीस हज़ार फ़ीट से कुछ ही मिनटों में लगभग पंद्रह हज़ार फ़ीट तक आ गया। पैसेंजर्स के लिए ये ज़िंदगी और मौत के बीच के पल थे।"
   },
   {
    "n": 9,
@@ -151,7 +206,22 @@
     "sub": "Reinforced cockpit doors became mandatory. US deadline: 9 April 2003. They stay locked in flight and open only from the flight deck.",
     "src": "SOURCE: FAA FINAL RULE, JANUARY 2002; SFAR 92"
    },
-   "text": "Aur yahan kahani ka sabse bada mod aata hai. 9/11 ke baad duniya bhar mein cockpit ke darwaaze mazboot banaye gaye. Udaan ke dauraan yeh band rehte hain, aur sirf andar se khulte hain. Matlab, agar andar se darwaaza na khule, toh bahar se koi madad andar nahi aa sakti."
+   "text": "Aur yahan kahani ka sabse bada mod aata hai. 9/11 ke baad duniya bhar mein cockpit ke darwaaze mazboot banaye gaye. Udaan ke dauraan yeh band rehte hain, aur sirf andar se khulte hain. Matlab, agar andar se darwaaza na khule, toh bahar se koi madad andar nahi aa sakti.",
+   "photo_style": "dim",
+   "photos": [
+    {
+     "src": "door",
+     "kb": "in",
+     "label": "REPRESENTATIVE IMAGE · COCKPIT DOOR"
+    },
+    {
+     "src": "door_switch",
+     "at": 0.55,
+     "kb": "left",
+     "label": "REPRESENTATIVE IMAGE · DOOR LOCK SWITCH ON THE FLIGHT DECK"
+    }
+   ],
+   "text_dev": "और यहाँ कहानी का सबसे बड़ा मोड़ आता है। नाइन इलेवन के बाद दुनिया भर में कॉकपिट के दरवाज़े मज़बूत बनाए गए। उड़ान के दौरान ये बंद रहते हैं, और सिर्फ़ अंदर से खुलते हैं। मतलब, अगर अंदर से दरवाज़ा ना खुले, तो बाहर से कोई मदद अंदर नहीं आ सकती।"
   },
   {
    "n": 10,
@@ -162,7 +232,8 @@
    "shot": "B",
    "direction": "Emotional, dheere. English quote ko waise hi boliye.",
    "text": "Ghayal hone ke bawajood, Captain Smit ne aakhri koshish ki. Unke mutabik, unhone khud se kaha: This is the last push, Smit. Do it, the door is right there. Aur darwaaza khul gaya.",
-   "source": "QUOTE: CAPT. MACHCHHAR'S ACCOUNT AS REPORTED BY FOX NEWS, CBC"
+   "source": "QUOTE: CAPT. MACHCHHAR'S ACCOUNT AS REPORTED BY FOX NEWS, CBC",
+   "text_dev": "घायल होने के बावजूद, कैप्टन स्मित ने आख़िरी कोशिश की। उनके मुताबिक़, उन्होंने ख़ुद से कहा: दिस इज़ द लास्ट पुश, स्मित। डू इट, द डोर इज़ राइट देयर। और दरवाज़ा खुल गया।"
   },
   {
    "n": 11,
@@ -179,7 +250,15 @@
     "what": "Grabbed the attacker in a chokehold and pulled him out of the cockpit.",
     "src": "SOURCE: AP, WION REPORTS, 1 OCT 2026"
    },
-   "text": "Darwaaza khulte hi aam passengers andar ghuse. Reports ke mutabik, Israel ke ek plumber, Yaniv Hayoun ne, hamlavar ko chokehold mein pakda, aur cockpit se bahar kheench liya."
+   "text": "Darwaaza khulte hi aam passengers andar ghuse. Reports ke mutabik, Israel ke ek plumber, Yaniv Hayoun ne, hamlavar ko chokehold mein pakda, aur cockpit se bahar kheench liya.",
+   "photo_style": "blur",
+   "photos": [
+    {
+     "src": "cabin",
+     "kb": "in"
+    }
+   ],
+   "text_dev": "दरवाज़ा खुलते ही आम पैसेंजर्स अंदर घुसे। रिपोर्ट्स के मुताबिक़, इज़राइल के एक प्लंबर, यानिव हायून ने, हमलावर को चोकहोल्ड में पकड़ा, और कॉकपिट से बाहर खींच लिया।"
   },
   {
    "n": 12,
@@ -196,7 +275,15 @@
     "what": "Helped restrain the attacker, then treated the wounded captain and stopped his bleeding.",
     "src": "SOURCE: AP, WION REPORTS, 1 OCT 2026"
    },
-   "text": "Ek dentist, Dr. Shota Musaev ne, hamlavar ko qaabu karne mein madad ki, aur phir ghayal captain ka khoon rokne mein lag gaye."
+   "text": "Ek dentist, Dr. Shota Musaev ne, hamlavar ko qaabu karne mein madad ki, aur phir ghayal captain ka khoon rokne mein lag gaye.",
+   "photo_style": "blur",
+   "photos": [
+    {
+     "src": "cabin",
+     "kb": "out"
+    }
+   ],
+   "text_dev": "एक डेंटिस्ट, डॉक्टर शोता मुसाएव ने, हमलावर को क़ाबू करने में मदद की, और फिर घायल कैप्टन का ख़ून रोकने में लग गए।"
   },
   {
    "n": 13,
@@ -207,13 +294,23 @@
    "shot": "A",
    "direction": "Raahat wala tone, aakhri line par muskurahat.",
    "text": "Lekin plane ab bhi hawa mein tha. Kismat se, flight par flydubai ke do off-duty pilots bhi the, Henson Steven aur Rowan Tooth. Unhone controls sambhaale, aur plane ko Saudi Arabia ke Tabuk mein surakshit utaar diya.",
-   "source": "SOURCE: FLYDUBAI STATEMENT; GULF NEWS; THE MEDIA LINE"
+   "source": "SOURCE: FLYDUBAI STATEMENT; GULF NEWS; THE MEDIA LINE",
+   "photo_style": "full",
+   "photos": [
+    {
+     "src": "tabuk",
+     "at": 0.66,
+     "kb": "in",
+     "label": "TABUK REGIONAL AIRPORT, SAUDI ARABIA · FILE PHOTO 2010"
+    }
+   ],
+   "text_dev": "लेकिन प्लेन अब भी हवा में था। क़िस्मत से, फ़्लाइट पर फ़्लाईदुबई के दो ऑफ़-ड्यूटी पायलट्स भी थे, हेंसन स्टीवन और रोवन टूथ। उन्होंने कंट्रोल्स सँभाले, और प्लेन को सऊदी अरब के तबूक में सुरक्षित उतार दिया।"
   },
   {
    "n": 14,
    "id": "ordinary",
    "layout": "C",
-   "look": "bg",
+   "look": "photo",
    "chapter": "",
    "shot": "B",
    "direction": "Har naam ke baad chhota pause. Dil se.",
@@ -223,7 +320,14 @@
      "t": 0.55,
      "text": "AAM LOG. <b>ASLI HEROES.</b>"
     }
-   ]
+   ],
+   "photos": [
+    {
+     "src": "fz_takeoff",
+     "kb": "in"
+    }
+   ],
+   "text_dev": "एक प्लंबर। एक डेंटिस्ट। दो पायलट्स, जो बस घर लौट रहे थे। और एक कैप्टन, जो घायल होकर भी लड़ता रहा। इनमें से कोई भी एक ना होता, तो शायद ये कहानी कुछ और होती।"
   },
   {
    "n": 15,
@@ -241,7 +345,15 @@
     "tag": "CLAIMS · INVESTIGATION ONGOING",
     "src": "SOURCE: WAM, HAARETZ, 9 OCT 2026"
    },
-   "text": "Ab sabse bada sawaal. Yeh first officer kaun tha? 9 October ko UAE ke Attorney General ne daava kiya, ki uska plan plane ko Tel Aviv ke Ben Gurion airport ke terminal mein giraane ka tha, 9/11 ki tarah. UAE ke mutabik, uska kattarpanth 2017 se shuru hua, aur usne pehle do baar Tel Aviv jaakar route aur airport samjha tha. Usne investigators ko bataya ki usne yeh akele kiya. Yeh sab abhi daave hain, aur jaanch jaari hai."
+   "text": "Ab sabse bada sawaal. Yeh first officer kaun tha? 9 October ko UAE ke Attorney General ne daava kiya, ki uska plan plane ko Tel Aviv ke Ben Gurion airport ke terminal mein giraane ka tha, 9/11 ki tarah. UAE ke mutabik, uska kattarpanth 2017 se shuru hua, aur usne pehle do baar Tel Aviv jaakar route aur airport samjha tha. Usne investigators ko bataya ki usne yeh akele kiya. Yeh sab abhi daave hain, aur jaanch jaari hai.",
+   "photo_style": "blur",
+   "photos": [
+    {
+     "src": "tlv",
+     "kb": "in"
+    }
+   ],
+   "text_dev": "अब सबसे बड़ा सवाल। ये फ़र्स्ट ऑफ़िसर कौन था? नौ अक्टूबर को यू ए ई के अटॉर्नी जनरल ने दावा किया, कि उसका प्लान प्लेन को तेल अवीव के बेन गुरियन एयरपोर्ट के टर्मिनल में गिराने का था, नाइन इलेवन की तरह। यू ए ई के मुताबिक़, उसका कट्टरपंथ दो हज़ार सत्रह से शुरू हुआ, और उसने पहले दो बार तेल अवीव जाकर रूट और एयरपोर्ट समझा था। उसने इन्वेस्टिगेटर्स को बताया कि उसने ये अकेले किया। ये सब अभी दावे हैं, और जाँच जारी है।"
   },
   {
    "n": 16,
@@ -269,7 +381,15 @@
     },
     "vs": "BUT"
    },
-   "text": "Lekin agar plan itna purana tha, toh yeh pakda kyun nahi gaya? UAE ka kehna hai ki airline ki hiring checks mein, koi kattar soch ya terror link nahi mila. Wahin Reuters ne, Israeli officials ke hawale se report kiya, ki usne investigators ko bataya, plan naukri milne se pehle ka tha. Agar dono baatein sach hain, toh sawaal screening system par uthta hai."
+   "text": "Lekin agar plan itna purana tha, toh yeh pakda kyun nahi gaya? UAE ka kehna hai ki airline ki hiring checks mein, koi kattar soch ya terror link nahi mila. Wahin Reuters ne, Israeli officials ke hawale se report kiya, ki usne investigators ko bataya, plan naukri milne se pehle ka tha. Agar dono baatein sach hain, toh sawaal screening system par uthta hai.",
+   "photo_style": "blur",
+   "photos": [
+    {
+     "src": "cockpit_night",
+     "kb": "out"
+    }
+   ],
+   "text_dev": "लेकिन अगर प्लान इतना पुराना था, तो ये पकड़ा क्यों नहीं गया? यू ए ई का कहना है कि एयरलाइन की हायरिंग चेक्स में, कोई कट्टर सोच या टेरर लिंक नहीं मिला। वहीं रॉयटर्स ने, इज़राइली ऑफ़िशियल्स के हवाले से रिपोर्ट किया, कि उसने इन्वेस्टिगेटर्स को बताया, प्लान नौकरी मिलने से पहले का था। अगर दोनों बातें सच हैं, तो सवाल स्क्रीनिंग सिस्टम पर उठता है।"
   },
   {
    "n": 17,
@@ -289,7 +409,8 @@
       "Crashed in the French Alps",
       "150 killed"
      ],
-     "src": "FRENCH PROSECUTORS"
+     "src": "FRENCH PROSECUTORS",
+     "img": "daipx"
     },
     "right": {
      "head": "FLYDUBAI FZ1073",
@@ -299,11 +420,14 @@
       "Landed safely at Tabuk",
       "No deaths reported"
      ],
-     "src": "FLYDUBAI, FLIGHTRADAR24"
+     "src": "FLYDUBAI, FLIGHTRADAR24",
+     "img": "a6fkf"
     },
     "vs": "VS"
    },
-   "text": "Yeh pehli baar nahi hai. 2015 mein Germanwings flight 9525 mein, co-pilot ne captain ko cockpit se bahar lock kar diya tha, aur plane French Alps mein crash kar diya. 150 log maare gaye. Wahan darwaaza band raha. Is baar darwaaza khul gaya. Aur shayad bas yahi farq tha."
+   "text": "Yeh pehli baar nahi hai. 2015 mein Germanwings flight 9525 mein, co-pilot ne captain ko cockpit se bahar lock kar diya tha, aur plane French Alps mein crash kar diya. 150 log maare gaye. Wahan darwaaza band raha. Is baar darwaaza khul gaya. Aur shayad bas yahi farq tha.",
+   "source": "PHOTOS: D-AIPX, DÜSSELDORF 2015 (DER SASCHA, CC BY-SA 4.0) · A6-FKF, DUBAI 2026 (UB-TY144, CC BY-SA 4.0) · WIKIMEDIA COMMONS",
+   "text_dev": "ये पहली बार नहीं है। दो हज़ार पंद्रह में जर्मनविंग्स फ़्लाइट नाइन फ़ाइव टू फ़ाइव में, को-पायलट ने कैप्टन को कॉकपिट से बाहर लॉक कर दिया था, और प्लेन फ़्रेंच ऐल्प्स में क्रैश कर दिया। एक सौ पचास लोग मारे गए। वहाँ दरवाज़ा बंद रहा। इस बार दरवाज़ा खुल गया। और शायद बस यही फ़र्क़ था।"
   },
   {
    "n": 18,
@@ -333,7 +457,15 @@
      }
     ]
    },
-   "text": "Germanwings ke baad Europe ne salah di thi, ki cockpit mein hamesha do log rahein. Lekin is baar toh cockpit mein do log pehle se the. Isliye experts ab teen baaton par behas kar rahe hain. Pehli, kya yeh mazboot darwaaze sirf bahar ke khatre ke liye bane hain? Doosri, pilots ki screening aur gehri kaise ho? Aur teesri, kya do logon wala niyam kaafi hai?"
+   "text": "Germanwings ke baad Europe ne salah di thi, ki cockpit mein hamesha do log rahein. Lekin is baar toh cockpit mein do log pehle se the. Isliye experts ab teen baaton par behas kar rahe hain. Pehli, kya yeh mazboot darwaaze sirf bahar ke khatre ke liye bane hain? Doosri, pilots ki screening aur gehri kaise ho? Aur teesri, kya do logon wala niyam kaafi hai?",
+   "photo_style": "blur",
+   "photos": [
+    {
+     "src": "door",
+     "kb": "in"
+    }
+   ],
+   "text_dev": "जर्मनविंग्स के बाद यूरोप ने सलाह दी थी, कि कॉकपिट में हमेशा दो लोग रहें। लेकिन इस बार तो कॉकपिट में दो लोग पहले से थे। इसलिए एक्सपर्ट्स अब तीन बातों पर बहस कर रहे हैं। पहली, क्या ये मज़बूत दरवाज़े सिर्फ़ बाहर के ख़तरे के लिए बने हैं? दूसरी, पायलट्स की स्क्रीनिंग और गहरी कैसे हो? और तीसरी, क्या दो लोगों वाला नियम काफ़ी है?"
   },
   {
    "n": 19,
@@ -344,7 +476,8 @@
    "shot": "A",
    "direction": "Seedha, official tone.",
    "text": "Bharat ke liye yeh kahani aur bhi khaas hai. Saudi Arabia ne aaropi ko UAE ko saunp diya, aur UAE ne 9 October ko apne daave saamne rakhe. Hamari NIA ne bhi Anti-Hijacking Act 2016 aur UAPA ke tahat case darj kiya hai, taaki kisi badi saazish ki jaanch ho sake. Jaanch abhi jaari hai.",
-   "source": "SOURCES: WAM, HAARETZ (9 OCT) · NIA VIA BUSINESS TODAY (10 OCT)"
+   "source": "SOURCES: WAM, HAARETZ (9 OCT) · NIA VIA BUSINESS TODAY (10 OCT)",
+   "text_dev": "भारत के लिए ये कहानी और भी ख़ास है। सऊदी अरब ने आरोपी को यू ए ई को सौंप दिया, और यू ए ई ने नौ अक्टूबर को अपने दावे सामने रखे। हमारी एन आई ए ने भी एंटी-हाइजैकिंग एक्ट दो हज़ार सोलह और यू ए पी ए के तहत केस दर्ज किया है, ताकि किसी बड़ी साज़िश की जाँच हो सके। जाँच अभी जारी है।"
   },
   {
    "n": 20,
@@ -361,13 +494,14 @@
     "what": "To be presented once he recovers. President Herzog also gave medals to six Israeli passengers.",
     "src": "SOURCE: KHALEEJ TIMES, GULF NEWS, 4–9 OCT 2026"
    },
-   "text": "Aur Captain Smit? Israel ke Rashtrapati Isaac Herzog ne ailaan kiya hai, ki unhe Israel ka Presidential Award for Civilian Heroism diya jaayega, jaise hi woh theek ho jaate hain. Herzog ne chhe Israeli passengers ko bhi medal diye. UAE mein Bharatiya embassy ke mutabik, Captain Smit ab theek ho rahe hain."
+   "text": "Aur Captain Smit? Israel ke Rashtrapati Isaac Herzog ne ailaan kiya hai, ki unhe Israel ka Presidential Award for Civilian Heroism diya jaayega, jaise hi woh theek ho jaate hain. Herzog ne chhe Israeli passengers ko bhi medal diye. UAE mein Bharatiya embassy ke mutabik, Captain Smit ab theek ho rahe hain.",
+   "text_dev": "और कैप्टन स्मित? इज़राइल के राष्ट्रपति आइज़ैक हर्ज़ोग ने ऐलान किया है, कि उन्हें इज़राइल का प्रेसिडेंशियल अवॉर्ड फ़ॉर सिविलियन हीरोइज़्म दिया जाएगा, जैसे ही वो ठीक हो जाते हैं। हर्ज़ोग ने छह इज़राइली पैसेंजर्स को भी मेडल दिए। यू ए ई में भारतीय एम्बेसी के मुताबिक़, कैप्टन स्मित अब ठीक हो रहे हैं।"
   },
   {
    "n": 21,
    "id": "conclusion",
    "layout": "C",
-   "look": "bg",
+   "look": "photo",
    "chapter": "",
    "shot": "B",
    "direction": "Dheema, sochne wala tone. Yeh video ki sabse important line hai.",
@@ -377,7 +511,14 @@
      "t": 0.5,
      "text": "HIMMAT HI <b>AAKHRI SURAKSHA</b>"
     }
-   ]
+   ],
+   "photos": [
+    {
+     "src": "fz_takeoff",
+     "kb": "out"
+    }
+   ],
+   "text_dev": "इस कहानी से एक बात साफ़ है। टेक्नोलॉजी, दरवाज़े, नियम, सब ज़रूरी हैं। लेकिन जब सब फ़ेल हो जाए, तो इंसान की हिम्मत ही आख़िरी सुरक्षा होती है। एक घायल कैप्टन ने दरवाज़ा खोला, और आम लोगों ने बाक़ी काम कर दिया।"
   },
   {
    "n": 22,
@@ -394,7 +535,15 @@
     "l2": "PEHLE KAISE PAKADTE?",
     "cta": "COMMENT MEIN BATAIYE ↓"
    },
-   "text": "Lekin sawaal yeh hai. Jo pilot har security check pass kar chuka tha, use pehle kaise pakda jaaye? Kya airlines ko pilots ki screening aur sakht karni chahiye, ya cockpit ke niyam badalne chahiye? Apni raay comment mein zaroor likhiye."
+   "text": "Lekin sawaal yeh hai. Jo pilot har security check pass kar chuka tha, use pehle kaise pakda jaaye? Kya airlines ko pilots ki screening aur sakht karni chahiye, ya cockpit ke niyam badalne chahiye? Apni raay comment mein zaroor likhiye.",
+   "photo_style": "blur",
+   "photos": [
+    {
+     "src": "cockpit_max",
+     "kb": "in"
+    }
+   ],
+   "text_dev": "लेकिन सवाल ये है। जो पायलट हर सिक्योरिटी चेक पास कर चुका था, उसे पहले कैसे पकड़ा जाए? क्या एयरलाइन्स को पायलट्स की स्क्रीनिंग और सख़्त करनी चाहिए, या कॉकपिट के नियम बदलने चाहिए? अपनी राय कमेंट में ज़रूर लिखिए।"
   },
   {
    "n": 23,
@@ -404,7 +553,8 @@
    "chapter": "",
    "shot": "A",
    "direction": "Muskurahat ke saath signature line.",
-   "text": "Main hoon Rahul Nishad, aur aap dekh rahe the Think With Rahul Nishad. Think Beyond Headlines!"
+   "text": "Main hoon Rahul Nishad, aur aap dekh rahe the Think With Rahul Nishad. Think Beyond Headlines!",
+   "text_dev": "मैं हूँ राहुल निषाद, और आप देख रहे थे थिंक विद राहुल निषाद। थिंक बियॉन्ड हेडलाइन्स!"
   }
  ]
 }

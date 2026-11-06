@@ -139,7 +139,7 @@ def build_timeline(scenes, durs):
         dur = pre + durs[s["n"]] + post
         out.append({"n": s["n"], "id": s["id"], "look": s["look"], "layout": s.get("layout", "F"),
                     "chapter": s.get("chapter", ""), "phrases": s.get("phrases", []), "params": s.get("params"),
-                    "source": s.get("source", ""), "start": round(t, 3), "dur": round(dur, 3),
+                    "source": s.get("source", ""), "photos": s.get("photos", []), "photo_style": s.get("photo_style"), "alarm": s.get("alarm"), "start": round(t, 3), "dur": round(dur, 3),
                     "vo_at": round(t + pre, 3), "vo_dur": round(durs[s["n"]], 3), "pre": pre, "post": post})
         t += dur
     return {"fps": FPS, "total": round(t, 3), "scenes": out}
