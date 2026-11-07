@@ -67,7 +67,7 @@ On macOS the renderer uses the GPU automatically. Set `RENDER_GPU=1` to force it
 
 1. **Verify sources.** The cloud session could not open news pages; facts came from search summaries. Open each link in `README.md` and fix any mismatch, especially the headcount, the weapon wording and the 9 Oct UAE claims.
 2. **Record the 23 clips** and run §3.
-3. **Apply the skill learnings** in `docs/01-skill-learnings-fz1073.md` to the `think-with-rahul-nishad-production` skill once Rahul approves.
+3. **Upload the updated skill** `skills/think-with-rahul-nishad-production.zip` at claude.ai (Customize, Skills) once Rahul approves it; it merges `docs/01-skill-learnings-fz1073.md`.
 4. **Shorts version** (9:16, 45–75 s) from the same assets.
 5. Optional: animate the AI stills (Sora/Flow/Kling) and save as `assets/ai/<same name>.mp4`.
 
