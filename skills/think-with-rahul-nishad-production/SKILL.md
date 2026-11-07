@@ -123,7 +123,7 @@ Use this when he wants a finished video, not just a package. Repo: `RahulNishad/
 **Visual sources, in order of preference.**
 1. Real licensed photos from Wikimedia Commons (CC BY, CC BY-SA, PD) — the actual aircraft, places, equipment, documents. Credit on screen and in `CREDITS.md`; tag "THE AIRCRAFT INVOLVED", "REPRESENTATIVE IMAGE" or "FILE PHOTO".
 2. Claude-rendered code visuals (Three.js + HTML): route maps, altitude/stat counters, timelines, split "X vs Y", hero cards, quote cards, question and end cards.
-3. AI reconstructions for moments nobody filmed (ChatGPT images; Flow/Sora if available). Write one setup message defining consistent characters (from behind), then one prompt per image with an exact filename. Two or three stills per moment, cut with Ken Burns and crossfades. Rules: no faces of real people, no blood, no weapons, no logos or livery, no readable text; never use a CC BY-SA photo as a reference. Label every one "AI RECONSTRUCTION" or "AI ILLUSTRATION" and tell him to tick YouTube's altered/synthetic content box.
+3. AI reconstructions for moments nobody filmed (ChatGPT images; Flow/Sora if available). Write one setup message defining consistent characters (from behind), then one prompt per image with an exact filename. Two or three stills per moment, cut with Ken Burns and crossfades. Rules: invented faces only (never lookalikes of the real people, labelled NOT THE REAL PERSON), no blood, no weapons, no logos or livery, no readable text; never use a CC BY-SA photo as a reference. Label every one "AI RECONSTRUCTION" or "AI ILLUSTRATION" and tell him to tick YouTube's altered/synthetic content box.
 Review every AI image before use (faces, hands, logos, text) and fall back to a real photo or code visual when one is missing.
 
 **Sound.** Original drone bed about −30 LUFS ducked about 60% under voice, quieter hook, low pulse from title to climax, whooshes on scene changes, booms on 3–4 reveals, riser into the final question with about 1 s of music silence before it. Voice compressed and normalised; final mix −14 LUFS, true peak under −1.5 dBFS.
@@ -147,12 +147,13 @@ He pointed to a 27-minute Hindi investigation of FZ1073 by another creator as th
 - **Mock screens built in code.** Crew roster, background-check portal, social-post pop-up, transponder panel showing 7700 then 7500, radar or ADS-B readout. Use generic interfaces with no real logos, labelled ILLUSTRATION.
 - **Maps.** Dark textured base, the country lit in red, an animated route line, and a pin on every place he names.
 - **Name tags and speech bubbles.** A bold label on a figure ("PLUMBER · ROW 11") and a speech bubble for an attributed quote from a passenger interview.
+- **Brightness.** He found the first direction video too dark. Keep images bright and well exposed, especially inside the cockpit; ask image tools for lit cabins and cockpits with clear faces.
 - **Colour language.** A neutral grade for facts, a red duotone for the attacker's backstory and the threat, and black-and-white with one red accent for the violent moment.
 - **Presenter look.** One fixed, warm, low-key set with a practical lamp and a textured wall. Alternate medium and close shots, and he talks to the lens.
 - **Sponsor.** A mid-roll slot only if he has a sponsor, clearly separated from the story.
 
 What this channel does differently from that reference, and keeps doing:
-- No faces of the real people in AI images. Show them from behind, in silhouette or as hands. Name tags go on those figures.
+- AI images may show invented faces (his decision, Nov 2026), never made to resemble the real people and never built from their photos. Label any image showing a named person's face "AI RECONSTRUCTION · NOT THE REAL PERSON".
 - No blood, wounds or weapons. Tension comes from light, framing, clocks and sound.
 - The accused is named only by age and nationality, from the official statement.
 - Every AI image is labelled "AI RECONSTRUCTION" or "AI ILLUSTRATION".

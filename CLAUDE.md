@@ -8,7 +8,7 @@ A local, script-driven documentary video pipeline for the YouTube channel **Thin
 ## Rules that always apply
 - **Script is the single source of truth:** `samples/fz1073/script.long.json`. `RECORDING_SCRIPT.md` and `STORYBOARD.jpg` are generated from it (`script_to_md.py`, `storyboard.py`). Never hand-edit the generated files.
 - **Facts:** attribute every claim ("UAE ke mutabik…"), label claims as CLAIM, show SOURCE lines, never invent numbers. Headcount is "170+" because reports vary 172–182.
-- **People:** never show the faces of the real people (captain, first officer, plumber, dentist, pilots). No blood, no weapons, no airline logos in AI images. Do not name the accused.
+- **People:** AI images may show invented faces (Rahul's decision, 7 Nov 2026). Never try to make them look like the real captain, first officer, plumber, dentist or pilots, and never use their photos as references. Any AI image showing a named person's face is labelled "AI RECONSTRUCTION · NOT THE REAL PERSON". No blood, no weapons, no airline logos in AI images. Do not name the accused.
 - **Images:** real photos only from Wikimedia Commons with CC BY / CC BY-SA / PD licences, credited on screen and in `CREDITS.md`. AI images are labelled "AI RECONSTRUCTION" or "AI ILLUSTRATION". Never use a CC BY-SA photo as an AI reference image.
 - **Original footage is read-only.** Takes are only read; all outputs are new files.
 - **Commit and push** to branch `claude/awesome-goldberg-6n0u1a` after each meaningful change.

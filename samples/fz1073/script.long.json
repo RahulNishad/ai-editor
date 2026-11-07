@@ -51,8 +51,7 @@
     {
      "src": "ai/r_struggle_1",
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
-     "style": "bw"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     },
     {
      "src": "ai/r_dive_1",
@@ -82,7 +81,7 @@
      "src": "ai/r_approach",
      "at": 0.82,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     }
    ]
   },
@@ -107,15 +106,15 @@
    ],
    "photos": [
     {
-     "src": "cockpit_night",
+     "src": "cockpit_max2",
      "kb": "in",
-     "label": "REPRESENTATIVE IMAGE · 737 FLIGHT DECK AT NIGHT"
+     "label": "REPRESENTATIVE IMAGE · BOEING 737 MAX FLIGHT DECK"
     },
     {
      "src": "ai/r_struggle_1",
      "at": 0.6,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     }
    ],
    "alarm": 0.55,
@@ -261,15 +260,13 @@
      "src": "ai/r_struggle_1",
      "at": 0.45,
      "kb": "out",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
-     "style": "bw"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     },
     {
      "src": "ai/r_struggle_2",
      "at": 0.75,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
-     "style": "bw"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     }
    ],
    "alarm": 0.3,
@@ -592,13 +589,13 @@
      "src": "ai/r_takeover",
      "at": 0,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     },
     {
      "src": "ai/r_approach",
      "at": 0.22,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     },
     {
      "src": null,
@@ -737,7 +734,7 @@
    "expression": "Voice only. Questioning tone, measured, no accusation.",
    "fallback_photos": [
     {
-     "src": "cockpit_night",
+     "src": "cockpit_max2",
      "kb": "out"
     }
    ],

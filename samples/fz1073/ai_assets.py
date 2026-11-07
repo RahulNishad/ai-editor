@@ -3,8 +3,8 @@ import os, subprocess, glob
 HERE = os.path.dirname(os.path.abspath(__file__))
 FPS = 30
 
-def _frames(key):
-    mp4 = os.path.join(HERE, "assets", "ai", key + ".mp4"); d = os.path.join(HERE, "assets", "ai", key)
+def _frames(key, folder="ai"):
+    mp4 = os.path.join(HERE, "assets", folder, key + ".mp4"); d = os.path.join(HERE, "assets", folder, key)
     if not os.path.exists(mp4): return 0
     if not os.path.isdir(d) or os.path.getmtime(d) < os.path.getmtime(mp4):
         os.makedirs(d, exist_ok=True)
@@ -35,6 +35,10 @@ def resolve(photos):
     out = []
     for p in photos or []:
         src = p.get("src")
+        if src and src.startswith("vid/"):  # real licensed footage (commons.py getvid)
+            n = _frames(src[4:], "vid")
+            if n: out.append({**p, "video": n})
+            continue
         if src and src.startswith("ai/"):
             key = src[3:]; n = _frames(key)
             if n: out.append({**p, "video": n}); continue
