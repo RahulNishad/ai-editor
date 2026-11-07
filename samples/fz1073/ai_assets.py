@@ -19,13 +19,16 @@ def _still(key):
     base = os.path.join(HERE, "assets", "ai", key); jpg = base + ".jpg"
     for ext in (".png", ".webp", ".jpeg", ".JPG", ".PNG", ".jpg"):
         src = base + ext
-        if os.path.exists(src) and (ext != ".jpg" or not os.path.exists(base + ".ok")):
-            tmp = base + ".tmp.jpg"
-            subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-i", src, "-vf",
-                            "scale=1920:1080:force_original_aspect_ratio=increase:flags=lanczos,crop=1920:1080", "-q:v", "2", tmp], check=True)
-            os.replace(tmp, jpg); open(base + ".ok", "w").close()
-            if ext != ".jpg": os.remove(src)
-            return True
+        if not os.path.exists(src): continue
+        # On case-insensitive disks (macOS) "<key>.JPG" is the same file as "<key>.jpg".
+        same = os.path.exists(jpg) and os.path.samefile(src, jpg)
+        if same and os.path.exists(base + ".ok"): return True
+        tmp = base + ".tmp.jpg"
+        subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-i", src, "-vf",
+                        "scale=1920:1080:force_original_aspect_ratio=increase:flags=lanczos,crop=1920:1080", "-q:v", "2", tmp], check=True)
+        os.replace(tmp, jpg); open(base + ".ok", "w").close()
+        if not same: os.remove(src)
+        return True
     return os.path.exists(jpg)
 
 def resolve(photos):
