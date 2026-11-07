@@ -418,7 +418,8 @@ function photoLayer(sc,lt,d,mode){const P=sc.photos||[];const box=$('photo');
   else if(A.dataset.k!==cur.src){if(A.dataset.k){B.src=A.src;B.dataset.k=A.dataset.k;B.dataset.kb=A.dataset.kb;B.dataset.s=A.dataset.s;B.dataset.e=A.dataset.e;}A.src=pimg(cur.src);A.dataset.k=cur.src;A.dataset.kb=cur.kb||'in';A.dataset.s=start;A.dataset.e=end;}
   const xf=.6,fa=i===0&&(cur.at||0)===0?1:ease((lt-start)/xf);
   A.style.opacity=fa;kb(A,A.dataset.kb,(lt-start)/Math.max(end-start,.1));
-  B.style.opacity=fa<1&&B.dataset.k&&i>0?1:0;if(B.dataset.k)kb(B,B.dataset.kb,(lt-parseFloat(B.dataset.s))/Math.max(parseFloat(B.dataset.e)-parseFloat(B.dataset.s),.1));
+  const prevNull=i>0&&!P[i-1].src;box.style.background=prevNull?'transparent':'#000';
+  B.style.opacity=!prevNull&&fa<1&&B.dataset.k&&i>0?1:0;if(B.dataset.k)kb(B,B.dataset.kb,(lt-parseFloat(B.dataset.s))/Math.max(parseFloat(B.dataset.e)-parseFloat(B.dataset.s),.1));
   const style=mode==='C'?'blur':(sc.photo_style||'full');
   const f={full:'brightness(.86) contrast(1.05) saturate(.92)',dim:'brightness(.42) saturate(.8)',blur:'blur(14px) brightness(.5) saturate(.85)'}[style];
   let ff=f;if(sc.dim_at!=null&&style==='full'){const k=ease((lt-sc.dim_at*d)/.7);ff=`brightness(${lerp(.86,.36,k)}) contrast(1.05) saturate(${lerp(.92,.7,k)})`;}
@@ -589,7 +590,7 @@ window.renderFrame=function(f){
   const mode=sc.layout||'F';document.body.classList.toggle('modeL',mode==='L');document.body.classList.toggle('modeC',mode==='C');
   $('gl').style.filter=mode==='C'?'blur(16px) brightness(.55)':'none';
   LOOKS[sc.look](lt,d,f,sc);
-  photoLayer(sc,lt,d,mode);
+  if(photoLayer(sc,lt,d,mode)&&sc.look.startsWith('map'))$('ov_map').classList.add('hide');
   // chapter tag
   const ch=$('chapter');ch.classList.toggle('hide',!sc.chapter);if(sc.chapter){$('chtext').textContent=sc.chapter;ch.style.opacity=ease(lt/.5);}
   $('illus').classList.toggle('hide',!illusFor(sc));
