@@ -112,3 +112,5 @@ Rahul asked to show the captain injured and bleeding from the back of the head i
 | `r_aid` | `flow_inj/aid_inj2.jpg` | blanket at temple, collar blood on wrong side | blanket behind the head, right collar, fingertips | both PASS |
 
 Not applied: the continuity reviewer asked to seat the first officer in `r_door_open`; kept standing, because he had left his seat for the attack and the plumber pulled him out from between the seats. All edits were free (Nano Banana); no paid video.
+
+Rahul approved the four injured-captain stills on 7 Nov 2026.
