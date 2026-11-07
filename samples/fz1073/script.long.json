@@ -63,7 +63,7 @@
      "src": "ai/r_door_open",
      "at": 0.34,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     },
     {
      "src": "ai/r_aisle",
@@ -75,7 +75,7 @@
      "src": "ai/r_aid",
      "at": 0.66,
      "kb": "out",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     },
     {
      "src": "ai/r_approach",
@@ -93,7 +93,7 @@
    "chapter": "",
    "shot": "B",
    "direction": "Seedha camera mein, dheemi aawaz. 'Achanak' se pehle ek pause.",
-   "text": "Sochiye… aap 34,000 feet ki oonchai par hain. Bahar andhera hai, plane autopilot par hai. Aur achanak… cockpit ke andar, aapka apna co-pilot hi aap par hamla kar deta hai.",
+   "text": "Sochiye… aap 34,000 feet ki oonchai par hain. Subah ki dhoop hai, plane autopilot par hai. Aur achanak… cockpit ke andar, aapka apna co-pilot hi aap par hamla kar deta hai.",
    "phrases": [
     {
      "t": 0.12,
@@ -118,7 +118,7 @@
     }
    ],
    "alarm": 0.55,
-   "text_dev": "सोचिए... आप चौंतीस हज़ार फ़ीट की ऊँचाई पर हैं। बाहर अँधेरा है, प्लेन ऑटोपायलट पर है। और अचानक... कॉकपिट के अंदर, आपका अपना को-पायलट ही, आप पर हमला कर देता है।",
+   "text_dev": "सोचिए... आप चौंतीस हज़ार फ़ीट की ऊँचाई पर हैं। सुबह की धूप है, प्लेन ऑटोपायलट पर है। और अचानक... कॉकपिट के अंदर, आपका अपना को-पायलट ही, आप पर हमला कर देता है।",
    "expression": "Serious and still. Eyes locked on the lens, slight frown. Raise eyebrows a little on 'Sochiye'. Narrow your eyes on 'achanak' and drop your voice. Hold your gaze 1 second after the last word."
   },
   {
@@ -227,7 +227,18 @@
      "at": 0.04,
      "until": 0.45
     }
-   }
+   },
+   "photos": [
+    {
+     "src": "vid/cabin_takeoff",
+     "at": 0,
+     "label": "REAL FOOTAGE · REPRESENTATIVE · A JET CABIN AT TAKE-OFF"
+    },
+    {
+     "src": null,
+     "at": 0.4
+    }
+   ]
   },
   {
    "n": 7,
@@ -426,10 +437,10 @@
      "src": "ai/r_door_hand",
      "at": 0,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON",
      "tag": {
       "text": "CAPTAIN",
-      "x": 0.42,
+      "x": 0.5,
       "y": 0.3
      },
      "flip": true
@@ -438,7 +449,7 @@
      "src": "ai/r_door_open",
      "at": 0.62,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     }
    ],
    "fallback_look": "cockpit_door"
@@ -482,26 +493,25 @@
      "tag": {
       "text": "PLUMBER · PASSENGER",
       "x": 0.52,
-      "y": 0.27
+      "y": 0.17
      }
     },
     {
      "src": "ai/r_restrain",
      "at": 0.38,
      "kb": "left",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON",
      "tag": {
       "text": "PLUMBER",
-      "x": 0.42,
-      "y": 0.15
-     },
-     "style": "bw"
+      "x": 0.58,
+      "y": 0.19
+     }
     },
     {
      "src": "ai/r_galley_hold",
      "at": 0.72,
      "kb": "out",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     }
    ],
    "text_dev": "दरवाज़ा खुलते ही आम पैसेंजर्स अंदर घुसे। रिपोर्ट्स के मुताबिक़, इज़राइल के एक प्लंबर, यानिव हायून ने, हमलावर को चोकहोल्ड में पकड़ा, और कॉकपिट से बाहर खींच लिया।",
@@ -549,11 +559,11 @@
      "src": "ai/r_aid",
      "at": 0,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON",
      "tag": {
       "text": "DENTIST · PASSENGER",
-      "x": 0.7,
-      "y": 0.34
+      "x": 0.58,
+      "y": 0.12
      }
     },
     {
@@ -610,14 +620,7 @@
    ],
    "text_dev": "लेकिन प्लेन अब भी हवा में था। क़िस्मत से, फ़्लाइट पर फ़्लाईदुबई के दो ऑफ़-ड्यूटी पायलट्स भी थे, हेंसन स्टीवन और रोवन टूथ। उन्होंने कंट्रोल्स सँभाले, और प्लेन को सऊदी अरब के तबूक में सुरक्षित उतार दिया।",
    "expression": "Voice only. Relief in the voice. Let a smile come through on 'surakshit utaar diya'.",
-   "fallback_photos": [
-    {
-     "src": "tabuk",
-     "at": 0.66,
-     "kb": "in",
-     "label": "TABUK, SAUDI ARABIA · FILE PHOTO"
-    }
-   ],
+   "fallback_photos": [],
    "fallback_style": "full"
   },
   {

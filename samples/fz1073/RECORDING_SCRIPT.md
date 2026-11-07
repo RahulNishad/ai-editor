@@ -2,7 +2,7 @@
 
 _Ek ghayal Indian captain, ek plumber, ek dentist aur do off-duty pilots ne 170 se zyada zindagiyan kaise bachaayi_
 
-**24 scenes · 1055 words · about 8 minutes at 140 words per minute**
+**24 scenes · 1056 words · about 8 minutes at 140 words per minute**
 
 ## How to record
 
@@ -24,9 +24,9 @@ _Ek ghayal Indian captain, ek plumber, ek dentist aur do off-duty pilots ne 170 
 _Direction: Trailer jaisa tone. Chhoti, tez lines, har line ke baad ek beat._
 
 **02.mp4** · Shot B · You on screen, centred
-> Sochiye… aap 34,000 feet ki oonchai par hain. Bahar andhera hai, plane autopilot par hai. Aur achanak… cockpit ke andar, aapka apna co-pilot hi aap par hamla kar deta hai.
+> Sochiye… aap 34,000 feet ki oonchai par hain. Subah ki dhoop hai, plane autopilot par hai. Aur achanak… cockpit ke andar, aapka apna co-pilot hi aap par hamla kar deta hai.
 >
-> सोचिए... आप चौंतीस हज़ार फ़ीट की ऊँचाई पर हैं। बाहर अँधेरा है, प्लेन ऑटोपायलट पर है। और अचानक... कॉकपिट के अंदर, आपका अपना को-पायलट ही, आप पर हमला कर देता है।
+> सोचिए... आप चौंतीस हज़ार फ़ीट की ऊँचाई पर हैं। सुबह की धूप है, प्लेन ऑटोपायलट पर है। और अचानक... कॉकपिट के अंदर, आपका अपना को-पायलट ही, आप पर हमला कर देता है।
 **Face:** Serious and still. Eyes locked on the lens, slight frown. Raise eyebrows a little on 'Sochiye'. Narrow your eyes on 'achanak' and drop your voice. Hold your gaze 1 second after the last word.
 _Direction: Seedha camera mein, dheemi aawaz. 'Achanak' se pehle ek pause._
 

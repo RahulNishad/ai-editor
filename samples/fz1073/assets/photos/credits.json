@@ -55,13 +55,6 @@
   "artist": "Vladislav Bezrukov",
   "date": "2012-06-24 11:47:45"
  },
- "tabuk": {
-  "title": "File:TUU 0456 (4647926379).jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:TUU_0456_(4647926379).jpg",
-  "license": "Public domain",
-  "artist": "United States Naval Academy Photo Archive",
-  "date": "2010-05-28 11:27"
- },
  "house_res": {
   "title": "File:2026 US House Resolution - Honoring Captain Smit Machchhar - page 1.jpg",
   "page": "https://commons.wikimedia.org/wiki/File:2026_US_House_Resolution_-_Honoring_Captain_Smit_Machchhar_-_page_1.jpg",
@@ -97,20 +90,6 @@
   "artist": "N82khan",
   "date": "2021-10-16 06:22:36"
  },
- "tabuk2": {
-  "title": "File:TUU 0485 (4648541686).jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:TUU_0485_(4648541686).jpg",
-  "license": "Public domain",
-  "artist": "United States Naval Academy Photo Archive",
-  "date": "2010-05-28 11:28"
- },
- "tabuk3": {
-  "title": "File:TUU 0770 (4647930261).jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:TUU_0770_(4647930261).jpg",
-  "license": "Public domain",
-  "artist": "United States Naval Academy Photo Archive",
-  "date": "2010-05-28 12:36"
- },
  "vid/cabin_takeoff": {
   "title": "File:Airplane inside while taking off.webm",
   "page": "https://commons.wikimedia.org/wiki/File:Airplane_inside_while_taking_off.webm",
@@ -125,6 +104,22 @@
   "license": "CC BY-SA 4.0",
   "artist": "FASTILY",
   "date": "2016-08-29 08:22:50",
+  "video": true
+ },
+ "vid/above_clouds": {
+  "title": "File:Up in the Clouds - May 2019.webm",
+  "page": "https://commons.wikimedia.org/wiki/File:Up_in_the_Clouds_-_May_2019.webm",
+  "license": "CC BY-SA 4.0",
+  "artist": "RoyKabanlit",
+  "date": "2019-05-22",
+  "video": true
+ },
+ "vid/landing_haneda": {
+  "title": "File:Landing aircraft - Haneda - 2021 3 31.webm",
+  "page": "https://commons.wikimedia.org/wiki/File:Landing_aircraft_-_Haneda_-_2021_3_31.webm",
+  "license": "CC BY-SA 4.0",
+  "artist": "Nesnad",
+  "date": "2021-03-31",
   "video": true
  }
 }

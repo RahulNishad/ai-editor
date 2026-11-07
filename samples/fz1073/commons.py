@@ -68,7 +68,11 @@ elif sys.argv[1] == "getvid":
     os.makedirs(os.path.join(HERE, "assets", "vid"), exist_ok=True)
     dst = os.path.join(HERE, "assets", "vid", key + ".mp4")
     tmp = dst + ".src.webm"; import time
-    subprocess.run(["curl", "-sS", "-f", "-L", "-A", UA["User-Agent"], "--retry", "5", "--retry-delay", "30", "--retry-all-errors", "-o", tmp, r["orig"].split("?")[0]], check=True)
+    orig = r["orig"].split("?")[0]; name = orig.rsplit("/", 1)[1]
+    trans = orig.replace("/wikipedia/commons/", "/wikipedia/commons/transcoded/") + "/" + name
+    for url in (trans + ".1080p.vp9.webm", trans + ".720p.vp9.webm", orig):  # transcodes download reliably; originals often reset
+        if subprocess.run(["curl", "-sS", "-f", "-L", "-A", UA["User-Agent"], "--retry", "3", "--retry-delay", "20", "--retry-all-errors", "-o", tmp, url]).returncode == 0: break
+    else: sys.exit("download failed")
     time.sleep(10)
     subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-ss", ss, "-t", dur, "-i", tmp, "-an",
                     "-vf", "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,fps=30", "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", dst], check=True)

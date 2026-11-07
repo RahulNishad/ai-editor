@@ -2,6 +2,21 @@
 
 Status: discussion draft, 2026-11-06. Nothing here is implemented yet.
 
+## Product vision (Rahul, 7 Nov 2026)
+
+**Rahul AI Video Studio**: an AI-powered local documentary video editor for Mac, running in a local browser.
+
+> Your script. Your footage. Your AI director.
+
+1. Write your script.
+2. Upload your recording.
+3. Let Claude understand your content.
+4. Approve 3D animations.
+5. Edit everything on a timeline.
+6. Export professional videos.
+
+How the FZ1073 pipeline maps to it today: steps 1 and 3 are `script.long.json` plus Claude's research; step 4 is the direction video (`make_direction.py`) with Google Flow stills, Commons photos and footage, and Claude-rendered cards; steps 2 and 6 are `make_long.py`. Step 5, the editable timeline, is the main piece still to build.
+
 This document reconciles three inputs:
 
 1. The proposed product direction (six screens, multitrack editor, Claude as AI director, Figma Weave for animation, FFmpeg rendering, 16:9 + 9:16 outputs).
