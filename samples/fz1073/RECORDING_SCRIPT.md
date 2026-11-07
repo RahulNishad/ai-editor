@@ -21,6 +21,7 @@ _Ek ghayal Indian captain, ek plumber, ek dentist aur do off-duty pilots ne 170 
 >
 > चौंतीस हज़ार फ़ीट पर, कॉकपिट के अंदर हमला। प्लेन तेज़ी से नीचे गिरने लगा। एक घायल कैप्टन ने दरवाज़ा खोला। एक प्लंबर और एक डेंटिस्ट आगे आए। और दो पायलट्स ने प्लेन को ज़मीन पर उतारा। ये है फ़्लाइट एफ़ ज़ेड वन ज़ीरो सेवन थ्री की पूरी कहानी।
 **Face:** Voice only. Fast and gripping, like a trailer. A short beat after every line.
+**On screen:** pilots struggling (AI still) → jet diving (AI still) → plumber enters the cockpit (AI still) → plumber runs up the aisle (AI still) → dentist treats the captain (AI still) → landing approach (AI still)
 _Direction: Trailer jaisa tone. Chhoti, tez lines, har line ke baad ek beat._
 
 **02.mp4** · Shot B · You on screen, centred
@@ -28,6 +29,7 @@ _Direction: Trailer jaisa tone. Chhoti, tez lines, har line ke baad ek beat._
 >
 > सोचिए... आप चौंतीस हज़ार फ़ीट की ऊँचाई पर हैं। सुबह की धूप है, प्लेन ऑटोपायलट पर है। और अचानक... कॉकपिट के अंदर, आपका अपना को-पायलट ही, आप पर हमला कर देता है।
 **Face:** Serious and still. Eyes locked on the lens, slight frown. Raise eyebrows a little on 'Sochiye'. Narrow your eyes on 'achanak' and drop your voice. Hold your gaze 1 second after the last word.
+**On screen:** 737 MAX cockpit (real photo) → pilots struggling (AI still)
 _Direction: Seedha camera mein, dheemi aawaz. 'Achanak' se pehle ek pause._
 
 **03.mp4** · Shot B · You on screen, centred
@@ -35,6 +37,7 @@ _Direction: Seedha camera mein, dheemi aawaz. 'Achanak' se pehle ek pause._
 >
 > ना कोई हाइजैकर, ना कोई बाहर का आदमी। ख़तरा उस दरवाज़े के अंदर था, जिसे दुनिया का सबसे सुरक्षित दरवाज़ा माना जाता है। और फिर जो हुआ, वो किसी फ़िल्म से कम नहीं था। एक घायल इंडियन कैप्टन, एक प्लंबर, एक डेंटिस्ट, और दो ऑफ़-ड्यूटी पायलट्स।
 **Face:** Lean slightly toward the lens, curious. A small half-smile on 'kisi film se kam nahi tha'. Count the heroes on your fingers: captain, plumber, dentist, two pilots. Eyes widen a little on the last line.
+**On screen:** flydubai cabin (real photo)
 _Direction: Thoda aage jhukiye. Last line mein heroes ko ginte hue ungliyon se gin sakte hain._
 
 **04.mp4** · Shot A · Full-screen graphic, only your voice
@@ -42,6 +45,7 @@ _Direction: Thoda aage jhukiye. Last line mein heroes ko ginte hue ungliyon se g
 >
 > तीस सितंबर, दो हज़ार छब्बीस। फ़्लाईदुबई की फ़्लाइट, एफ़ ज़ेड वन ज़ीरो सेवन थ्री। दुबई से तेल अवीव। एक बोइंग सात सौ सैंतीस मैक्स, और उसमें एक सौ सत्तर से ज़्यादा लोग।
 **Face:** Voice only, face not shown. Clear news-anchor tone, steady pace.
+**On screen:** the actual aircraft A6-FKF (real photo)
 _Direction: Sirf aawaz chalegi, screen par title. Saaf, news anchor jaisa tone._
 
 **05.mp4** · Shot A · You on screen, centred
@@ -49,6 +53,7 @@ _Direction: Sirf aawaz chalegi, screen par title. Saaf, news anchor jaisa tone._
 >
 > ये कहानी सिर्फ़ एक फ़्लाइट की नहीं है। हर दिन दुनिया में लाखों लोग प्लेन में बैठते हैं, और हम सब एक ही चीज़ पर भरोसा करते हैं, कि कॉकपिट में बैठे दो लोग हमारी हिफ़ाज़त करेंगे। लेकिन अगर उनमें से ही एक ख़तरा बन जाए, तो?
 **Face:** Open and conversational, soft eyes, shoulders relaxed. On the final 'toh?' raise both eyebrows, tilt your head slightly and stay silent for 1 second.
+**On screen:** Dubai airport (real photo) → globe of flights (AI still)
 _Direction: Viewer se baat karte hue, sawaal wali line par bhauein uthaiye._
 
 ### 01 · THE FLIGHT
@@ -58,6 +63,7 @@ _Direction: Viewer se baat karte hue, sawaal wali line par bhauein uthaiye._
 >
 > फ़्लाइटरडार चौबीस के डेटा के मुताबिक़, फ़्लाइट ने दुबई से सुबह तीन बजकर पाँच मिनट, यू टी सी टाइम पर उड़ान भरी। प्लेन सऊदी अरब के ऊपर से तेल अवीव की तरफ़ बढ़ रहा था। लगभग सवा दो घंटे तक सब नॉर्मल था।
 **Face:** Calm storyteller. Relaxed face, small nods, normal pace. Slightly slower on 'sab normal tha', as if something is coming.
+**On screen:** 3D route map → cabin at take-off (real footage)
 _Direction: Normal storytelling pace._
 
 ### 02 · THE ATTACK
@@ -67,6 +73,7 @@ _Direction: Normal storytelling pace._
 >
 > फिर सुबह पाँच बजकर इक्कीस मिनट पर, प्लेन की ऑल्टिट्यूड अचानक ऊपर नीचे होने लगी। यू ए ई के अटॉर्नी जनरल के मुताबिक़, उनतीस साल के एक ओमानी फ़र्स्ट ऑफ़िसर ने, कॉकपिट में रखी क्रैश ऐक्स से, इंडियन कैप्टन स्मित मच्छर पर हमला किया।
 **Face:** Grave. Jaw set, no smile. Lower your voice. Take a short pause before 'crash axe' and narrow your eyes slightly on it.
+**On screen:** 737 MAX cockpit (real photo) → pilots struggling (AI still) → captain at the yoke (AI still)
 _Direction: Gambhir. 'Crash axe' par halka zor._
 
 **08.mp4** · Shot A · Full-screen graphic, only your voice
@@ -74,6 +81,7 @@ _Direction: Gambhir. 'Crash axe' par halka zor._
 >
 > अब आप सोचेंगे, प्लेन में कुल्हाड़ी क्या कर रही थी? असल में क्रैश ऐक्स एक ज़रूरी इमरजेंसी टूल है। आग लगने पर पैनल तोड़ने के लिए, या फँसे हुए दरवाज़े को खोलने के लिए। नियमों के मुताबिक़ ये कॉकपिट के अंदर रखी जाती है, जहाँ पैसेंजर्स का हाथ ना पहुँचे। लेकिन इस बार, ख़तरा पैसेंजर नहीं था।
 **Face:** Voice only. Curious, explaining tone, a little lighter. Slow down on the last line, 'khatra passenger nahi tha'.
+**On screen:** fact card → crash axe (AI still)
 _Direction: Explain karne wala tone, thoda halka._
 
 **09.mp4** · Shot A · Full-screen graphic, only your voice
@@ -81,6 +89,7 @@ _Direction: Explain karne wala tone, thoda halka._
 >
 > हमले के दौरान प्लेन तेज़ी से नीचे गिरने लगा। फ़्लाइटरडार चौबीस के डेटा के मुताबिक़, प्लेन चौंतीस हज़ार फ़ीट से कुछ ही मिनटों में लगभग पंद्रह हज़ार फ़ीट तक आ गया। पैसेंजर्स के लिए ये ज़िंदगी और मौत के बीच के पल थे।
 **Face:** Voice only. Tense and slightly faster. Let 'zindagi aur maut' land with a pause before it.
+**On screen:** jet diving (AI still) → altimeter (AI still) → tilted window view (AI still)
 _Direction: Thodi tez aawaz, tension ke saath._
 
 ### 03 · THE DOOR
@@ -90,6 +99,7 @@ _Direction: Thodi tez aawaz, tension ke saath._
 >
 > और यहाँ कहानी का सबसे बड़ा मोड़ आता है। नाइन इलेवन के बाद दुनिया भर में कॉकपिट के दरवाज़े मज़बूत बनाए गए। उड़ान के दौरान ये बंद रहते हैं, और सिर्फ़ अंदर से खुलते हैं। मतलब, अगर अंदर से दरवाज़ा ना खुले, तो बाहर से कोई मदद अंदर नहीं आ सकती।
 **Face:** Voice only. Pause before 'Aur yahan'. Slow and deliberate on 'sirf andar se khulte hain'.
+**On screen:** fact card → cockpit door (real photo) → cockpit door lock (AI still) → door lock switch (real photo)
 _Direction: 'Aur yahan' se pehle pause. Kahani ka mod._
 
 **11.mp4** · Shot B · You on the right, graphic on the left
@@ -97,6 +107,7 @@ _Direction: 'Aur yahan' se pehle pause. Kahani ka mod._
 >
 > घायल होने के बावजूद, कैप्टन स्मित ने आख़िरी कोशिश की। उनके मुताबिक़, उन्होंने ख़ुद से कहा: दिस इज़ द लास्ट पुश, स्मित। डू इट, द डोर इज़ राइट देयर। और दरवाज़ा खुल गया।
 **Face:** Emotional and slow, close-up. Soft eyes. Say the English quote with quiet determination, a slight clench. Then exhale with relief on 'aur darwaaza khul gaya' and give one small nod.
+**On screen:** captain at the door handle (AI still) → plumber enters the cockpit (AI still)
 _Direction: Emotional, dheere. English quote ko waise hi boliye._
 
 ### 04 · THE HEROES
@@ -106,6 +117,7 @@ _Direction: Emotional, dheere. English quote ko waise hi boliye._
 >
 > दरवाज़ा खुलते ही आम पैसेंजर्स अंदर घुसे। रिपोर्ट्स के मुताबिक़, इज़राइल के एक प्लंबर, यानिव हायून ने, हमलावर को चोकहोल्ड में पकड़ा, और कॉकपिट से बाहर खींच लिया।
 **Face:** Voice only. Energy rising, a sense of relief and admiration.
+**On screen:** name card → plumber runs up the aisle (AI still) → plumber pulls him back (AI still) → passengers hold him down (AI still)
 _Direction: Energy badhaiye._
 
 **13.mp4** · Shot A · Full-screen graphic, only your voice
@@ -113,6 +125,7 @@ _Direction: Energy badhaiye._
 >
 > एक डेंटिस्ट, डॉक्टर शोता मुसाएव ने, हमलावर को क़ाबू करने में मदद की, और फिर घायल कैप्टन का ख़ून रोकने में लग गए।
 **Face:** Voice only. Same rising energy, warm tone.
+**On screen:** name card → dentist treats the captain (AI still) → blanket close-up (AI still)
 _Direction: Same energy._
 
 **14.mp4** · Shot A · Full-screen graphic, only your voice
@@ -120,6 +133,7 @@ _Direction: Same energy._
 >
 > लेकिन प्लेन अब भी हवा में था। क़िस्मत से, फ़्लाइट पर फ़्लाईदुबई के दो ऑफ़-ड्यूटी पायलट्स भी थे, हेंसन स्टीवन और रोवन टूथ। उन्होंने कंट्रोल्स सँभाले, और प्लेन को सऊदी अरब के तबूक में सुरक्षित उतार दिया।
 **Face:** Voice only. Relief in the voice. Let a smile come through on 'surakshit utaar diya'.
+**On screen:** 3D map to Tabuk → off-duty pilots take over (AI still) → landing approach (AI still) → jet on the apron (AI still)
 _Direction: Raahat wala tone, aakhri line par muskurahat._
 
 **15.mp4** · Shot B · You on screen, centred
@@ -127,6 +141,7 @@ _Direction: Raahat wala tone, aakhri line par muskurahat._
 >
 > एक प्लंबर। एक डेंटिस्ट। दो पायलट्स, जो बस घर लौट रहे थे। और एक कैप्टन, जो घायल होकर भी लड़ता रहा। इनमें से कोई भी एक ना होता, तो शायद ये कहानी कुछ और होती।
 **Face:** Warm pride, close-up. Gentle smile. Pause and nod after each hero. Turn serious and slower on the last sentence.
+**On screen:** flydubai take-off (real photo)
 _Direction: Har naam ke baad chhota pause. Dil se._
 
 ### 05 · THE FIRST OFFICER
@@ -136,6 +151,7 @@ _Direction: Har naam ke baad chhota pause. Dil se._
 >
 > अब सबसे बड़ा सवाल। ये फ़र्स्ट ऑफ़िसर कौन था? नौ अक्टूबर को यू ए ई के अटॉर्नी जनरल ने दावा किया, कि उसका प्लान प्लेन को तेल अवीव के बेन गुरियन एयरपोर्ट के टर्मिनल में गिराने का था, नाइन इलेवन की तरह। यू ए ई के मुताबिक़, उसका कट्टरपंथ दो हज़ार सत्रह से शुरू हुआ, और उसने पहले दो बार तेल अवीव जाकर रूट और एयरपोर्ट समझा था। उसने इन्वेस्टिगेटर्स को बताया कि उसने ये अकेले किया। ये सब अभी दावे हैं, और जाँच जारी है।
 **Face:** Voice only. Neutral, factual. Lean on the word 'daave' so viewers hear these are claims.
+**On screen:** name card → Ben Gurion airport (real photo)
 _Direction: Neutral, facts wala tone. 'Daave' shabd par zor._
 
 **17.mp4** · Shot A · Full-screen graphic, only your voice
@@ -143,6 +159,7 @@ _Direction: Neutral, facts wala tone. 'Daave' shabd par zor._
 >
 > लेकिन अगर प्लान इतना पुराना था, तो ये पकड़ा क्यों नहीं गया? यू ए ई का कहना है कि एयरलाइन की हायरिंग चेक्स में, कोई कट्टर सोच या टेरर लिंक नहीं मिला। वहीं रॉयटर्स ने, इज़राइली ऑफ़िशियल्स के हवाले से रिपोर्ट किया, कि उसने इन्वेस्टिगेटर्स को बताया, प्लान नौकरी मिलने से पहले का था। अगर दोनों बातें सच हैं, तो सवाल स्क्रीनिंग सिस्टम पर उठता है।
 **Face:** Voice only. Questioning tone, measured, no accusation.
+**On screen:** check screen, then side-by-side card → background check (AI still)
 _Direction: Sawaal poochhne wala tone._
 
 ### 06 · NOT THE FIRST TIME
@@ -152,6 +169,7 @@ _Direction: Sawaal poochhne wala tone._
 >
 > ये पहली बार नहीं है। दो हज़ार पंद्रह में जर्मनविंग्स फ़्लाइट नाइन फ़ाइव टू फ़ाइव में, को-पायलट ने कैप्टन को कॉकपिट से बाहर लॉक कर दिया था, और प्लेन फ़्रेंच ऐल्प्स में क्रैश कर दिया। एक सौ पचास लोग मारे गए। वहाँ दरवाज़ा बंद रहा। इस बार दरवाज़ा खुल गया। और शायद बस यही फ़र्क़ था।
 **Face:** Voice only. Slow and respectful. Pause before and after '150 log maare gaye'. No drama.
+**On screen:** side-by-side card → French Alps (AI still)
 _Direction: Dheema. '150 log' par ruk kar._
 
 **19.mp4** · Shot A · Full-screen graphic, only your voice
@@ -159,6 +177,7 @@ _Direction: Dheema. '150 log' par ruk kar._
 >
 > जर्मनविंग्स के बाद यूरोप ने सलाह दी थी, कि कॉकपिट में हमेशा दो लोग रहें। लेकिन इस बार तो कॉकपिट में दो लोग पहले से थे। इसलिए एक्सपर्ट्स अब तीन बातों पर बहस कर रहे हैं। पहली, क्या ये मज़बूत दरवाज़े सिर्फ़ बाहर के ख़तरे के लिए बने हैं? दूसरी, पायलट्स की स्क्रीनिंग और गहरी कैसे हो? और तीसरी, क्या दो लोगों वाला नियम काफ़ी है?
 **Face:** Voice only. Clear, structured, like counting three points.
+**On screen:** list card → cockpit door lock (AI still)
 _Direction: Teen points, ungliyon par ginte hue._
 
 ### 07 · INDIA & THE PROBE
@@ -168,6 +187,7 @@ _Direction: Teen points, ungliyon par ginte hue._
 >
 > भारत के लिए ये कहानी और भी ख़ास है। सऊदी अरब ने आरोपी को यू ए ई को सौंप दिया, और यू ए ई ने नौ अक्टूबर को अपने दावे सामने रखे। हमारी एन आई ए ने भी एंटी-हाइजैकिंग एक्ट दो हज़ार सोलह और यू ए पी ए के तहत केस दर्ज किया है, ताकि किसी बड़ी साज़िश की जाँच हो सके। जाँच अभी जारी है।
 **Face:** Voice only. Straight, official tone.
+**On screen:** investigation timeline → investigation desk (AI still)
 _Direction: Seedha, official tone._
 
 **21.mp4** · Shot B · You on the right, graphic on the left
@@ -175,6 +195,7 @@ _Direction: Seedha, official tone._
 >
 > और कैप्टन स्मित? इज़राइल के राष्ट्रपति आइज़ैक हर्ज़ोग ने ऐलान किया है, कि उन्हें इज़राइल का प्रेसिडेंशियल अवॉर्ड फ़ॉर सिविलियन हीरोइज़्म दिया जाएगा, जैसे ही वो ठीक हो जाते हैं। हर्ज़ोग ने छह इज़राइली पैसेंजर्स को भी मेडल दिए। अमेरिका की हाउस ऑफ़ रिप्रेज़ेंटेटिव्स में भी, उनके और क्रू और पैसेंजर्स के सम्मान में एक रेज़ोल्यूशन पेश किया गया है। यू ए ई में भारतीय एम्बेसी के मुताबिक़, कैप्टन स्मित अब ठीक हो रहे हैं।
 **Face:** Proud, close-up. Warm eyes and a genuine smile on 'Captain Smit?'. Small nod on 'theek ho rahe hain'.
+**On screen:** name card
 _Direction: Garv ke saath, halki muskurahat._
 
 **22.mp4** · Shot B · You on screen, centred
@@ -182,6 +203,7 @@ _Direction: Garv ke saath, halki muskurahat._
 >
 > इस कहानी से एक बात साफ़ है। टेक्नोलॉजी, दरवाज़े, नियम, सब ज़रूरी हैं। लेकिन जब सब फ़ेल हो जाए, तो इंसान की हिम्मत ही आख़िरी सुरक्षा होती है। एक घायल कैप्टन ने दरवाज़ा खोला, और आम लोगों ने बाक़ी काम कर दिया।
 **Face:** Reflective, close-up, slow. Look slightly down at the start, then lift your eyes to the lens on 'insaan ki himmat' and hold the gaze. This is the most important line of the video.
+**On screen:** wing in the sun (AI still)
 _Direction: Dheema, sochne wala tone. Yeh video ki sabse important line hai._
 
 **23.mp4** · Shot A · Full-screen graphic, only your voice
@@ -189,6 +211,7 @@ _Direction: Dheema, sochne wala tone. Yeh video ki sabse important line hai._
 >
 > लेकिन सवाल ये है। जो पायलट हर सिक्योरिटी चेक पास कर चुका था, उसे पहले कैसे पकड़ा जाए? क्या एयरलाइन्स को पायलट्स की स्क्रीनिंग और सख़्त करनी चाहिए, या कॉकपिट के नियम बदलने चाहिए? अपनी राय कमेंट में ज़रूर लिखिए।
 **Face:** Voice only. Direct, inviting question, as if you really want their answer.
+**On screen:** question card → 737 MAX cockpit (real photo)
 _Direction: Seedha viewer se sawaal._
 
 **24.mp4** · Shot A · You on the right, graphic on the left
@@ -196,6 +219,7 @@ _Direction: Seedha viewer se sawaal._
 >
 > मैं हूँ राहुल निषाद, और आप देख रहे थे थिंक विद राहुल निषाद। थिंक बियॉन्ड हेडलाइन्स!
 **Face:** Friendly smile, relaxed shoulders. Say the signature line with confidence, smile wider on 'Think Beyond Headlines!', then hold the smile for 2 seconds.
+**On screen:** end card
 _Direction: Muskurahat ke saath signature line._
 
 ---
