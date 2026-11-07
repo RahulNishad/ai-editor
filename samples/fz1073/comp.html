@@ -469,7 +469,8 @@ function photoLayer(sc,lt,d,mode){const P=sc.photos||[];const box=$('photo');
   const per=el=>style==='blur'?FIL.blur+(el.dataset.st==='threat'?' sepia(1) hue-rotate(-40deg) saturate(2.5)':el.dataset.st==='bw'?' grayscale(1)':''):(el.dataset.st&&FIL[el.dataset.st])||ff;
   A.style.filter=per(A);B.style.filter=per(B);$('pgrad').style.opacity=style==='full'?1:.4;
   // name tags on figures (AI figures shown from behind; never on real faces)
-  const tg=cur.tag&&style!=='blur'&&!cur.video?cur.tag:null;  // tags only on stills: figures move in clips$('tags').innerHTML=tg?`<div class="ntag" style="left:${tg.x*W}px;top:${tg.y*H}px;opacity:${win(lt,start+.5,end-.1,.35,.25)}"><b>${tg.text}</b><i></i></div>`:'';
+  const tg=cur.tag&&style!=='blur'&&!cur.video?cur.tag:null;  // tags only on stills: figures move in clips
+  $('tags').innerHTML=tg?`<div class="ntag" style="left:${tg.x*W}px;top:${tg.y*H}px;opacity:${win(lt,start+.5,end-.1,.35,.25)}"><b>${tg.text}</b><i></i></div>`:'';
   const al=sc.alarm!=null&&u>=sc.alarm?((Math.floor(lt*3)%2)?.55:1):0;$('alarm').style.opacity=al;
   const c=CREDITS[cur.src];
   if(c&&c.video&&style!=='blur'){$('credit').innerHTML=`<div class="ptag">${cur.label||'REAL FOOTAGE · REPRESENTATIVE'}</div><br>VIDEO: ${c.artist.replace(/\s+/g,' ').slice(0,50)} · WIKIMEDIA COMMONS · ${c.license}`;document.body.classList.add('hasCredit');}

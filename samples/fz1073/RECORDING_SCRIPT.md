@@ -21,7 +21,7 @@ _Ek ghayal Indian captain, ek plumber, ek dentist aur do off-duty pilots ne 170 
 >
 > चौंतीस हज़ार फ़ीट पर, कॉकपिट के अंदर हमला। प्लेन तेज़ी से नीचे गिरने लगा। एक घायल कैप्टन ने दरवाज़ा खोला। एक प्लंबर और एक डेंटिस्ट आगे आए। और दो पायलट्स ने प्लेन को ज़मीन पर उतारा। ये है फ़्लाइट एफ़ ज़ेड वन ज़ीरो सेवन थ्री की पूरी कहानी।
 **Face:** Voice only. Fast and gripping, like a trailer. A short beat after every line.
-**On screen:** pilots struggling (AI still) → jet diving (AI still) → plumber enters the cockpit (AI still) → plumber runs up the aisle (AI still) → dentist treats the captain (AI still) → landing approach (AI still)
+**On screen:** r attack behind (AI still) → jet diving (AI video clip) → injured captain at the door handle (AI still) → plumber runs up the aisle (AI video clip) → dentist presses a blanket to the captain's head (AI still) → landing approach (AI video clip)
 _Direction: Trailer jaisa tone. Chhoti, tez lines, har line ke baad ek beat._
 
 **02.mp4** · Shot B · You on screen, centred
@@ -29,7 +29,7 @@ _Direction: Trailer jaisa tone. Chhoti, tez lines, har line ke baad ek beat._
 >
 > सोचिए... आप चौंतीस हज़ार फ़ीट की ऊँचाई पर हैं। सुबह की धूप है, प्लेन ऑटोपायलट पर है। और अचानक... कॉकपिट के अंदर, आपका अपना को-पायलट ही, आप पर हमला कर देता है।
 **Face:** Serious and still. Eyes locked on the lens, slight frown. Raise eyebrows a little on 'Sochiye'. Narrow your eyes on 'achanak' and drop your voice. Hold your gaze 1 second after the last word.
-**On screen:** 737 MAX cockpit (real photo) → pilots struggling (AI still)
+**On screen:** 737 MAX cockpit (real photo) → r attack behind (AI still)
 _Direction: Seedha camera mein, dheemi aawaz. 'Achanak' se pehle ek pause._
 
 **03.mp4** · Shot B · You on screen, centred
@@ -73,7 +73,7 @@ _Direction: Normal storytelling pace._
 >
 > फिर सुबह पाँच बजकर इक्कीस मिनट पर, प्लेन की ऑल्टिट्यूड अचानक ऊपर नीचे होने लगी। यू ए ई के अटॉर्नी जनरल के मुताबिक़, उनतीस साल के एक ओमानी फ़र्स्ट ऑफ़िसर ने, कॉकपिट में रखी क्रैश ऐक्स से, इंडियन कैप्टन स्मित मच्छर पर हमला किया।
 **Face:** Grave. Jaw set, no smile. Lower your voice. Take a short pause before 'crash axe' and narrow your eyes slightly on it.
-**On screen:** 737 MAX cockpit (real photo) → pilots struggling (AI still) → captain at the yoke (AI still)
+**On screen:** 737 MAX cockpit (real photo) → r attack behind (AI still)
 _Direction: Gambhir. 'Crash axe' par halka zor._
 
 **08.mp4** · Shot A · Full-screen graphic, only your voice
@@ -89,7 +89,7 @@ _Direction: Explain karne wala tone, thoda halka._
 >
 > हमले के दौरान प्लेन तेज़ी से नीचे गिरने लगा। फ़्लाइटरडार चौबीस के डेटा के मुताबिक़, प्लेन चौंतीस हज़ार फ़ीट से कुछ ही मिनटों में लगभग पंद्रह हज़ार फ़ीट तक आ गया। पैसेंजर्स के लिए ये ज़िंदगी और मौत के बीच के पल थे।
 **Face:** Voice only. Tense and slightly faster. Let 'zindagi aur maut' land with a pause before it.
-**On screen:** jet diving (AI still) → altimeter (AI still) → tilted window view (AI still)
+**On screen:** jet diving (AI video clip) → altimeter (AI still) → tilted window view (AI video clip)
 _Direction: Thodi tez aawaz, tension ke saath._
 
 ### 03 · THE DOOR
@@ -107,7 +107,7 @@ _Direction: 'Aur yahan' se pehle pause. Kahani ka mod._
 >
 > घायल होने के बावजूद, कैप्टन स्मित ने आख़िरी कोशिश की। उनके मुताबिक़, उन्होंने ख़ुद से कहा: दिस इज़ द लास्ट पुश, स्मित। डू इट, द डोर इज़ राइट देयर। और दरवाज़ा खुल गया।
 **Face:** Emotional and slow, close-up. Soft eyes. Say the English quote with quiet determination, a slight clench. Then exhale with relief on 'aur darwaaza khul gaya' and give one small nod.
-**On screen:** captain at the door handle (AI still) → plumber enters the cockpit (AI still)
+**On screen:** injured captain at the yoke (AI still) → injured captain at the door handle (AI still)
 _Direction: Emotional, dheere. English quote ko waise hi boliye._
 
 ### 04 · THE HEROES
@@ -117,7 +117,7 @@ _Direction: Emotional, dheere. English quote ko waise hi boliye._
 >
 > दरवाज़ा खुलते ही आम पैसेंजर्स अंदर घुसे। रिपोर्ट्स के मुताबिक़, इज़राइल के एक प्लंबर, यानिव हायून ने, हमलावर को चोकहोल्ड में पकड़ा, और कॉकपिट से बाहर खींच लिया।
 **Face:** Voice only. Energy rising, a sense of relief and admiration.
-**On screen:** name card → plumber runs up the aisle (AI still) → plumber pulls him back (AI still) → passengers hold him down (AI still)
+**On screen:** name card → plumber runs up the aisle (AI video clip) → plumber enters, injured captain on the floor (AI still) → plumber pulls him back (AI still)
 _Direction: Energy badhaiye._
 
 **13.mp4** · Shot A · Full-screen graphic, only your voice
@@ -125,7 +125,7 @@ _Direction: Energy badhaiye._
 >
 > एक डेंटिस्ट, डॉक्टर शोता मुसाएव ने, हमलावर को क़ाबू करने में मदद की, और फिर घायल कैप्टन का ख़ून रोकने में लग गए।
 **Face:** Voice only. Same rising energy, warm tone.
-**On screen:** name card → dentist treats the captain (AI still) → blanket close-up (AI still)
+**On screen:** name card → passengers hold him down (AI still) → dentist presses a blanket to the captain's head (AI still)
 _Direction: Same energy._
 
 **14.mp4** · Shot A · Full-screen graphic, only your voice
@@ -133,7 +133,7 @@ _Direction: Same energy._
 >
 > लेकिन प्लेन अब भी हवा में था। क़िस्मत से, फ़्लाइट पर फ़्लाईदुबई के दो ऑफ़-ड्यूटी पायलट्स भी थे, हेंसन स्टीवन और रोवन टूथ। उन्होंने कंट्रोल्स सँभाले, और प्लेन को सऊदी अरब के तबूक में सुरक्षित उतार दिया।
 **Face:** Voice only. Relief in the voice. Let a smile come through on 'surakshit utaar diya'.
-**On screen:** 3D map to Tabuk → off-duty pilots take over (AI still) → landing approach (AI still) → jet on the apron (AI still)
+**On screen:** 3D map to Tabuk → off-duty pilots take over (AI still) → landing approach (AI video clip) → jet on the apron (AI video clip)
 _Direction: Raahat wala tone, aakhri line par muskurahat._
 
 **15.mp4** · Shot B · You on screen, centred

@@ -1,8 +1,8 @@
 import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
-NAMES = {"r_struggle_1": "pilots struggling", "r_struggle_2": "captain at the yoke", "r_dive_1": "jet diving", "r_dive_window": "tilted window view",
-         "r_door_hand": "captain at the door handle", "r_door_open": "plumber enters the cockpit", "r_aisle": "plumber runs up the aisle",
-         "r_restrain": "plumber pulls him back", "r_galley_hold": "passengers hold him down", "r_aid": "dentist treats the captain",
+NAMES = {"r_struggle_1": "pilots struggling", "r_struggle_2": "injured captain at the yoke", "r_dive_1": "jet diving", "r_dive_window": "tilted window view",
+         "r_door_hand": "injured captain at the door handle", "r_door_open": "plumber enters, injured captain on the floor", "r_aisle": "plumber runs up the aisle",
+         "r_restrain": "plumber pulls him back", "r_galley_hold": "passengers hold him down", "r_aid": "dentist presses a blanket to the captain's head",
          "r_aid_close": "blanket close-up", "r_takeover": "off-duty pilots take over", "r_approach": "landing approach", "r_apron": "jet on the apron",
          "r_window_dawn": "wing in the sun", "a_globe_flights": "globe of flights", "a_axe": "crash axe", "a_altimeter": "altimeter",
          "a_door_lock": "cockpit door lock", "a_screening": "background check", "a_alps": "French Alps", "a_investigation": "investigation desk",

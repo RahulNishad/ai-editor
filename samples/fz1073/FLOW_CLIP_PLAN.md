@@ -19,29 +19,96 @@ The repo rule today is "no weapons in AI images". The UAE Attorney General says 
 - **Option A (current rule):** the first officer stands behind the captain with his arm raised; the axe is never in frame, and the clip cuts away on the swing.
 - **Option B:** the crash axe is visible in his hand, with no contact, no wound and no blood shown.
 
-## Shots to regenerate
+## Review round 1 (two independent reviewers, 7 Nov 2026): NOT READY
 
-| # | File | Scene, line | Still prompt (after the fixed description) | Motion prompt for the 8 s clip |
+Findings both reviewers agreed on, plus the one disagreement resolved by checking the image:
+- Only `closeup_b` passes. `attack_b`, `struggle_a`, `doorhand_a`, `doorhand_b` are mirrored (captain in the right seat). The model mirrors whenever the prompt names seats without saying where they appear in the frame.
+- `enter_a/b`: two pilots calmly seated while the plumber enters. Impossible at that moment.
+- `restrain_a/b`: forearm across the throat (policy risk); `restrain_b` gives the first officer four stripes.
+- Panel drawn as an older 737 with six small screens and round gauges; a 737 MAX has four large landscape displays.
+- The first officer is a different face in every shot. Fix with one reference image per character, taken from our own generated stills.
+- Every still carries the Flow sparkle watermark in the bottom-right corner; the pipeline must crop it.
+- Flow cannot "cut before contact": motion must keep the axe away from the captain for the whole clip, and avoid the words attack, hit, strike, swing, choke, drag, fight, wound, blood.
+- Clip slots are 3.6–6 s, so the key action must happen in the first 4 s.
+- Which way the 737 flight-deck door swings is not verified, so no shot shows the swing direction.
+
+## Round 2 shots (stills free; reference images attached: captain from `closeup_b`, first officer from `restrain_a`)
+
+Orientation words used in every cockpit still: "Camera looks FORWARD toward the windshield: the captain's seat is on the LEFT of the frame" or "Camera looks AFT toward the rear wall: the captain's seat appears on the RIGHT of the frame". Panel: "four large landscape-format displays in one row, no round gauges".
+
+| # | File | Plays under | Still prompt (after the fixed description) | Motion prompt (8 s) |
 | --- | --- | --- | --- | --- |
-| 1 | `r_attack_behind` | 07 attack, "hamla kiya" | Camera at the right side of the cockpit looking left and slightly back: the captain sits in the LEFT seat facing forward, hands on the yoke; the first officer has left the right seat and stands BEHIND the captain's seat, between the seats and the closed cockpit door, his arm raised (Option A: hand out of frame; Option B: holding a red-and-black crash axe). | The captain senses movement and starts to turn his head; the first officer's raised arm comes down toward him; cut before contact. Red master caution light starts flashing. Handheld, slight shake. |
-| 2 | `r_struggle_1` | Teaser, 02 hook, 07 attack | From behind and between the seats looking forward: the captain in the LEFT seat keeps his left hand on the yoke and twists right, his right arm raised to block the first officer, who stands behind and above him between the seats. Red master caution light. | The captain fends him off with one arm while holding the yoke with the other; the first officer leans in; the horizon outside tilts as the nose drops. |
-| 3 | `r_struggle_2` | 07 attack, close | Close over the captain's left shoulder in the LEFT seat: his hand grips the yoke, another man's hand grabs his right shoulder from behind; his face in profile, pained and determined; the PFD shows nose-down. | His grip tightens and he pulls back on the yoke; the hand from behind pulls at his shoulder; the caution light blinks. |
-| 4 | `r_door_hand` | 11 door, "the door is right there" | Inside the cockpit, camera low near the first officer's seat looking BACK at the rear wall: the closed reinforced door directly behind the seats; the hurt captain has half-risen from the LEFT seat and reaches back with one hand to the door's lever handle. | He turns the handle; the door unlatches and swings backward into the bright galley; light floods in. |
-| 5 | `r_door_open` | 11 door, 12 plumber | View from the forward galley looking INTO the cockpit through the open door: the two seats ahead, the windshield beyond; the stocky bald passenger in a dark grey t-shirt steps through the doorway into the cockpit. | He rushes in through the door toward the seats; the cockpit is bright with daylight. |
-| 6 | `r_restrain` | 12 plumber | Forward galley just behind the open cockpit door: the stocky bald passenger holds the first officer from behind and pulls him back out through the doorway into the galley. | He pulls him two steps back into the galley; the first officer resists, then loses balance. (Kept calm and non-violent; the first wording was blocked by Flow.) |
+| 1 | `r_attack_behind` | 07 attack, "hamla kiya" | Camera at the closed rear door between the seat backs, looking FORWARD. Captain in the LEFT seat on the left of the frame, seen from behind and the side, both hands on the yoke. Right seat EMPTY. The first officer stands in the gap behind the captain's headrest (left-centre), holding a short red-handled crash axe at chest height, well away from the captain. | The standing man steps closer behind the seat and lifts the red tool slightly; the captain begins to turn his head. The tool never moves toward him; they stay apart. Red light blinks. Slow push-in. |
+| 2 | `r_struggle_1` | Teaser; 07 attack | Same camera. Captain in the LEFT seat keeps his LEFT hand on the yoke and twists right, right forearm raised to block. The first officer leans over the captain's seat back from behind, the axe held high and back, not touching him. Right seat EMPTY. | Within 3 s the captain raises his open hand to keep him back, other hand on the yoke; the standing man leans in, the tool held away. The cockpit sways as if pitching down. Handheld. |
+| 3 | `r_struggle_2` | 11 door, opening line | `closeup_b` (passed). | The captain grips the yoke tighter and leans forward against the hand on his shoulder; the hand stays on his shoulder. Red light blinks. No camera move. |
+| 4 | `r_door_hand` | 11 door, "the door is right there" | Camera just behind the empty RIGHT seat, looking diagonally AFT and to the left. The closed grey door is in the left-centre of the frame in the rear wall. The captain has stood up out of the left seat and stands beside the door on the left of the frame, one hand pressing its lever handle, the other on his seat back, face strained. No wounds. | Within 2 s he presses the lever down with effort; the latch releases and a thin line of bright light appears at the door edge. He leans against the wall, exhausted. (The swing itself is not shown.) |
+| 5 | `r_door_open` | 12 plumber | From the forward galley looking INTO the cockpit through the open rectangular door. Both seats EMPTY. The first officer (three stripes, hands empty) stands between the seats, half-turned toward the door. The captain sits slumped on the floor at the left edge of the doorway. The stocky bald passenger in a dark grey t-shirt, seen from behind three-quarters, steps through the doorway toward the first officer. | Within 3 s the passenger steps through and reaches both hands toward the standing man's shoulders; the standing man turns to face him. Handheld, one step behind. |
+| 6 | `r_restrain` | 12 plumber, "bahar kheench liya" | From the forward galley looking toward the open cockpit door. The passenger is nearest the camera, back half to us, both arms wrapped around the first officer's CHEST from behind, pinning his upper arms; no arm near the neck. The first officer (three stripes) faces the camera in the doorway, tense, hands empty. Empty seats beyond. | Within 3 s both men step backward together out of the doorway into the galley, sway against the galley counter, then hold still. Handheld. |
+| 7 | `r_galley_hold` | 13 dentist | Overhead view of the bright galley floor: the first officer (reference face, three stripes) face-down, face turned to the floor; the bald passenger kneels holding his arms; the dentist (light blue shirt) holds his legs. No other people, no props. | Very small movements: the men shift their weight and hold him still; the dentist looks up. Static overhead camera. |
+| 8 | `r_takeover` | 14 landing, "controls sambhaale" | The same two pilots as `approach_b` (reference attached), seen from behind between the seats, camera looking FORWARD, cruise above white clouds. The right-seat pilot reaches to the overhead panel; the left-seat pilot has a hand on the yoke. | The right pilot flips two overhead switches; the left pilot settles his hand on the thrust levers. Calm, steady camera. |
 
-## Clips that look right and stay (unless Rahul says otherwise)
+Every motion prompt ends with: "No contact between the tool and anyone. No extra people appear. Camera stays where it is."
 
-| File | Clip | Why it can stay |
-| --- | --- | --- |
-| `r_aisle` | Plumber runs up the aisle | Cabin only; door at the front centre of the aisle. |
-| `r_aid` | Dentist presses blanket on captain's arm | Galley only. |
-| `r_dive_1` | Jet diving over desert | Exterior. Needs a check that it reads as a 737 MAX (split-tip winglets, two engines). |
-| `r_dive_window` | Tilted window view | Cabin window only. |
-| `r_takeover` | Off-duty pilots take the seats | Check: both are off-duty pilots, so the left and right seats are both plausible. |
-| `r_approach` | Landing approach at Tabuk | Same check as the takeover. |
-| `r_apron` | Jet on the apron | Exterior, not yet downloaded. |
+## Script timing changes from review (apply once clips are approved)
+
+| Scene | Change |
+| --- | --- |
+| 01 teaser | dive at 0.20; `r_door_hand` (no flip) at 0.35 instead of `r_door_open`; aisle 0.51; aid 0.61; approach 0.71. |
+| 07 attack | `cockpit_max` 0; `r_attack_behind` 0.38; `r_struggle_1` 0.68; drop `r_struggle_2` here. |
+| 11 door | `r_struggle_2` 0 (tag CAPTAIN); `r_door_hand` 0.55, flip removed. |
+| 12 plumber | `r_aisle` 0; `r_door_open` 0.18; `r_restrain` 0.50; `r_galley_hold` moves to 13. |
+| 13 dentist | `r_galley_hold` 0; `r_aid` 0.60; drop `r_aid_close`. |
+| 14 landing | map 0; `r_takeover` 0.33; `r_approach` 0.68; `r_apron` 0.86. |
+
+## Clips already generated that stay
+
+`r_aisle`, `r_aid`, `r_dive_1`, `r_dive_window`, `r_approach`, `r_apron` (all passed review; the apron clip is already in the project).
 
 ## Cost
 
-Six new stills: free. Six clips at 24 credits each: 144 credits. Each clip is shown to Rahul as a still first; the video is generated only after the still is approved.
+Round 2 stills: free. Video for shots 1–8: 8 × 24 = 192 credits, only after both reviewers say READY and Rahul approves.
+
+## Final decision after review rounds 2 and 3 (7 Nov 2026)
+
+Rahul's direction: mostly still images, only a few animated moments.
+
+| Moment | Used as | Source | Review |
+| --- | --- | --- | --- |
+| Attack from behind (teaser, hook, 07) | still | `flow_r2/attack_a3.jpg` (stripe fix of attack_a) | both PASS as a still |
+| Struggle | dropped | `struggle_a3` rejected: three arms, a hand on the yoke | aviation REJECT |
+| Hand on captain's shoulder (11) | still | `flow_fix/closeup_b.jpg` | both PASS |
+| Captain at the door handle (teaser, 11) | still | `flow_r2/doorhand_b.jpg`, no flip | both PASS |
+| Plumber enters (12) | still | `flow_r2/enter_b.jpg` | both PASS |
+| Restraint (12) | still | `flow_r2/restrain_b.jpg` | PASS as a still |
+| Galley hold (13) | still | `flow_r2/galley_b.jpg` | both PASS |
+| First aid (teaser, 13) | still | `flow_day/aid_a.jpg` | PASS |
+| Takeover (14) | still | `flow_r2/takeover_b.jpg` | both PASS |
+| Aisle run, dive, tilted window, approach, apron | animated (existing clips) | `assets/ai/r_*.mp4` | start frames PASS; clips checked frame by frame |
+
+Rejected clips from the first batch (struggle, yoke, door handle, door open, galley hold, takeover, first aid) stay archived in `assets/ai/flow_clips/` and are not used.
+
+Pipeline fixes from round 3: Flow sparkle and Veo marks are blurred with `delogo` in `ai_assets.py` (no crop, framing unchanged); name tags render again on stills; tag positions and source-box positions corrected.
+
+Known limits for the final cut: the panels are drawn as an older 737 layout, not the MAX's four large screens, and the crash axe is drawn hammer-like.
+
+## Round 4: injured captain after the attack (Rahul, 7 Nov 2026)
+
+Rahul asked to show the captain injured and bleeding from the back of the head in every shot after the attack. Restrained: blood on the back of the head, collar and hand, no open-wound close-ups. All are free still EDITS of already-approved images, so faces and layout stay the same.
+
+| File | Base (approved) | Edit prompt |
+| --- | --- | --- |
+| `r_struggle_2` | `flow_fix/closeup_b` | Keep everything identical. Add a realistic injury: dark red blood matted in the hair at the back of the captain's head, running down the back of his neck onto his white collar, a few drops on his shoulder board. No open wound visible. |
+| `r_door_hand` | `flow_r2/doorhand_b` | Keep everything identical. The captain is injured: blood matted in the hair at the back of his head, running down his neck and staining the back of his white collar and shirt; a smear of blood on the hand holding the lever. Pale, strained face. No open wound visible. |
+| `r_door_open` | `flow_r2/enter_b` | Keep everything identical. The captain slumped at the doorway is injured: blood in his hair at the back of his head and down his neck, his white collar and shirt shoulder stained red, one hand pressed to the back of his head with blood on the fingers. No open wound visible. |
+| `r_aid` | `flow_day/aid_a` | Keep everything identical. The captain is injured: blood stains on his white collar and the back of his neck from a head injury; the dentist presses the folded grey blanket to the back of the captain's head instead of his arm, a little blood soaking into it. No open wound visible. |
+
+### Round 4 review result (7 Nov 2026): READY after three rounds
+
+| File | Installed from | Round 1 | Fix applied | Final |
+| --- | --- | --- | --- | --- |
+| `r_struggle_2` | `flow_inj/closeup_inj2.jpg` | blood at temple, spatter | blood only behind the ear, one trickle, smear on knuckles | both PASS |
+| `r_door_hand` | `flow_inj/doorhand_inj3.jpg` | too graphic (face, temple, big collar smear) | back of head only, soft collar stain, smear on hand | both PASS |
+| `r_door_open` | `flow_inj/enter_inj3.jpg` | blood on forehead and face | face clean, neck smear, collar stain | both PASS |
+| `r_aid` | `flow_inj/aid_inj2.jpg` | blanket at temple, collar blood on wrong side | blanket behind the head, right collar, fingertips | both PASS |
+
+Not applied: the continuity reviewer asked to seat the first officer in `r_door_open`; kept standing, because he had left his seat for the attack and the plumber pulled him out from between the seats. All edits were free (Nano Banana); no paid video.

@@ -49,37 +49,38 @@
    ],
    "photos": [
     {
-     "src": "ai/r_struggle_1",
+     "src": "ai/r_attack_behind",
+     "at": 0,
      "kb": "in",
      "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     },
     {
      "src": "ai/r_dive_1",
-     "at": 0.17,
+     "at": 0.2,
      "kb": "in",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     },
     {
-     "src": "ai/r_door_open",
-     "at": 0.34,
+     "src": "ai/r_door_hand",
+     "at": 0.35,
      "kb": "in",
      "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     },
     {
      "src": "ai/r_aisle",
-     "at": 0.5,
+     "at": 0.51,
      "kb": "in",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
     },
     {
      "src": "ai/r_aid",
-     "at": 0.66,
+     "at": 0.61,
      "kb": "out",
      "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     },
     {
      "src": "ai/r_approach",
-     "at": 0.82,
+     "at": 0.71,
      "kb": "in",
      "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     }
@@ -111,7 +112,7 @@
      "label": "REPRESENTATIVE IMAGE · BOEING 737 MAX FLIGHT DECK"
     },
     {
-     "src": "ai/r_struggle_1",
+     "src": "ai/r_attack_behind",
      "at": 0.6,
      "kb": "in",
      "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
@@ -268,14 +269,8 @@
      "label": "REPRESENTATIVE IMAGE · BOEING 737 MAX FLIGHT DECK"
     },
     {
-     "src": "ai/r_struggle_1",
-     "at": 0.45,
-     "kb": "out",
-     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
-    },
-    {
-     "src": "ai/r_struggle_2",
-     "at": 0.75,
+     "src": "ai/r_attack_behind",
+     "at": 0.38,
      "kb": "in",
      "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     }
@@ -300,7 +295,8 @@
       "date": "9 OCT 2026",
       "text": "UAE Attorney General: the first officer attacked the captain with the cockpit's crash axe. Accounts of the weapon vary.",
       "hl": "attacked the captain",
-      "kind": "OFFICIAL CLAIM · PARAPHRASED"
+      "kind": "OFFICIAL CLAIM · PARAPHRASED",
+      "top": 620
      }
     ]
    }
@@ -434,22 +430,26 @@
    },
    "photos": [
     {
-     "src": "ai/r_door_hand",
+     "src": "ai/r_struggle_2",
      "at": 0,
      "kb": "in",
      "label": "AI RECONSTRUCTION · NOT THE REAL PERSON",
      "tag": {
       "text": "CAPTAIN",
-      "x": 0.5,
-      "y": 0.3
-     },
-     "flip": true
+      "x": 0.55,
+      "y": 0.12
+     }
     },
     {
-     "src": "ai/r_door_open",
-     "at": 0.62,
+     "src": "ai/r_door_hand",
+     "at": 0.5,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON",
+     "tag": {
+      "text": "CAPTAIN",
+      "x": 0.5,
+      "y": 0.12
+     }
     }
    ],
    "fallback_look": "cockpit_door"
@@ -478,7 +478,8 @@
       "date": "1 OCT 2026",
       "text": "A passenger, a plumber from Israel, put the attacker in a chokehold and pulled him out of the cockpit.",
       "hl": "chokehold",
-      "kind": "REPORT · PARAPHRASED"
+      "kind": "REPORT · PARAPHRASED",
+      "side": "left"
      }
     ]
    },
@@ -489,29 +490,29 @@
      "src": "ai/r_aisle",
      "at": 0,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
+     "src": "ai/r_door_open",
+     "at": 0.18,
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON",
      "tag": {
       "text": "PLUMBER · PASSENGER",
-      "x": 0.52,
-      "y": 0.17
+      "x": 0.86,
+      "y": 0.3
      }
     },
     {
      "src": "ai/r_restrain",
-     "at": 0.38,
+     "at": 0.5,
      "kb": "left",
      "label": "AI RECONSTRUCTION · NOT THE REAL PERSON",
      "tag": {
       "text": "PLUMBER",
-      "x": 0.58,
-      "y": 0.19
+      "x": 0.86,
+      "y": 0.31
      }
-    },
-    {
-     "src": "ai/r_galley_hold",
-     "at": 0.72,
-     "kb": "out",
-     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     }
    ],
    "text_dev": "दरवाज़ा खुलते ही आम पैसेंजर्स अंदर घुसे। रिपोर्ट्स के मुताबिक़, इज़राइल के एक प्लंबर, यानिव हायून ने, हमलावर को चोकहोल्ड में पकड़ा, और कॉकपिट से बाहर खींच लिया।",
@@ -548,7 +549,8 @@
       "date": "1 OCT 2026",
       "text": "A dentist on board helped restrain the attacker, then treated the wounded captain.",
       "hl": "treated the wounded captain",
-      "kind": "REPORT · PARAPHRASED"
+      "kind": "REPORT · PARAPHRASED",
+      "side": "left"
      }
     ]
    },
@@ -556,21 +558,21 @@
    "photo_style": "full",
    "photos": [
     {
-     "src": "ai/r_aid",
+     "src": "ai/r_galley_hold",
      "at": 0,
      "kb": "in",
      "label": "AI RECONSTRUCTION · NOT THE REAL PERSON",
      "tag": {
       "text": "DENTIST · PASSENGER",
-      "x": 0.58,
-      "y": 0.12
+      "x": 0.77,
+      "y": 0.22
      }
     },
     {
-     "src": "ai/r_aid_close",
-     "at": 0.55,
+     "src": "ai/r_aid",
+     "at": 0.6,
      "kb": "out",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     }
    ],
    "text_dev": "एक डेंटिस्ट, डॉक्टर शोता मुसाएव ने, हमलावर को क़ाबू करने में मदद की, और फिर घायल कैप्टन का ख़ून रोकने में लग गए।",
@@ -596,24 +598,24 @@
    "photo_style": "full",
    "photos": [
     {
+     "src": null,
+     "at": 0
+    },
+    {
      "src": "ai/r_takeover",
-     "at": 0,
+     "at": 0.33,
      "kb": "in",
      "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     },
     {
      "src": "ai/r_approach",
-     "at": 0.22,
+     "at": 0.68,
      "kb": "in",
      "label": "AI RECONSTRUCTION · NOT THE REAL PERSON"
     },
     {
-     "src": null,
-     "at": 0.42
-    },
-    {
      "src": "ai/r_apron",
-     "at": 0.76,
+     "at": 0.86,
      "kb": "out",
      "label": "AI RECONSTRUCTION · ILLUSTRATIVE · AFTER LANDING AT TABUK"
     }
