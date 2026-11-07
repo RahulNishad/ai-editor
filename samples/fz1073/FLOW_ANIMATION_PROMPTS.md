@@ -5,7 +5,7 @@ Short 5–8 second motion clips made from the stills we already have. Each clip 
 ## How to make each clip in Flow
 
 1. Open the Flow project, pick **Frames to Video** (image-to-video), 16:9, 8 s.
-2. Use the **start frame** listed for each clip. "Flow #n" is the Flow gallery order from the top (0 = newest). "Repo" means `assets/ai/<file>.jpg` (same picture as the ChatGPT zip).
+2. Use the **start frame** listed for each clip. The 13 picked Flow stills are saved at full size in `assets/ai/flow/<file>.jpg`, so you can upload those instead of searching the gallery. "Flow #n" is the Flow gallery order from the top (0 = newest). "Repo" means `assets/ai/<file>.jpg` (same picture as the ChatGPT zip).
 3. Paste the prompt, then add the **motion suffix** below.
 4. Generate 2 variations, keep the one where hands and faces stay hidden and nothing warps. Download, rename exactly as listed, `.mp4`.
 
