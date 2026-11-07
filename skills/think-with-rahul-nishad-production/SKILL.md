@@ -132,6 +132,32 @@ Review every AI image before use (faces, hands, logos, text) and fall back to a 
 
 **Previews.** Before he records, render a preview with a Piper `hi_IN-rohan-medium` scratch voice (reads Devanagari only) and "YOUR CLIP nn" placeholders so he can approve visuals and pacing.
 
+## Four-step production flow (his plan, Nov 2026)
+1. **Script.** Research, then write `script.long.json`: every scene with its line, layout, visuals, clock and source cards, and face notes.
+2. **Direction video.** Before he records, Claude renders the whole video as he will see it: every visual, map, card, clock and reconstruction, the music, a scratch voice reading his lines, and a labelled box ("YOUR CLIP 07 · Shot B · centred") wherever he appears. This is his brief. He watches it and records to it.
+3. **His clips.** One clip per scene, named by scene number, recorded to match the direction video.
+4. **Final.** The pipeline drops his clips in, re-times every visual to his real delivery, mixes and exports, and `report.md` flags any clip that does not fit its scene.
+
+## Presenter-led investigation format (reference he chose, Nov 2026)
+He pointed to a 27-minute Hindi investigation of FZ1073 by another creator as the format he wants. Take the structure and rhythm only. Never copy that creator's set, graphics, lines or branding.
+- **Cold open, 30–60 s.** Five to seven of the strongest later beats, 2–3 s each, under a small "COMING UP" tag, cut between his hook lines. For this format the teaser is the default.
+- **Rhythm.** He is on screen about 40 percent of the runtime and comes back every 20–40 s. Between his shots, a new full-screen visual every 4–8 s. Never two text cards in a row without an image.
+- **Source clippings.** Each claim gets a torn-paper or browser-style clipping laid over the scene image: "SOURCE: domain" on top, one key sentence highlighted, held 3–4 s. Paraphrase or quote a few words, and mark it "AS REPORTED".
+- **Clock cards.** The incident section is a minute-by-minute chronology. Each beat gets a large time stamp with the date, such as "30 SEP 2026 · 09:21". Take times only from sources, and mark local or UTC.
+- **Mock screens built in code.** Crew roster, background-check portal, social-post pop-up, transponder panel showing 7700 then 7500, radar or ADS-B readout. Use generic interfaces with no real logos, labelled ILLUSTRATION.
+- **Maps.** Dark textured base, the country lit in red, an animated route line, and a pin on every place he names.
+- **Name tags and speech bubbles.** A bold label on a figure ("PLUMBER · ROW 11") and a speech bubble for an attributed quote from a passenger interview.
+- **Colour language.** A neutral grade for facts, a red duotone for the attacker's backstory and the threat, and black-and-white with one red accent for the violent moment.
+- **Presenter look.** One fixed, warm, low-key set with a practical lamp and a textured wall. Alternate medium and close shots, and he talks to the lens.
+- **Sponsor.** A mid-roll slot only if he has a sponsor, clearly separated from the story.
+
+What this channel does differently from that reference, and keeps doing:
+- No faces of the real people in AI images. Show them from behind, in silhouette or as hands. Name tags go on those figures.
+- No blood, wounds or weapons. Tension comes from light, framing, clocks and sound.
+- The accused is named only by age and nationality, from the official statement.
+- Every AI image is labelled "AI RECONSTRUCTION" or "AI ILLUSTRATION".
+- Every detail is checked against an opened source. The reference states some reconstruction details and backstory as fact that need attribution, such as who pulled which control and the full biography of the accused.
+
 ## Tone rules
 - Conversational, investigative, never robotic or "AI-sounding". Short spoken sentences.
 - No sensationalism beyond what the facts support; frame hypotheticals as "agar…".
