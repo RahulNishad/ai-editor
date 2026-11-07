@@ -15,3 +15,5 @@ samples/fz1073/assets/ai/*/
 samples/fz1073/assets/ai/*.mp4
 samples/fz1073/assets/ai/*.ok
 .venv/
+samples/fz1073/frames_direction/
+samples/fz1073/timeline.direction.json

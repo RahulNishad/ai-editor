@@ -98,6 +98,39 @@ body.modeL #credit{max-width:1040px}
 .gcard.lower{position:absolute;left:72px;bottom:150px;max-width:880px;padding:30px 38px;background:rgba(14,17,21,.86)}
 .gcard.lower .name{font-size:66px}.gcard.lower .what{font-size:26px}.gcard.lower .icon{display:none}
 body.modeL .gcard.lower{max-width:760px}
+
+/* presenter-led format: teaser tag, clock cards, source clippings, name tags, mock screens, direction slots */
+#comingup{position:absolute;top:56px;left:72px;font:600 22px/1 Inter;letter-spacing:.28em;background:var(--red);color:#fff;padding:10px 14px}
+#clock{position:absolute;left:72px;top:118px;opacity:0}
+#clock .d{font:600 22px/1 Inter;letter-spacing:.3em;color:#c9ced5}
+#clock .t{font:400 150px/1 Anton;font-variant-numeric:tabular-nums;margin-top:8px;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+#clock .t small{font:400 46px/1 Anton;color:var(--red);margin-left:14px;letter-spacing:.04em}
+#clock .n{font:600 22px/1.3 Inter;letter-spacing:.14em;color:#fff;background:rgba(0,0,0,.55);border-left:4px solid var(--red);padding:9px 12px;margin-top:12px;display:inline-block;max-width:620px}
+.clip{position:absolute;width:640px;background:#ece6d8;color:#1b1b1b;padding:30px 36px 26px;transform:rotate(-1.6deg);box-shadow:0 26px 60px rgba(0,0,0,.6);
+  clip-path:polygon(0 3%,4% 0,9% 2%,15% 0,22% 2.5%,30% .5%,38% 2%,47% 0,55% 2.2%,63% .4%,71% 2%,80% 0,88% 2.4%,95% .3%,100% 2.5%,100% 97%,96% 100%,89% 98%,81% 100%,73% 97.6%,64% 100%,56% 98%,47% 100%,39% 97.8%,30% 100%,21% 98%,12% 100%,5% 97.5%,0 100%)}
+.clip .h{font:800 17px/1 Inter;letter-spacing:.2em;color:#b4231f}
+.clip .x{font:400 31px/1.42 Georgia,'Times New Roman',serif;margin-top:16px}
+.clip .x mark{background:linear-gradient(transparent 12%,#ffe14d 12%,#ffe14d 88%,transparent 88%);color:#111;padding:0 2px}
+.clip .f{font:600 13px/1 Inter;letter-spacing:.2em;color:#6b6457;margin-top:18px}
+.ntag{position:absolute;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.ntag b{font:400 34px/1 Anton;letter-spacing:.04em;background:#fff;color:#0b0d10;padding:9px 14px 7px;border-bottom:5px solid var(--red);white-space:nowrap}
+.ntag i{width:2px;height:60px;background:#fff}
+.mock{width:1180px;background:#10141a;border:1px solid #2a313a;box-shadow:0 40px 90px rgba(0,0,0,.7);font-family:Inter}
+.mock .bar{height:46px;background:#1a2028;display:flex;align-items:center;gap:10px;padding:0 18px}
+.mock .bar span{width:13px;height:13px;border-radius:50%;background:#3a424d}
+.mock .bar em{font:600 17px/1 Inter;letter-spacing:.18em;color:#8b939d;font-style:normal;margin-left:14px}
+.mock .hd{display:flex;gap:28px;align-items:center;padding:30px 40px;border-bottom:1px solid #232a33}
+.mock .av{width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 50% 38%,#3b434e 0 26%,transparent 27%),radial-gradient(ellipse at 50% 100%,#3b434e 0 48%,transparent 49%),#232a33}
+.mock .who{font:400 46px/1.05 Anton}.mock .sub{font:600 18px/1 Inter;letter-spacing:.18em;color:#8b939d;margin-top:10px}
+.mock .row{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid #1e242c;font:400 30px/1 Inter;color:#d6dae0}
+.mock .ok{font:800 20px/1 Inter;letter-spacing:.18em;color:#0b0d10;background:#36e07a;padding:9px 14px}
+.mock .ft{padding:18px 40px;font:600 16px/1.4 Inter;letter-spacing:.14em;color:#e0312e}
+#slot{position:absolute;box-sizing:border-box;border:3px dashed rgba(255,255,255,.55);background:rgba(10,12,16,.62);display:none;flex-direction:column;justify-content:center;padding:40px;gap:16px}
+#slot .k{font:600 20px/1 Inter;letter-spacing:.3em;color:var(--red)}
+#slot .c{font:400 92px/1 Anton}
+#slot .s{font:600 22px/1.3 Inter;letter-spacing:.14em;color:#fff}
+#slot .e{font:400 24px/1.4 Inter;color:#c9ced5}
+#vchip{position:absolute;right:72px;top:112px;font:600 18px/1 Inter;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);border:2px dashed rgba(255,255,255,.5);padding:10px 14px;display:none}
 </style>
 <script src="/node_modules/topojson-client/dist/topojson-client.min.js"></script>
 <script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js"}}</script>
@@ -173,6 +206,11 @@ body.modeL .gcard.lower{max-width:760px}
 </div>
 
 <div id="lowgrad" style="position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,0));opacity:0"></div><div id="ov_gen" class="layer hide"></div><div id="phrase"></div>
+<div id="tags" class="layer"></div><div id="clipbox" class="layer"></div>
+<div id="clock"><div class="d" id="ck_d"></div><div class="t" id="ck_t"></div><div class="n" id="ck_n"></div></div>
+<div id="slot"><div class="k">DIRECTION VIDEO</div><div class="c" id="sl_c"></div><div class="s" id="sl_s"></div><div class="e" id="sl_e"></div></div>
+<div id="vchip"></div>
+<div id="comingup" class="hide">COMING UP</div>
 <div id="chapter" class="hide"><div class="bar"></div><div id="chtext"></div></div>
 <div id="illus" class="hide">ILLUSTRATION · RECONSTRUCTION</div>
 <div id="source"></div><div id="credit"></div>
@@ -403,16 +441,17 @@ for(const id of ['h1','h2','h3'])$(id).dataset.base='translate(-50%,-50%)';
 /* ---------------- photo layer ---------------- */
 const PIMG={};function pimg(k){return k.startsWith('ai/')?'/assets/'+k+'.jpg':'/assets/photos/'+k+'.jpg';}
 let pState={a:null,b:null};
-function kb(el,kind,u){u=clamp(u);const e=easeIO(u);let sc=1.06,tx=0,ty=0;
+function kb(el,kind,u){const fl=el.dataset.flip==='1'?'scaleX(-1) ':'';kb0(el,kind,u);el.style.transform=fl+el.style.transform;}
+function kb0(el,kind,u){u=clamp(u);const e=easeIO(u);let sc=1.06,tx=0,ty=0;
   if(kind==='vid'){el.style.transform=`scale(${lerp(1.0,1.04,e)})`;return;}
   if(kind==='out')sc=lerp(1.18,1.05,e);else if(kind==='left'){sc=1.14;tx=lerp(2.5,-2.5,e);}else if(kind==='right'){sc=1.14;tx=lerp(-2.5,2.5,e);}else if(kind==='up'){sc=1.14;ty=lerp(2,-2,e);}else sc=lerp(1.04,1.17,e);
   el.style.transform=`scale(${sc}) translate(${tx}%,${ty}%)`;}
 function photoLayer(sc,lt,d,mode){const P=sc.photos||[];const box=$('photo');
   if(!P.length){box.style.display='none';$('credit').innerHTML='';document.body.classList.remove('hasCredit');return false;}
   const u=lt/d;let i=-1;P.forEach((p,k)=>{if(u>=(p.at||0))i=k;});
-  if(i<0||!P[i].src){box.style.display='none';$('credit').innerHTML='';document.body.classList.remove('hasCredit');return false;}
+  if(i<0||!P[i].src){box.style.display='none';$('credit').innerHTML='';$('tags').innerHTML='';document.body.classList.remove('hasCredit');return false;}
   box.style.display='block';const cur=P[i],start=(cur.at||0)*d,end=i+1<P.length?P[i+1].at*d:d;
-  const A=$('pa'),B=$('pb');
+  const A=$('pa'),B=$('pb');if(A.dataset.k!==cur.src&&!cur.video){B.dataset.st=A.dataset.st||'';B.dataset.flip=A.dataset.flip||'';}
   const vsrc=cur.video?`/assets/${cur.src}/${String(Math.min(cur.video,Math.floor((lt-start)*30)+1)).padStart(5,'0')}.jpg`:null;
   if(vsrc){if(A.dataset.k!==cur.src){if(A.dataset.k){B.src=A.src;B.dataset.k=A.dataset.k;B.dataset.kb=A.dataset.kb;B.dataset.s=A.dataset.s;B.dataset.e=A.dataset.e;}A.dataset.k=cur.src;A.dataset.kb='vid';A.dataset.s=start;A.dataset.e=end;}A.src=vsrc;}
   else if(A.dataset.k!==cur.src){if(A.dataset.k){B.src=A.src;B.dataset.k=A.dataset.k;B.dataset.kb=A.dataset.kb;B.dataset.s=A.dataset.s;B.dataset.e=A.dataset.e;}A.src=pimg(cur.src);A.dataset.k=cur.src;A.dataset.kb=cur.kb||'in';A.dataset.s=start;A.dataset.e=end;}
@@ -421,14 +460,20 @@ function photoLayer(sc,lt,d,mode){const P=sc.photos||[];const box=$('photo');
   const prevNull=i>0&&!P[i-1].src;box.style.background=prevNull?'transparent':'#000';
   B.style.opacity=!prevNull&&fa<1&&B.dataset.k&&i>0?1:0;if(B.dataset.k)kb(B,B.dataset.kb,(lt-parseFloat(B.dataset.s))/Math.max(parseFloat(B.dataset.e)-parseFloat(B.dataset.s),.1));
   const style=mode==='C'?'blur':(sc.photo_style||'full');
-  const f={full:'brightness(.86) contrast(1.05) saturate(.92)',dim:'brightness(.42) saturate(.8)',blur:'blur(14px) brightness(.5) saturate(.85)'}[style];
+  const FIL={full:'brightness(.86) contrast(1.05) saturate(.92)',dim:'brightness(.42) saturate(.8)',blur:'blur(14px) brightness(.5) saturate(.85)',
+    threat:'grayscale(1) sepia(1) hue-rotate(-40deg) saturate(3.2) brightness(.55) contrast(1.15)',bw:'grayscale(1) contrast(1.2) brightness(.78)'};
+  const f=FIL[style];
   let ff=f;if(sc.dim_at!=null&&style==='full'){const k=ease((lt-sc.dim_at*d)/.7);ff=`brightness(${lerp(.86,.36,k)}) contrast(1.05) saturate(${lerp(.92,.7,k)})`;}
-  A.style.filter=B.style.filter=ff;$('pgrad').style.opacity=style==='full'?1:.4;
+  A.dataset.st=cur.style||'';A.dataset.flip=cur.flip?'1':'';
+  const per=el=>style==='blur'?FIL.blur+(el.dataset.st==='threat'?' sepia(1) hue-rotate(-40deg) saturate(2.5)':el.dataset.st==='bw'?' grayscale(1)':''):(el.dataset.st&&FIL[el.dataset.st])||ff;
+  A.style.filter=per(A);B.style.filter=per(B);$('pgrad').style.opacity=style==='full'?1:.4;
+  // name tags on figures (AI figures shown from behind; never on real faces)
+  const tg=cur.tag&&style!=='blur'?cur.tag:null;$('tags').innerHTML=tg?`<div class="ntag" style="left:${tg.x*W}px;top:${tg.y*H}px;opacity:${win(lt,start+.5,end-.1,.35,.25)}"><b>${tg.text}</b><i></i></div>`:'';
   const al=sc.alarm!=null&&u>=sc.alarm?((Math.floor(lt*3)%2)?.55:1):0;$('alarm').style.opacity=al;
   const c=CREDITS[cur.src];
-  if(c&&c.ai&&style!=='blur'){$('credit').innerHTML=`<div class="ptag">${cur.label||'AI RECONSTRUCTION'}</div><br>AI-GENERATED ILLUSTRATION · NOT ACTUAL FOOTAGE OF THE INCIDENT`;document.body.classList.add('hasCredit');}
+  if(((c&&c.ai)||cur.src.startsWith('ai/'))&&style!=='blur'){$('credit').innerHTML=`<div class="ptag">${cur.label||'AI RECONSTRUCTION'}</div><br>AI-GENERATED ILLUSTRATION · NOT ACTUAL FOOTAGE OF THE INCIDENT`;document.body.classList.add('hasCredit');}
   else if(c&&style!=='blur'){const by=c.artist.replace(/\s+/g,' ').slice(0,60);$('credit').innerHTML=`${cur.label?`<div class="ptag">${cur.label}</div><br>`:''}PHOTO: ${by} · WIKIMEDIA COMMONS · ${c.license}`;document.body.classList.add('hasCredit');}
-  else{$('credit').innerHTML=cur.label&&style!=='blur'?`<div class="ptag">${cur.label}</div>`:'';document.body.classList.remove('hasCredit');}
+  else{const lb=cur.label&&style!=='blur';$('credit').innerHTML=lb?`<div class="ptag">${cur.label}</div>`:'';document.body.classList.toggle('hasCredit',!!lb);}
   return true;}
 
 /* ---------------- generic data-driven templates ---------------- */
@@ -445,12 +490,20 @@ function genHTML(sc){const p=sc.params||{};
   if(sc.look==='stat')return `<div style="text-align:${document.body.classList.contains('modeL')?'left':'center'}"><div class="gkick" data-in="0.02">${p.kicker}</div><div class="gbig" data-in="0.08">${p.big}</div><div class="gsub" data-in="0.3" style="margin-left:auto;margin-right:auto">${p.sub}</div><div class="gsrc" data-in="0.3">${p.src||''}</div></div>`;
   if(sc.look==='split'){const col=(c,r,at)=>`<div class="col ${r?'r':''}" data-in="${at}">${c.img?`<img src="${pimg(c.img)}">`:''}<div class="head">${c.head}</div>${c.lines.map(l=>`<div class="ln">${l}</div>`).join('')}<div class="gsrc">${c.src||''}</div></div>`;
     return `<div class="gtitle" data-in="0.02">${p.title}</div><div class="split">${col(p.left,0,0.1)}<div class="vs" data-in="0.45">${p.vs||'VS'}</div>${col(p.right,1,0.5)}</div>`;}
+  if(sc.look==='screen_split'){const m=p.screen;
+    return `<div class="gscreen" data-show="0,${p.switch}"><div class="mock" data-in="0.02"><div class="bar"><span></span><span></span><span></span><em>${m.app}</em></div>
+      <div class="hd"><div class="av"></div><div><div class="who">${m.who}</div><div class="sub">${m.sub}</div></div></div>
+      ${m.rows.map((r,i)=>`<div class="row" data-in="${(0.08+i*0.07).toFixed(2)}"><span>${r[0]}</span><span class="ok">${r[1]}</span></div>`).join('')}
+      <div class="ft" data-in="${(0.1+m.rows.length*0.07).toFixed(2)}">${m.foot}</div></div></div>
+      <div class="gsplit" data-show="${p.switch},2" style="width:100%;display:flex;flex-direction:column;align-items:center">${genHTML({look:'split',params:p})}</div>`;}
   if(sc.look==='list')return `<div class="gtitle" data-in="0.02">${p.title}</div><div class="glist">${p.items.map((it,i)=>`<div class="gitem" data-in="${[0.28,0.5,0.75][i]??0.3}"><div class="num">${i+1}</div><div><div class="h">${it.head}</div><div class="t">${it.text}</div><div class="gsrc">${it.src||''}</div></div></div>`).join('')}</div>`;
   return '';}
 let genFor=null;
 function lookGeneric(lt,d,f,sc){lookBg(lt,d,f);showOnly(['ov_gen']);const g=$('ov_gen');
   if(genFor!==sc.id){g.innerHTML=genHTML(sc);genFor=sc.id;}
-  g.querySelectorAll('[data-in]').forEach(el=>{const t=(lt-d*parseFloat(el.dataset.in))/.45;el.style.opacity=ease(t);el.style.transform=`translateY(${(1-ease(t))*26}px)`;});}
+  g.querySelectorAll('[data-show]').forEach(el=>{const [a,b]=el.dataset.show.split(',').map(Number);el.style.display=lt>=a*d&&lt<b*d?'':'none';el.dataset.off=a;});
+  g.querySelectorAll('[data-in]').forEach(el=>{const host=el.closest('[data-show]');const off=host?parseFloat(host.dataset.off):0;
+    const t=(lt-d*(parseFloat(el.dataset.in)+off))/.45;el.style.opacity=ease(t);el.style.transform=`translateY(${(1-ease(t))*26}px)`;});}
 
 /* ---------------- look renderers ---------------- */
 function lookPlaneCruise(lt,d,f){
@@ -570,7 +623,7 @@ function lookPhoto(lt,d,f,sc){const ovl=sc.params&&sc.params.overlay;showOnly(ov
   if(sc.params&&sc.params.overlay==='title'){const t0=(sc.dim_at||0)*d;fadeIn($('t_kick'),(lt-t0-.3)/.6);fadeIn($('t_big'),(lt-t0-.7)/.6,40);fadeIn($('t_sub'),(lt-t0-.7-(d-t0)*.35)/.6);$('ov_title').style.opacity=1-ease((lt-(d-.6))/.5);}}
 const LOOKS={
   bg:(lt,d,f)=>{lookBg(lt,d,f);showOnly([]);}, plane_bg:lookPlaneBg, photo:lookPhoto,
-  card:lookGeneric, stat:lookGeneric, split:lookGeneric, list:lookGeneric,
+  card:lookGeneric, stat:lookGeneric, split:lookGeneric, list:lookGeneric, screen_split:lookGeneric,
   cockpit:(lt,d,f)=>lookCockpit(lt,d,f,'hook'),
   cockpit_alarm:(lt,d,f)=>lookCockpit(lt,d,f,'alarm'),
   cockpit_door:(lt,d,f)=>lookCockpit(lt,d,f,'door'),
@@ -582,6 +635,37 @@ const LOOKS={
   heroes:lookHeroes, probe:lookProbe, question:lookQuestion, end:lookEnd,
 };
 const ILLUS=new Set(['cockpit','cockpit_alarm','cockpit_door','plane_cruise','plane_dive']);const illusFor=sc=>ILLUS.has(sc.look)&&!(sc.photos&&sc.photos.length&&(sc.photos[0].at||0)===0);
+
+/* presenter-led extras; returns how visible a source clipping is (0..1) so captions can yield */
+let clipFor=null;
+function extras(sc,lt,d,mode,i){const p=sc.params||{};
+  // COMING UP tag on the teaser
+  $('comingup').classList.toggle('hide',!p.coming_up);if(p.coming_up){$('chapter').classList.add('hide');$('comingup').style.opacity=ease(lt/.4);}
+  // clock card: big time stamp for the minute-by-minute chronology
+  const ck=p.clock,cel=$('clock');
+  if(ck){if(cel.dataset.k!==sc.id){$('ck_d').textContent=ck.date;$('ck_t').innerHTML=`${ck.time}<small>${ck.zone||''}</small>`;$('ck_n').textContent=ck.note||'';$('ck_n').style.display=ck.note?'':'none';cel.dataset.k=sc.id;}
+    const a=(ck.at||0)*d,b=(ck.until??.45)*d;cel.style.opacity=win(lt,a,b,.3,.35);cel.style.transform=`translateY(${(1-ease((lt-a)/.35))*20}px)`;
+    cel.style.top=sc.chapter?'118px':'72px';}
+  else cel.style.opacity=0;
+  // source clippings
+  const cb=$('clipbox');let vis=0;
+  if(p.clips&&p.clips.length){
+    if(clipFor!==sc.id){cb.innerHTML=p.clips.map((c,k)=>{const x=c.hl?c.text.replace(c.hl,`<mark>${c.hl}</mark>`):c.text;
+      return `<div class="clip" id="clip${k}"><div class="h">SOURCE: ${c.src}${c.date?' · '+c.date:''}</div><div class="x">${x}</div><div class="f">${c.kind||'REPORT · PARAPHRASED'}</div></div>`;}).join('');clipFor=sc.id;}
+    p.clips.forEach((c,k)=>{const el=$('clip'+k);const a=c.at*d,b=a+(c.dur||3.6);const o=win(lt,a,b,.3,.3);vis=Math.max(vis,o);
+      const left=mode==='F'?(c.side==='left'?140:1140):120;el.style.left=left+'px';el.style.top=(c.top||250)+'px';
+      el.style.opacity=o;el.style.transform=`rotate(${c.rot??-1.6}deg) translateY(${(1-ease((lt-a)/.35))*40}px) scale(${lerp(1.04,1,ease((lt-a)/.5))})`;});}
+  else{cb.innerHTML='';clipFor=null;}
+  $('tags').style.opacity=1-vis;
+  // direction video: where Rahul appears, which clip, how to deliver it
+  const sl=$('slot'),vc=$('vchip');
+  if(TL.preview&&(mode==='C'||mode==='L')){sl.style.display='flex';
+    const [x,y,w,h]=mode==='L'?[1268,42,568,996]:[656,0,608,1080];Object.assign(sl.style,{left:x+'px',top:y+'px',width:w+'px',height:h+'px'});
+    $('sl_c').textContent=`YOUR CLIP ${String(sc.n).padStart(2,'0')}`;$('sl_s').textContent=`SHOT ${sc.shot||'A'} · ${sc.shot==='B'?'CLOSE-UP':'MEDIUM'} · ${mode==='L'?'RIGHT CARD':'CENTRED'}`;
+    $('sl_e').textContent=sc.expression||'';sl.style.opacity=ease(lt/.3)*(1-ease((lt-(d-.25))/.25));}
+  else sl.style.display='none';
+  if(TL.preview&&mode==='F'){vc.style.display='block';vc.textContent=`CLIP ${String(sc.n).padStart(2,'0')} · VOICE ONLY`;}else vc.style.display='none';
+  return vis;}
 
 window.renderFrame=function(f){
   const t=f/FPS;
@@ -595,9 +679,10 @@ window.renderFrame=function(f){
   const ch=$('chapter');ch.classList.toggle('hide',!sc.chapter);if(sc.chapter){$('chtext').textContent=sc.chapter;ch.style.opacity=ease(lt/.5);}
   $('illus').classList.toggle('hide',!illusFor(sc));
   const src=$('source');src.textContent=sc.source||'';src.style.opacity=sc.source?ease((lt-.5)/.5):0;
-  // phrase
+  const busy=extras(sc,lt,d,mode,i);
+  // phrase (one thing on screen at a time: yields to a clipping)
   const ph=$('phrase');let html='',o=0;for(const p of sc.phrases||[]){const a=p.t*d,b=a+2.6;if(lt>=a-.05&&lt<b){html=p.text;o=win(lt,a,b,.25,.3);}}
-  ph.innerHTML=html;ph.style.opacity=o;$('lowgrad').style.opacity=o;ph.style.transform=`translateY(${(1-ease(o))*16}px)`;
+  o*=1-busy;ph.innerHTML=html;ph.style.opacity=o;$('lowgrad').style.opacity=o;ph.style.transform=`translateY(${(1-ease(o))*16}px)`;
   // transitions: dip at boundaries, light leak at chapter starts
   const toEnd=d-lt;let dip=0;if(lt<.22)dip=1-ease(lt/.22);if(toEnd<.18)dip=Math.max(dip,ease(1-toEnd/.18));
   if(i===0&&lt<.6)dip=1-ease(lt/.6);

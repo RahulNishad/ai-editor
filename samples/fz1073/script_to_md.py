@@ -22,6 +22,6 @@ for s in d["scenes"]:
     L.append(f"**Face:** {s['expression']}" if s.get("expression") else "")
     L.append(f"_Direction: {s['direction']}_")
     L.append("")
-L += ["---", "Sign-off is scene 23. Sources for every on-screen fact are in `README.md`."]
+L += ["---", "Sign-off is the last scene. Sources for every on-screen fact are in `README.md`."]
 open(out, "w").write("\n".join(L) + "\n")
 print(words, "words,", round(mins, 1), "min")

@@ -12,6 +12,82 @@
  "scenes": [
   {
    "n": 1,
+   "id": "teaser",
+   "layout": "F",
+   "look": "photo",
+   "chapter": "",
+   "shot": "A",
+   "photo_style": "full",
+   "params": {
+    "coming_up": true
+   },
+   "direction": "Trailer jaisa tone. Chhoti, tez lines, har line ke baad ek beat.",
+   "expression": "Voice only. Fast and gripping, like a trailer. A short beat after every line.",
+   "text": "34,000 feet par, cockpit ke andar hamla. Plane tezi se neeche girne laga. Ek ghayal captain ne darwaaza khola. Ek plumber aur ek dentist aage aaye. Aur do pilots ne plane ko zameen par utaara. Yeh hai flight FZ1073 ki poori kahani.",
+   "text_dev": "चौंतीस हज़ार फ़ीट पर, कॉकपिट के अंदर हमला। प्लेन तेज़ी से नीचे गिरने लगा। एक घायल कैप्टन ने दरवाज़ा खोला। एक प्लंबर और एक डेंटिस्ट आगे आए। और दो पायलट्स ने प्लेन को ज़मीन पर उतारा। ये है फ़्लाइट एफ़ ज़ेड वन ज़ीरो सेवन थ्री की पूरी कहानी।",
+   "phrases": [
+    {
+     "t": 0.03,
+     "text": "COCKPIT MEIN <b>HAMLA</b>"
+    },
+    {
+     "t": 0.19,
+     "text": "<b>NOSE</b>-DIVE"
+    },
+    {
+     "t": 0.36,
+     "text": "DARWAAZA <b>KHULA</b>"
+    },
+    {
+     "t": 0.52,
+     "text": "EK <b>PLUMBER</b>"
+    },
+    {
+     "t": 0.68,
+     "text": "EK <b>DENTIST</b>"
+    }
+   ],
+   "photos": [
+    {
+     "src": "ai/r_struggle_1",
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
+     "style": "bw"
+    },
+    {
+     "src": "ai/r_dive_1",
+     "at": 0.17,
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
+     "src": "ai/r_door_open",
+     "at": 0.34,
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
+     "src": "ai/r_aisle",
+     "at": 0.5,
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
+     "src": "ai/r_aid",
+     "at": 0.66,
+     "kb": "out",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    },
+    {
+     "src": "ai/r_approach",
+     "at": 0.82,
+     "kb": "in",
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+    }
+   ]
+  },
+  {
+   "n": 2,
    "id": "hook",
    "layout": "C",
    "look": "photo",
@@ -47,7 +123,7 @@
    "expression": "Serious and still. Eyes locked on the lens, slight frown. Raise eyebrows a little on 'Sochiye'. Narrow your eyes on 'achanak' and drop your voice. Hold your gaze 1 second after the last word."
   },
   {
-   "n": 2,
+   "n": 3,
    "id": "hook2",
    "layout": "C",
    "look": "photo",
@@ -71,7 +147,7 @@
    "expression": "Lean slightly toward the lens, curious. A small half-smile on 'kisi film se kam nahi tha'. Count the heroes on your fingers: captain, plumber, dentist, two pilots. Eyes widen a little on the last line."
   },
   {
-   "n": 3,
+   "n": 4,
    "id": "title",
    "layout": "F",
    "look": "photo",
@@ -96,7 +172,7 @@
    "expression": "Voice only, face not shown. Clear news-anchor tone, steady pace."
   },
   {
-   "n": 4,
+   "n": 5,
    "id": "why",
    "layout": "C",
    "look": "photo",
@@ -126,7 +202,7 @@
    "expression": "Open and conversational, soft eyes, shoulders relaxed. On the final 'toh?' raise both eyebrows, tilt your head slightly and stay silent for 1 second."
   },
   {
-   "n": 5,
+   "n": 6,
    "id": "route",
    "layout": "L",
    "look": "map",
@@ -142,10 +218,20 @@
     }
    ],
    "text_dev": "फ़्लाइटरडार चौबीस के डेटा के मुताबिक़, फ़्लाइट ने दुबई से सुबह तीन बजकर पाँच मिनट, यू टी सी टाइम पर उड़ान भरी। प्लेन सऊदी अरब के ऊपर से तेल अवीव की तरफ़ बढ़ रहा था। लगभग सवा दो घंटे तक सब नॉर्मल था।",
-   "expression": "Calm storyteller. Relaxed face, small nods, normal pace. Slightly slower on 'sab normal tha', as if something is coming."
+   "expression": "Calm storyteller. Relaxed face, small nods, normal pace. Slightly slower on 'sab normal tha', as if something is coming.",
+   "params": {
+    "clock": {
+     "date": "30 SEP 2026",
+     "time": "03:05",
+     "zone": "UTC",
+     "note": "TAKE-OFF FROM DUBAI · FLIGHTRADAR24",
+     "at": 0.04,
+     "until": 0.45
+    }
+   }
   },
   {
-   "n": 6,
+   "n": 7,
    "id": "attack",
    "layout": "L",
    "look": "photo",
@@ -175,21 +261,44 @@
      "src": "ai/r_struggle_1",
      "at": 0.45,
      "kb": "out",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
+     "style": "bw"
     },
     {
      "src": "ai/r_struggle_2",
      "at": 0.75,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
+     "style": "bw"
     }
    ],
    "alarm": 0.3,
    "text_dev": "फिर सुबह पाँच बजकर इक्कीस मिनट पर, प्लेन की ऑल्टिट्यूड अचानक ऊपर नीचे होने लगी। यू ए ई के अटॉर्नी जनरल के मुताबिक़, उनतीस साल के एक ओमानी फ़र्स्ट ऑफ़िसर ने, कॉकपिट में रखी क्रैश ऐक्स से, इंडियन कैप्टन स्मित मच्छर पर हमला किया।",
-   "expression": "Grave. Jaw set, no smile. Lower your voice. Take a short pause before 'crash axe' and narrow your eyes slightly on it."
+   "expression": "Grave. Jaw set, no smile. Lower your voice. Take a short pause before 'crash axe' and narrow your eyes slightly on it.",
+   "params": {
+    "clock": {
+     "date": "30 SEP 2026",
+     "time": "05:21",
+     "zone": "UTC",
+     "note": "ALTITUDE STARTS TO SWING · FLIGHTRADAR24",
+     "at": 0.02,
+     "until": 0.4
+    },
+    "clips": [
+     {
+      "at": 0.5,
+      "dur": 3.6,
+      "src": "WAM.AE",
+      "date": "9 OCT 2026",
+      "text": "UAE Attorney General: the first officer attacked the captain with the cockpit's crash axe. Accounts of the weapon vary.",
+      "hl": "attacked the captain",
+      "kind": "OFFICIAL CLAIM · PARAPHRASED"
+     }
+    ]
+   }
   },
   {
-   "n": 7,
+   "n": 8,
    "id": "axe",
    "layout": "F",
    "look": "stat",
@@ -223,7 +332,7 @@
    "fallback_style": "dim"
   },
   {
-   "n": 8,
+   "n": 9,
    "id": "plunge",
    "layout": "F",
    "look": "photo",
@@ -261,7 +370,7 @@
    "fallback_look": "plane_dive"
   },
   {
-   "n": 9,
+   "n": 10,
    "id": "door_rule",
    "layout": "F",
    "look": "stat",
@@ -299,7 +408,7 @@
    "expression": "Voice only. Pause before 'Aur yahan'. Slow and deliberate on 'sirf andar se khulte hain'."
   },
   {
-   "n": 10,
+   "n": 11,
    "id": "door",
    "layout": "L",
    "look": "photo",
@@ -320,7 +429,13 @@
      "src": "ai/r_door_hand",
      "at": 0,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
+     "tag": {
+      "text": "CAPTAIN",
+      "x": 0.42,
+      "y": 0.3
+     },
+     "flip": true
     },
     {
      "src": "ai/r_door_open",
@@ -332,7 +447,7 @@
    "fallback_look": "cockpit_door"
   },
   {
-   "n": 11,
+   "n": 12,
    "id": "plumber",
    "layout": "F",
    "look": "card",
@@ -346,7 +461,18 @@
     "what": "Grabbed the attacker in a chokehold and pulled him out of the cockpit.",
     "src": "SOURCE: AP, WION REPORTS, 1 OCT 2026",
     "pos": "lower",
-    "card_at": 0.48
+    "card_at": 0.5,
+    "clips": [
+     {
+      "at": 0.1,
+      "dur": 3.4,
+      "src": "AP · WION",
+      "date": "1 OCT 2026",
+      "text": "A passenger, a plumber from Israel, put the attacker in a chokehold and pulled him out of the cockpit.",
+      "hl": "chokehold",
+      "kind": "REPORT · PARAPHRASED"
+     }
+    ]
    },
    "text": "Darwaaza khulte hi aam passengers andar ghuse. Reports ke mutabik, Israel ke ek plumber, Yaniv Hayoun ne, hamlavar ko chokehold mein pakda, aur cockpit se bahar kheench liya.",
    "photo_style": "full",
@@ -355,13 +481,24 @@
      "src": "ai/r_aisle",
      "at": 0,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
+     "tag": {
+      "text": "PLUMBER · PASSENGER",
+      "x": 0.52,
+      "y": 0.27
+     }
     },
     {
      "src": "ai/r_restrain",
      "at": 0.38,
      "kb": "left",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
+     "tag": {
+      "text": "PLUMBER",
+      "x": 0.42,
+      "y": 0.15
+     },
+     "style": "bw"
     },
     {
      "src": "ai/r_galley_hold",
@@ -381,7 +518,7 @@
    "fallback_style": "blur"
   },
   {
-   "n": 12,
+   "n": 13,
    "id": "dentist",
    "layout": "F",
    "look": "card",
@@ -395,7 +532,18 @@
     "what": "Helped restrain the attacker, then treated the wounded captain and stopped his bleeding.",
     "src": "SOURCE: AP, WION REPORTS, 1 OCT 2026",
     "pos": "lower",
-    "card_at": 0.3
+    "card_at": 0.55,
+    "clips": [
+     {
+      "at": 0.06,
+      "dur": 3.4,
+      "src": "AP · WION",
+      "date": "1 OCT 2026",
+      "text": "A dentist on board helped restrain the attacker, then treated the wounded captain.",
+      "hl": "treated the wounded captain",
+      "kind": "REPORT · PARAPHRASED"
+     }
+    ]
    },
    "text": "Ek dentist, Dr. Shota Musaev ne, hamlavar ko qaabu karne mein madad ki, aur phir ghayal captain ka khoon rokne mein lag gaye.",
    "photo_style": "full",
@@ -404,7 +552,12 @@
      "src": "ai/r_aid",
      "at": 0,
      "kb": "in",
-     "label": "AI RECONSTRUCTION · ILLUSTRATIVE"
+     "label": "AI RECONSTRUCTION · ILLUSTRATIVE",
+     "tag": {
+      "text": "DENTIST · PASSENGER",
+      "x": 0.7,
+      "y": 0.34
+     }
     },
     {
      "src": "ai/r_aid_close",
@@ -424,7 +577,7 @@
    "fallback_style": "blur"
   },
   {
-   "n": 13,
+   "n": 14,
    "id": "landing",
    "layout": "F",
    "look": "map_tabuk",
@@ -471,7 +624,7 @@
    "fallback_style": "full"
   },
   {
-   "n": 14,
+   "n": 15,
    "id": "ordinary",
    "layout": "C",
    "look": "photo",
@@ -495,7 +648,7 @@
    "expression": "Warm pride, close-up. Gentle smile. Pause and nod after each hero. Turn serious and slower on the last sentence."
   },
   {
-   "n": 15,
+   "n": 16,
    "id": "accused",
    "layout": "F",
    "look": "card",
@@ -515,17 +668,18 @@
    "photos": [
     {
      "src": "tlv",
-     "kb": "in"
+     "kb": "in",
+     "style": "threat"
     }
    ],
    "text_dev": "अब सबसे बड़ा सवाल। ये फ़र्स्ट ऑफ़िसर कौन था? नौ अक्टूबर को यू ए ई के अटॉर्नी जनरल ने दावा किया, कि उसका प्लान प्लेन को तेल अवीव के बेन गुरियन एयरपोर्ट के टर्मिनल में गिराने का था, नाइन इलेवन की तरह। यू ए ई के मुताबिक़, उसका कट्टरपंथ दो हज़ार सत्रह से शुरू हुआ, और उसने पहले दो बार तेल अवीव जाकर रूट और एयरपोर्ट समझा था। उसने इन्वेस्टिगेटर्स को बताया कि उसने ये अकेले किया। ये सब अभी दावे हैं, और जाँच जारी है।",
    "expression": "Voice only. Neutral, factual. Lean on the word 'daave' so viewers hear these are claims."
   },
   {
-   "n": 16,
+   "n": 17,
    "id": "checks",
    "layout": "F",
-   "look": "split",
+   "look": "screen_split",
    "chapter": "05 · THE FIRST OFFICER",
    "shot": "A",
    "direction": "Sawaal poochhne wala tone.",
@@ -545,7 +699,28 @@
      ],
      "src": "REUTERS, VIA SEARCH REPORTS"
     },
-    "vs": "BUT"
+    "vs": "BUT",
+    "switch": 0.42,
+    "screen": {
+     "app": "PRE-HIRING CHECK · PILOT APPLICANT",
+     "who": "FIRST OFFICER · 29 · OMANI",
+     "sub": "AIRLINE RECRUITMENT FILE",
+     "rows": [
+      [
+       "Pre-hiring security checks",
+       "COMPLETED"
+      ],
+      [
+       "Extremist views",
+       "NONE FOUND"
+      ],
+      [
+       "Terror links",
+       "NONE FOUND"
+      ]
+     ],
+     "foot": "ILLUSTRATION OF THE UAE ATTORNEY GENERAL'S CLAIM · NOT A REAL SCREEN"
+    }
    },
    "text": "Lekin agar plan itna purana tha, toh yeh pakda kyun nahi gaya? UAE ka kehna hai ki airline ki hiring checks mein, koi kattar soch ya terror link nahi mila. Wahin Reuters ne, Israeli officials ke hawale se report kiya, ki usne investigators ko bataya, plan naukri milne se pehle ka tha. Agar dono baatein sach hain, toh sawaal screening system par uthta hai.",
    "photo_style": "blur",
@@ -554,7 +729,8 @@
      "src": "ai/a_screening",
      "at": 0,
      "kb": "in",
-     "label": "AI ILLUSTRATION"
+     "label": "AI ILLUSTRATION",
+     "style": "threat"
     }
    ],
    "text_dev": "लेकिन अगर प्लान इतना पुराना था, तो ये पकड़ा क्यों नहीं गया? यू ए ई का कहना है कि एयरलाइन की हायरिंग चेक्स में, कोई कट्टर सोच या टेरर लिंक नहीं मिला। वहीं रॉयटर्स ने, इज़राइली ऑफ़िशियल्स के हवाले से रिपोर्ट किया, कि उसने इन्वेस्टिगेटर्स को बताया, प्लान नौकरी मिलने से पहले का था। अगर दोनों बातें सच हैं, तो सवाल स्क्रीनिंग सिस्टम पर उठता है।",
@@ -568,7 +744,7 @@
    "fallback_style": "blur"
   },
   {
-   "n": 17,
+   "n": 18,
    "id": "germanwings",
    "layout": "F",
    "look": "split",
@@ -616,7 +792,7 @@
    "photo_style": "blur"
   },
   {
-   "n": 18,
+   "n": 19,
    "id": "debate",
    "layout": "F",
    "look": "list",
@@ -664,7 +840,7 @@
    "fallback_style": "blur"
   },
   {
-   "n": 19,
+   "n": 20,
    "id": "india",
    "layout": "F",
    "look": "probe",
@@ -686,7 +862,7 @@
    "photo_style": "dim"
   },
   {
-   "n": 20,
+   "n": 21,
    "id": "honour",
    "layout": "L",
    "look": "card",
@@ -708,7 +884,7 @@
    "expression": "Proud, close-up. Warm eyes and a genuine smile on 'Captain Smit?'. Small nod on 'theek ho rahe hain'."
   },
   {
-   "n": 21,
+   "n": 22,
    "id": "conclusion",
    "layout": "C",
    "look": "photo",
@@ -740,7 +916,7 @@
    ]
   },
   {
-   "n": 22,
+   "n": 23,
    "id": "question",
    "layout": "F",
    "look": "question",
@@ -766,7 +942,7 @@
    "expression": "Voice only. Direct, inviting question, as if you really want their answer."
   },
   {
-   "n": 23,
+   "n": 24,
    "id": "end",
    "layout": "L",
    "look": "end",

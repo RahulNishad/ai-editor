@@ -35,6 +35,8 @@ On macOS the renderer uses the GPU automatically. Set `RENDER_GPU=1` to force it
 
 ## 3. Finish the FZ1073 video
 
+0. **Watch the direction video first.** `.venv/bin/python make_direction.py --work ~/Movies/fz1073-direction` renders the whole film with a scratch voice and a "YOUR CLIP nn" slot wherever Rahul appears, with the shot and face note. `direction_timeline.md` lists every clip with its start time. Record to it.
+
 1. **Record** one vertical clip per scene, `01.mp4` … `23.mp4` (retake = `05_2.mp4`, highest number wins), 1080p 30 fps, 2 s silence before and after. Follow `RECORDING_SCRIPT.md` and `STORYBOARD.jpg`.
 2. **Put the clips in one folder**, e.g. `~/Movies/fz1073-takes`.
 3. **Run:**

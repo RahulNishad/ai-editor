@@ -26,6 +26,7 @@ def load(p):
 
 def filt(x, f, kind, o=2): return sosfilt(butter(o, f, kind, fs=SR, output="sos"), x)
 def first(look): return next((s for s in S if s["look"] == look), None)
+def byid(i): return next((s for s in S if s["id"] == i), None)
 def at(s, frac=0.0, off=0.0): return s["start"] + s["dur"] * frac + off
 
 
@@ -55,7 +56,7 @@ def ramp(a, b, v0, v1):
     i0, i1 = int(max(a, 0) * SR), int(min(b, T + 1) * SR); g[i0:i1] = np.linspace(v0, v1, max(i1 - i0, 1))
 
 
-title, dive, q, end = first("plane_cruise"), first("plane_dive"), first("question"), first("end")
+title, dive, q, end = first("plane_cruise") or byid("title"), first("plane_dive") or byid("plunge"), first("question"), first("end")
 if title: ramp(0, title["start"], 0.25, 0.35)
 if q:
     ramp(q["start"], q["start"] + 0.95, 0, 0); ramp(q["start"] + 0.95, q["start"] + 2.5, 0, 0.35)
@@ -117,6 +118,10 @@ for s in S:
     if lk == "cockpit": beeps(at(s, .55), at(s, 1, -.2), .12)
     if lk == "cockpit_door": beeps(s["start"], at(s, .3), .06)
     if "CLAIM" in (p.get("tag") or ""): place(boom(), at(s, 0.08), 0.7)
+    if s["id"] in ("title", "plunge") and lk == "photo": place(boom(), at(s, 0.08), 0.9)
+    if p.get("coming_up"):  # teaser: a hit on every cut
+        for ph in s.get("photos", [])[1:]: place(whoosh(0.5), at(s, ph.get("at", 0), -0.25), 0.55)
+        place(boom(), at(s, 0, 0.1), 0.6)
 if q: place(riser(4.0), q["start"] - 4.0, 0.5)
 
 

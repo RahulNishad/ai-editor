@@ -15,5 +15,6 @@ A local, script-driven documentary video pipeline for the YouTube channel **Thin
 
 ## Key commands (run inside `samples/fz1073`)
 - Storyboard check (fast, ~10 s): `python3 storyboard.py`
+- Direction video before recording (scratch voice + "YOUR CLIP" slots, ~25 min on a Mac): `.venv/bin/python make_direction.py --work ~/Movies/fz1073-direction`
 - Final video from recorded takes: `.venv/bin/python make_long.py --takes <folder> --work <work dir>`
 - Regenerate recording script: `python3 script_to_md.py script.long.json RECORDING_SCRIPT.md`
