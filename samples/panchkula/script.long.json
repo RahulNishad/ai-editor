@@ -410,18 +410,7 @@
      "text": "AKELA HAI YA <b>NAHI</b>?"
     }
    ],
-   "photos": [
-    {
-     "src": null,
-     "at": 0
-    },
-    {
-     "src": "phone_hand",
-     "at": 0.62,
-     "kb": "in",
-     "label": "FILE PHOTO · REPRESENTATIVE"
-    }
-   ]
+   "photos": []
   },
   {
    "n": 13,
@@ -576,10 +565,10 @@
    ],
    "photos": [
     {
-     "src": "counsel_room",
+     "src": "classroom_kerala",
      "at": 0,
      "kb": "in",
-     "label": "FILE PHOTO · A JUVENILE COUNSELLING CENTRE, TOKYO · REPRESENTATIVE"
+     "label": "FILE PHOTO · A GOVERNMENT SCHOOL CLASSROOM · REPRESENTATIVE"
     }
    ]
   },

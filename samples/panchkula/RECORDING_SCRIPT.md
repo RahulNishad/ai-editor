@@ -120,7 +120,7 @@ _Direction: The three 'phone pakda do' lines have rhythm; don't rush them. The q
 >
 > डब्ल्यूएचओ, दो हज़ार उन्नीस: एक साल से छोटे के लिए स्क्रीन टाइम ज़ीरो। दो से चार साल, दिन में एक घंटे से ज़्यादा नहीं। इंडियन एकेडमी ऑफ़ पीडियाट्रिक्स भी यही कहती है: दो साल तक कोई स्क्रीन नहीं, पाँच साल तक ज़्यादा से ज़्यादा एक घंटा, माँ-बाप के साथ, और बच्चे का अपना फ़ोन बिल्कुल नहीं। और सवाल सिर्फ़ घंटों का नहीं: उस फ़ोन के साथ बच्चा अकेला है या नहीं।
 **Face:** Voice only. Doctor's calm.
-**On screen:** fact card → a hand holding a smartphone (real photo)
+**On screen:** fact card
 _Direction: Numbers clear and slow. 'Imaandari se sochiye' with a pause after. The last two sentences shift from 'how much' to 'alone or not', which leads into empathy._
 
 ### 06 · SAWAAL 3: EMPATHY
@@ -166,7 +166,7 @@ _Direction: 'Ikyasi pratishat' slow. 'Dus mein se aath bachche' even slower. The
 >
 > पाँचवाँ सवाल: स्कूल की ज़िम्मेदारी सिर्फ़ अटेंडेंस और सिलेबस है? या ये भी देखना कि कौन सा बच्चा रोज़ लड़ता है? लेकिन क्या उस बच्चे के बिहेवियर पर पहले कभी किसी ने ध्यान दिया था? ये हम नहीं जानते। ये जानते हैं कि ऐसे संकेत अक्सर बहुत पहले दिखते हैं।
 **Face:** Measured. Eyebrows up on the question, a small head-shake on 'yeh hum nahi jaante'.
-**On screen:** a juvenile counselling centre, Tokyo (representative) (real photo)
+**On screen:** a government primary-school classroom, Kerala (not the school involved) (real photo)
 _Direction: Careful: 'yeh hum nahi jaante' must be said clearly; we are not accusing the school of ignoring signs. The last line hands to the WHO/NIMHANS card._
 
 **18.mp4** · Shot A · Full-screen graphic, only your voice
