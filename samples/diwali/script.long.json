@@ -266,29 +266,30 @@
    "n": 9,
    "id": "ayodhya",
    "layout": "F",
-   "look": "stat",
+   "look": "photo",
    "chapter": "04 · AAJ KI DIWALI",
    "shot": "A",
    "direction": "Build to the number. Say it slowly: 'chhabbis lakh, satrah hazaar, do sau pandrah'.",
    "expression": "Voice only. A little awe in the voice on the number.",
    "text": "Ab aaj par aate hain. 19 October 2025 ko Ayodhya ne Saryu ke 56 ghaton par 26 lakh 17 hazaar 215 diye jalaye. Ginti drone se hui, aur Guinness World Record bana. Jis shehar ki kahani se yeh tyohaar juda hai, wahi shehar aaj duniya ka sabse bada deepotsav karta hai.",
    "text_dev": "अब आज पर आते हैं। उन्नीस अक्टूबर दो हज़ार पच्चीस को अयोध्या ने सरयू के छप्पन घाटों पर छब्बीस लाख सत्रह हज़ार दो सौ पंद्रह दिये जलाए। गिनती ड्रोन से हुई, और गिनीज़ वर्ल्ड रिकॉर्ड बना। जिस शहर की कहानी से ये त्योहार जुड़ा है, वही शहर आज दुनिया का सबसे बड़ा दीपोत्सव करता है।",
-   "params": {
-    "kicker": "AYODHYA DEEPOTSAV · 19 OCTOBER 2025",
-    "big": "26,17,215 DIYE",
-    "sub": "Lit on 56 ghats of the Saryu, including Ram Ki Paidi · counted by drone · Guinness World Record confirmed on site",
-    "src": "SOURCE: ALL INDIA RADIO (NEWSONAIR.GOV.IN), 19 OCT 2025; DECCAN HERALD"
-   },
    "photos": [
     {
      "src": "ayodhya_night",
      "at": 0,
      "kb": "in",
      "label": "FILE PHOTO · RAM KI PAIDI, AYODHYA, 2018 · NOT THE 2025 RECORD NIGHT"
+    }
+   ],
+   "source": "SOURCE: ALL INDIA RADIO (NEWSONAIR.GOV.IN), 19 OCT 2025 · 26,17,215 DIYAS ON 56 GHATS, COUNTED BY DRONE · DECCAN HERALD",
+   "phrases": [
+    {
+     "t": 0.3,
+     "text": "<b>26,17,215</b> DIYE"
     },
     {
-     "src": null,
-     "at": 0.45
+     "t": 0.58,
+     "text": "<b>GUINNESS</b> WORLD RECORD"
     }
    ]
   },

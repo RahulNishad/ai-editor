@@ -11,10 +11,11 @@ frames_prev/
 sb/
 timeline.preview.json
 assets/photos/*.src*
-samples/fz1073/assets/ai/*/
-samples/fz1073/assets/ai/*.mp4
-samples/fz1073/assets/ai/*.ok
+samples/*/assets/ai/*/
+samples/*/assets/ai/*.mp4
+samples/*/assets/ai/*.ok
 .venv/
-samples/fz1073/frames_direction/
-samples/fz1073/timeline.direction.json
-samples/fz1073/assets/vid/*/
+samples/*/frames_direction/
+samples/*/timeline.direction.json
+samples/*/assets/vid/*/
+.DS_Store

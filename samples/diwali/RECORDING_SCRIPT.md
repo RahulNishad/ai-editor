@@ -93,7 +93,7 @@ _Direction: This is the 'think beyond headlines' beat. Clear, respectful, one fa
 >
 > अब आज पर आते हैं। उन्नीस अक्टूबर दो हज़ार पच्चीस को अयोध्या ने सरयू के छप्पन घाटों पर छब्बीस लाख सत्रह हज़ार दो सौ पंद्रह दिये जलाए। गिनती ड्रोन से हुई, और गिनीज़ वर्ल्ड रिकॉर्ड बना। जिस शहर की कहानी से ये त्योहार जुड़ा है, वही शहर आज दुनिया का सबसे बड़ा दीपोत्सव करता है।
 **Face:** Voice only. A little awe in the voice on the number.
-**On screen:** fact card → Ram Ki Paidi ghat at night (real photo)
+**On screen:** Ram Ki Paidi ghat at night (real photo)
 _Direction: Build to the number. Say it slowly: 'chhabbis lakh, satrah hazaar, do sau pandrah'._
 
 **10.mp4** · Shot A · You on the right, graphic on the left
