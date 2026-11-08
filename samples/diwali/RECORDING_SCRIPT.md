@@ -2,7 +2,7 @@
 
 _Ek Sanskrit natak, ek Iranian scholar ki kitaab, Ayodhya ke 26 lakh diye: Diwali ki poori kahani, aur meri taraf se shubhkaamnayein_
 
-**14 scenes · 643 words · about 5 minutes at 140 words per minute**
+**14 scenes · 692 words · about 5 minutes at 140 words per minute**
 
 ## How to record
 
@@ -18,9 +18,9 @@ _Ek Sanskrit natak, ek Iranian scholar ki kitaab, Ayodhya ke 26 lakh diye: Diwal
 ## Script
 
 **01.mp4** · Shot A · You on screen, centred
-> Aaj raat aapke ghar mein jo diya jalega, uski kahani sirf Ramayan tak nahi rukti. Lagbhag ek hazaar saal pehle, ek Iranian scholar ne apni kitaab mein is raat ka zikr kiya tha. Aur usse bhi pehle, ek Sanskrit natak mein. Toh Diwali shuru kahan se hui? Chaliye, headlines se aage chalte hain.
+> Aaj raat aapke ghar mein jo diya jalega, maanyata hai ki uski parampara yugon purani hai: devtaon ke samay se. Lekin likhe hue itihaas mein yeh raat pehli baar kab aayi? Lagbhag ek hazaar saal pehle, ek Iranian scholar ki kitaab mein. Aur usse bhi pehle, ek Sanskrit natak mein. Toh aastha aur itihaas, dono kya kehte hain? Chaliye, headlines se aage chalte hain.
 >
-> आज रात आपके घर में जो दिया जलेगा, उसकी कहानी सिर्फ़ रामायण तक नहीं रुकती। लगभग एक हज़ार साल पहले, एक ईरानी विद्वान ने अपनी किताब में इस रात का ज़िक्र किया था। और उससे भी पहले, एक संस्कृत नाटक में। तो दिवाली शुरू कहाँ से हुई? चलिए, हेडलाइंस से आगे चलते हैं।
+> आज रात आपके घर में जो दिया जलेगा, मान्यता है कि उसकी परंपरा युगों पुरानी है: देवताओं के समय से। लेकिन लिखे हुए इतिहास में ये रात पहली बार कब आई? लगभग एक हज़ार साल पहले, एक ईरानी विद्वान की किताब में। और उससे भी पहले, एक संस्कृत नाटक में। तो आस्था और इतिहास, दोनों क्या कहते हैं? चलिए, हेडलाइंस से आगे चलते हैं।
 **Face:** Warm, curious. Small smile on the first line, then eyebrows up on 'ek hazaar saal pehle'. Hold the lens on the question.
 **On screen:** a clay diya, close-up (real photo)
 _Direction: Curiosity hook. Slow first line, then pick up pace. The last line is a hand-off: say 'Chaliye' as if you are already walking into the story._
@@ -36,22 +36,22 @@ _Direction: Title line, slow. 'Shuru karte hain aaj ki raat se' picks up the ene
 ### 01 · AAJ KI RAAT
 
 **03.mp4** · Shot A · You on the right, graphic on the left
-> Aaj 8 November 2026 hai, Kartik amavasya: paanch din ke utsav ki sabse badi raat. Saal ki sabse andheri raaton mein se ek, aur hum usi ko sabse zyada roshan karte hain. Yeh sanyog nahi, soch hai. Aur yeh soch kitni purani hai? Jawab puraane granthon mein hai.
+> Aaj 8 November 2026 hai, Kartik amavasya: paanch din ke utsav ki sabse badi raat. Saal ki sabse andheri raaton mein se ek, aur hum usi ko sabse zyada roshan karte hain. Yeh sanyog nahi, soch hai. Aastha kehti hai: isi raat Samudra Manthan se Lakshmi ji prakat hui thi, aur devtaon ne deep jalaye. Yaani yeh parampara yugon purani hai. Aur likha hua itihaas kya kehta hai?
 >
-> आज आठ नवंबर दो हज़ार छब्बीस है, कार्तिक अमावस्या: पाँच दिन के उत्सव की सबसे बड़ी रात। साल की सबसे अँधेरी रातों में से एक, और हम उसी को सबसे ज़्यादा रोशन करते हैं। ये संयोग नहीं, सोच है। और ये सोच कितनी पुरानी है? जवाब पुराने ग्रंथों में है।
+> आज आठ नवंबर दो हज़ार छब्बीस है, कार्तिक अमावस्या: पाँच दिन के उत्सव की सबसे बड़ी रात। साल की सबसे अँधेरी रातों में से एक, और हम उसी को सबसे ज़्यादा रोशन करते हैं। ये संयोग नहीं, सोच है। आस्था कहती है: इसी रात समुद्र मंथन से लक्ष्मी जी प्रकट हुई थीं, और देवताओं ने दीप जलाए। यानी ये परंपरा युगों पुरानी है। और लिखा हुआ इतिहास क्या कहता है?
 **Face:** Relaxed storyteller. A small nod on 'yeh sanyog nahi'.
 **On screen:** fact card
-_Direction: Normal pace. Slow on 'sabse andheri raat' and 'sabse roshan'. End on the question, eyebrows up: it is answered by the next clip._
+_Direction: Normal pace. Slow on 'sabse andheri raat' and 'sabse roshan'. 'Aastha kehti hai' with respect, not as a claim you are checking. End on the question: the manuscripts answer it._
 
 ### 02 · JADEIN
 
 **04.mp4** · Shot A · Full-screen graphic, only your voice
-> Scholars ke mutabik Diwali ka sabse purana likhit zikr chhathi-saatvin sadi ke granthon mein hai: Kashmir ka Nilamata Purana, aur Raja Harsha ka Sanskrit natak Nagananda, jisme deep-utsav aata hai. Aur saal 1030 ke aas-paas, wahi Iranian scholar, Al-Biruni, Hindustan ke tyohaaron ki list mein is raat ko likhta hai. Lekin itna purana tyohaar shuru kyun hua?
+> Itihaas ke paas pannon ki seema hai. Scholars ke mutabik Diwali ka sabse purana likhit zikr chhathi-saatvin sadi ke granthon mein milta hai: Kashmir ka Nilamata Purana, aur Raja Harsha ka Sanskrit natak Nagananda. Aur saal 1030 ke aas-paas, wahi Iranian scholar, Al-Biruni, Hindustan ke tyohaaron ki list mein is raat ko likhta hai. Yaani kam se kam pandrah sau saal ka likhit itihaas, aur usse kahin purani aastha. Lekin yeh tyohaar shuru kyun hua?
 >
-> विद्वानों के मुताबिक़ दिवाली का सबसे पुराना लिखित ज़िक्र छठी-सातवीं सदी के ग्रंथों में है: कश्मीर का नीलमत पुराण, और राजा हर्ष का संस्कृत नाटक नागानंद, जिसमें दीप-उत्सव आता है। और साल एक हज़ार तीस के आस-पास, वही ईरानी विद्वान, अल-बिरूनी, हिंदुस्तान के त्योहारों की लिस्ट में इस रात को लिखता है। लेकिन इतना पुराना त्योहार शुरू क्यों हुआ?
+> इतिहास के पास पन्नों की सीमा है। विद्वानों के मुताबिक़ दिवाली का सबसे पुराना लिखित ज़िक्र छठी-सातवीं सदी के ग्रंथों में मिलता है: कश्मीर का नीलमत पुराण, और राजा हर्ष का संस्कृत नाटक नागानंद। और साल एक हज़ार तीस के आस-पास, वही ईरानी विद्वान, अल-बिरूनी, हिंदुस्तान के त्योहारों की लिस्ट में इस रात को लिखता है। यानी कम से कम पंद्रह सौ साल का लिखित इतिहास, और उससे कहीं पुरानी आस्था। लेकिन ये त्योहार शुरू क्यों हुआ?
 **Face:** Voice only. Measured, clear on the names and dates.
 **On screen:** Sanskrit palm-leaf manuscript (real photo) → a page in Al-Biruni's hand (real photo)
-_Direction: Reading old records. 'Wahi Iranian scholar' is a callback to your hook; land the name Al-Biruni. End on the 'kyun' question._
+_Direction: Reading old records. 'Itihaas ke paas pannon ki seema hai' is the key idea: belief is older than any page. Land the name Al-Biruni. End on the 'kyun' question._
 
 **05.mp4** · Shot A · You on the right, graphic on the left
 > Kai itihaaskaar maante hain ki yeh kai utsavon ka sangam hai. Ek purani vyakhya ise mausam se jodti hai: dhaan ki fasal kat chuki hoti thi, saal ke hisaab-kitaab ka waqt tha. Shayad isiliye kai vyapari aaj bhi isi din naye bahi-khaate shuru karte hain. Lekin fasal ke upar is raat par kahaniyan judti gayin. Sabse pehli, Ayodhya ki.
