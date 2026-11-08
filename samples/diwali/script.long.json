@@ -1,0 +1,419 @@
+{
+ "title": "Diwali: 1,000 saal se bhi purani roshni",
+ "subtitle": "Ek Sanskrit natak, ek Iranian scholar ki kitaab, Ayodhya ke 26 lakh diye: Diwali ki poori kahani, aur meri taraf se shubhkaamnayein",
+ "fps": 30,
+ "recording": {
+  "format": "Phone vertical 9:16, 1080x1920 or 4K, 30 fps, eye level on tripod, head-to-chest framing. Record in the evening with a few real diyas lit beside you if you can; warm light on your face looks right for this topic.",
+  "files": "One clip per scene, named by scene number: 01.mp4, 02.mp4 ... A retake of scene 05 is 05_2.mp4; the highest number wins.",
+  "silence": "Stay silent for 2 seconds before and after each line. The pipeline trims it.",
+  "shots": "Shot A = medium (chest up). Shot B = close-up (face fills the frame). Switch only where the script says.",
+  "expression": "Look into the lens, not at the screen. This is a warm topic: smile when the script says so, stay curious and calm in the history parts. Wear something festive but plain (no logos, no shiny fabric)."
+ },
+ "scenes": [
+  {
+   "n": 1,
+   "id": "hook",
+   "layout": "C",
+   "look": "photo",
+   "chapter": "",
+   "shot": "A",
+   "direction": "Curiosity hook. Slow first line, then pick up pace. A clear pause before 'Toh Diwali shuru kahan se hui?'",
+   "expression": "Warm, curious. Small smile on the first line, then eyebrows up on 'ek hazaar saal pehle'. Hold the lens on the question.",
+   "text": "Aaj raat aapke ghar mein jo diya jalega, uski kahani sirf Ramayan tak nahi rukti. Lagbhag ek hazaar saal pehle, ek Iranian scholar ne apni kitaab mein is raat ka zikr kiya tha. Aur usse bhi pehle, ek Sanskrit natak mein. Toh Diwali shuru kahan se hui? Chaliye, headlines se aage chalte hain.",
+   "text_dev": "आज रात आपके घर में जो दिया जलेगा, उसकी कहानी सिर्फ़ रामायण तक नहीं रुकती। लगभग एक हज़ार साल पहले, एक ईरानी विद्वान ने अपनी किताब में इस रात का ज़िक्र किया था। और उससे भी पहले, एक संस्कृत नाटक में। तो दिवाली शुरू कहाँ से हुई? चलिए, हेडलाइंस से आगे चलते हैं।",
+   "phrases": [
+    {
+     "t": 0.3,
+     "text": "<b>1,000</b> SAAL PURANA ZIKR"
+    },
+    {
+     "t": 0.55,
+     "text": "EK <b>SANSKRIT</b> NATAK"
+    }
+   ],
+   "photos": [
+    {
+     "src": "diya",
+     "at": 0,
+     "kb": "in",
+     "label": "FILE PHOTO"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "id": "title",
+   "layout": "F",
+   "look": "photo",
+   "chapter": "",
+   "shot": "A",
+   "params": {
+    "overlay": "title"
+   },
+   "direction": "Title line. Slow, like a chapter heading. Let the last word land.",
+   "expression": "Voice only. Calm and warm.",
+   "text": "Diwali. Roshni ka tyohaar. Lekin yeh roshni kitni purani hai, aur kitni kahaniyan apne andar samete hue hai?",
+   "text_dev": "दिवाली। रोशनी का त्योहार। लेकिन ये रोशनी कितनी पुरानी है, और कितनी कहानियाँ अपने अंदर समेटे हुए है?",
+   "photos": [
+    {
+     "src": "lamps_wb",
+     "at": 0,
+     "kb": "in",
+     "label": "FILE PHOTO · DIWALI NIGHT, WEST BENGAL"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "id": "today",
+   "layout": "L",
+   "look": "stat",
+   "chapter": "01 · AAJ KI RAAT",
+   "shot": "A",
+   "direction": "Normal pace. The last two lines slower: 'sabse andheri raat', then 'sabse zyada roshan'.",
+   "expression": "Relaxed storyteller. A small nod on 'yeh sanyog nahi'.",
+   "text": "Aaj 8 November 2026 hai, Kartik amavasya. Paanch din ka utsav: Dhanteras 6 November ko tha, aaj Lakshmi Puja, kal Govardhan Puja, phir Bhai Dooj. Saal ki sabse andheri raaton mein se ek, aur hum usi ko sabse zyada roshan karte hain. Yeh sanyog nahi, soch hai.",
+   "text_dev": "आज आठ नवंबर दो हज़ार छब्बीस है, कार्तिक अमावस्या। पाँच दिन का उत्सव: धनतेरस छह नवंबर को था, आज लक्ष्मी पूजा, कल गोवर्धन पूजा, फिर भाई दूज। साल की सबसे अँधेरी रातों में से एक, और हम उसी को सबसे ज़्यादा रोशन करते हैं। ये संयोग नहीं, सोच है।",
+   "params": {
+    "kicker": "KARTIK AMAVASYA · DIWALI 2026",
+    "big": "8 NOV 2026",
+    "sub": "Dhanteras 6 Nov · Naraka Chaturdashi 7 Nov · Lakshmi Puja 8 Nov · Govardhan Puja 9 Nov · Bhai Dooj 10 or 11 Nov",
+    "src": "SOURCE: DEKHO PANCHANG, EPANCHANG, TIME OUT INDIA · LATER DATES VARY BY PANCHANG"
+   },
+   "phrases": [
+    {
+     "t": 0.7,
+     "text": "SABSE ANDHERI RAAT · SABSE <b>ROSHAN</b>"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "id": "roots",
+   "layout": "F",
+   "look": "photo",
+   "chapter": "02 · JADEIN",
+   "shot": "A",
+   "direction": "Investigative tone, like reading from old records. Name each text clearly.",
+   "expression": "Voice only. Measured, clear on the names and dates.",
+   "text": "Scholars ke mutabik Diwali ka sabse purana likhit zikr chhathi-saatvin sadi ke granthon mein hai: Kashmir ka Nilamata Purana, aur Raja Harsha ka Sanskrit natak Nagananda, jisme deep-utsav aata hai. Padma aur Skanda Purana mein bhi Deepavali hai. Aur saal 1030 ke aas-paas Iranian scholar Al-Biruni ne Hindustan ke tyohaaron ki list mein is raat ko likha.",
+   "text_dev": "विद्वानों के मुताबिक़ दिवाली का सबसे पुराना लिखित ज़िक्र छठी-सातवीं सदी के ग्रंथों में है: कश्मीर का नीलमत पुराण, और राजा हर्ष का संस्कृत नाटक नागानंद, जिसमें दीप-उत्सव आता है। पद्म और स्कंद पुराण में भी दीपावली है। और साल एक हज़ार तीस के आस-पास ईरानी विद्वान अल-बिरूनी ने हिंदुस्तान के त्योहारों की लिस्ट में इस रात को लिखा।",
+   "source": "SOURCE: P. K. GODE (1945) AND AL-BIRUNI (c. 1030 CE), AS SUMMARISED BY JSTOR DAILY, 'A HISTORY OF DIWALI'",
+   "phrases": [
+    {
+     "t": 0.3,
+     "text": "<b>NAGANANDA</b> · 7TH CENTURY"
+    },
+    {
+     "t": 0.78,
+     "text": "<b>AL-BIRUNI</b> · c. 1030 CE"
+    }
+   ],
+   "photos": [
+    {
+     "src": "manuscript",
+     "at": 0,
+     "kb": "in",
+     "label": "SANSKRIT PALM-LEAF MANUSCRIPT (A 6TH-CENTURY TEXT, LATER COPY) · REPRESENTATIVE"
+    },
+    {
+     "src": "biruni",
+     "at": 0.6,
+     "kb": "in",
+     "label": "A MANUSCRIPT PAGE IN AL-BIRUNI'S HAND, c. 1050 · PUBLIC DOMAIN"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "id": "harvest",
+   "layout": "L",
+   "look": "photo",
+   "chapter": "02 · JADEIN",
+   "shot": "A",
+   "direction": "Conversational. 'Hisaab-kitaab ka waqt' with a small smile.",
+   "expression": "Explaining to a friend. Small smile on the last line.",
+   "text": "Kai itihaaskaar maante hain ki yeh ek nahi, kai utsavon ka sangam hai. Ek purani vyakhya ise mausam se jodti hai: dhaan ki fasal kat chuki hoti thi, yeh saal ke hisaab-kitaab ka waqt tha. Shayad isiliye aaj bhi kai vyapari isi din naye bahi-khaate shuru karte hain.",
+   "text_dev": "कई इतिहासकार मानते हैं कि ये एक नहीं, कई उत्सवों का संगम है। एक पुरानी व्याख्या इसे मौसम से जोड़ती है: धान की फ़सल कट चुकी होती थी, ये साल के हिसाब-किताब का वक़्त था। शायद इसीलिए आज भी कई व्यापारी इसी दिन नए बही-खाते शुरू करते हैं।",
+   "source": "SOURCE: JSTOR DAILY, 'A HISTORY OF DIWALI' (A 1916 ACCOUNT QUOTED BY GODE) · SCHOLARS DISAGREE ON A SINGLE ORIGIN",
+   "phrases": [
+    {
+     "t": 0.35,
+     "text": "FASAL KE BAAD KA <b>UTSAV</b>"
+    }
+   ],
+   "photos": [
+    {
+     "src": "rangoli",
+     "at": 0,
+     "kb": "in",
+     "label": "FILE PHOTO"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "id": "rama",
+   "layout": "F",
+   "look": "photo",
+   "chapter": "03 · KAHANIYAN",
+   "shot": "A",
+   "direction": "Warm, familiar story. Slow on 'deep-avali: deepon ki kataar'.",
+   "expression": "Voice only. Gentle, like telling a child the story.",
+   "text": "Sabse mashhoor kahani Ramayan ki hai. Chaudah saal ka vanvaas, Ravan par vijay, aur Shri Ram ka Ayodhya lautna. Kaha jaata hai, Ayodhya ke logon ne unke swagat mein ghar-ghar deep jalaye. Isi se bana shabd 'deep-avali': deepon ki kataar.",
+   "text_dev": "सबसे मशहूर कहानी रामायण की है। चौदह साल का वनवास, रावण पर विजय, और श्री राम का अयोध्या लौटना। कहा जाता है, अयोध्या के लोगों ने उनके स्वागत में घर-घर दीप जलाए। इसी से बना शब्द 'दीप-आवली': दीपों की क़तार।",
+   "source": "TRADITIONAL ACCOUNT · RAMAYANA TRADITION",
+   "phrases": [
+    {
+     "t": 0.72,
+     "text": "DEEP + AVALI = <b>DEEPON KI KATAAR</b>"
+    }
+   ],
+   "photos": [
+    {
+     "src": "rama_return",
+     "at": 0,
+     "kb": "in",
+     "label": "17TH-CENTURY MALWA PAINTING · NATIONAL MUSEUM · PUBLIC DOMAIN"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "id": "lakshmi",
+   "layout": "F",
+   "look": "photo",
+   "chapter": "03 · KAHANIYAN",
+   "shot": "A",
+   "direction": "Keep moving; one idea per breath.",
+   "expression": "Voice only. Even pace, respectful.",
+   "text": "Lekin yeh akeli kahani nahi. Is raat Lakshmi ji ki puja hoti hai: dhan aur samriddhi ki devi. Ek din pehle Naraka Chaturdashi: Bhagavata Purana ke mutabik Krishna ne Narakasura ka vadh kiya. Dakshin Bharat mein yahi din mukhya Deepavali hai.",
+   "text_dev": "लेकिन ये अकेली कहानी नहीं। इस रात लक्ष्मी जी की पूजा होती है: धन और समृद्धि की देवी। एक दिन पहले नरक चतुर्दशी: भागवत पुराण के मुताबिक़ कृष्ण ने नरकासुर का वध किया। दक्षिण भारत में यही दिन मुख्य दीपावली है।",
+   "source": "SOURCE: BHAGAVATA PURANA (BOOK 10) · HOBSON-JOBSON (1903) VIA JSTOR DAILY",
+   "phrases": [
+    {
+     "t": 0.12,
+     "text": "<b>LAKSHMI</b> PUJA"
+    },
+    {
+     "t": 0.5,
+     "text": "<b>NARAKA</b> CHATURDASHI"
+    }
+   ],
+   "photos": [
+    {
+     "src": "lakshmi",
+     "at": 0,
+     "kb": "in",
+     "label": "RAJA RAVI VARMA PRESS, 1930s · PUBLIC DOMAIN"
+    },
+    {
+     "src": "naraka",
+     "at": 0.48,
+     "kb": "in",
+     "label": "KRISHNA AT NARAKA'S CITADEL · 1775 · CLEVELAND MUSEUM OF ART · PUBLIC DOMAIN"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "id": "faiths",
+   "layout": "F",
+   "look": "photo",
+   "chapter": "03 · KAHANIYAN",
+   "shot": "A",
+   "direction": "This is the 'think beyond headlines' beat. Clear, respectful, one faith per sentence.",
+   "expression": "Voice only. Calm and even; no faith gets more weight than another.",
+   "text": "Aur Diwali sirf ek dharm ki nahi. Jainon ke liye yeh Bhagwan Mahavir ke nirvana ki raat hai. Sikh ise Bandi Chhor Divas manate hain: 1619 mein Guru Hargobind Sahib Gwalior ke qile se rihaa hue, aur kaha jaata hai, 52 rajaon ko bhi saath chhudaya. Bengal mein isi raat Kali Puja hoti hai, aur Nepal mein yeh Tihar hai.",
+   "text_dev": "और दिवाली सिर्फ़ एक धर्म की नहीं। जैनों के लिए ये भगवान महावीर के निर्वाण की रात है। सिख इसे बंदी छोड़ दिवस मनाते हैं: सोलह सौ उन्नीस में गुरु हरगोबिंद साहिब ग्वालियर के क़िले से रिहा हुए, और कहा जाता है, बावन राजाओं को भी साथ छुड़ाया। बंगाल में इसी रात काली पूजा होती है, और नेपाल में ये तिहार है।",
+   "source": "SOURCE: JAIN TRADITION · SIKH ACCOUNTS OF 1619 VIA UTSAV.GOV.IN, RELIGION NEWS SERVICE · NUMBER OF PRISONERS VARIES BY ACCOUNT",
+   "phrases": [
+    {
+     "t": 0.1,
+     "text": "<b>MAHAVIR</b> NIRVANA"
+    },
+    {
+     "t": 0.36,
+     "text": "<b>BANDI CHHOR</b> DIVAS · 1619"
+    },
+    {
+     "t": 0.82,
+     "text": "KALI PUJA · <b>TIHAR</b>"
+    }
+   ],
+   "photos": [
+    {
+     "src": "mahavira",
+     "at": 0,
+     "kb": "in",
+     "label": "MAHAVIRA, GUJARAT, 1470 · ROYAL MUSEUMS OF ART AND HISTORY, BRUSSELS"
+    },
+    {
+     "src": "golden_temple",
+     "at": 0.3,
+     "kb": "in",
+     "label": "FILE PHOTO · GOLDEN TEMPLE ON DIWALI"
+    },
+    {
+     "src": "tihar",
+     "at": 0.78,
+     "kb": "out",
+     "label": "FILE PHOTO · KATHMANDU DURING TIHAR"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "id": "ayodhya",
+   "layout": "F",
+   "look": "stat",
+   "chapter": "04 · AAJ KI DIWALI",
+   "shot": "A",
+   "direction": "Build to the number. Say it slowly: 'chhabbis lakh, satrah hazaar, do sau pandrah'.",
+   "expression": "Voice only. A little awe in the voice on the number.",
+   "text": "Ab aaj par aate hain. 19 October 2025 ko Ayodhya ne Saryu ke 56 ghaton par 26 lakh 17 hazaar 215 diye jalaye. Ginti drone se hui, aur Guinness World Record bana. Jis shehar ki kahani se yeh tyohaar juda hai, wahi shehar aaj duniya ka sabse bada deepotsav karta hai.",
+   "text_dev": "अब आज पर आते हैं। उन्नीस अक्टूबर दो हज़ार पच्चीस को अयोध्या ने सरयू के छप्पन घाटों पर छब्बीस लाख सत्रह हज़ार दो सौ पंद्रह दिये जलाए। गिनती ड्रोन से हुई, और गिनीज़ वर्ल्ड रिकॉर्ड बना। जिस शहर की कहानी से ये त्योहार जुड़ा है, वही शहर आज दुनिया का सबसे बड़ा दीपोत्सव करता है।",
+   "params": {
+    "kicker": "AYODHYA DEEPOTSAV · 19 OCTOBER 2025",
+    "big": "26,17,215 DIYE",
+    "sub": "Lit on 56 ghats of the Saryu, including Ram Ki Paidi · counted by drone · Guinness World Record confirmed on site",
+    "src": "SOURCE: ALL INDIA RADIO (NEWSONAIR.GOV.IN), 19 OCT 2025; DECCAN HERALD"
+   },
+   "photos": [
+    {
+     "src": "ayodhya_night",
+     "at": 0,
+     "kb": "in",
+     "label": "FILE PHOTO · RAM KI PAIDI, AYODHYA, 2018 · NOT THE 2025 RECORD NIGHT"
+    },
+    {
+     "src": null,
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "id": "economy",
+   "layout": "L",
+   "look": "stat",
+   "chapter": "04 · AAJ KI DIWALI",
+   "shot": "A",
+   "direction": "Matter-of-fact on the numbers; clearly flag 'ek sangathan ka anumaan hai'. Warm on the last line.",
+   "expression": "Analyst face for the numbers, then soften on 'kumhar se mithai wale tak'.",
+   "text": "Aur yeh arthvyavastha bhi hai. Vyapariyon ke sangathan CAIT ka daava hai: Diwali 2025 mein lagbhag 6 lakh 5 hazaar crore rupaye ka kaarobaar, aur kareeb 50 lakh asthayi naukriyan. Yeh ek sangathan ka anumaan hai, sarkari aankda nahi. Lekin ek diya jalta hai, toh kumhar se mithai wale tak, lakhon gharon mein chulha jalta hai.",
+   "text_dev": "और ये अर्थव्यवस्था भी है। व्यापारियों के संगठन कैट का दावा है: दिवाली दो हज़ार पच्चीस में लगभग छह लाख पाँच हज़ार करोड़ रुपये का कारोबार, और क़रीब पचास लाख अस्थायी नौकरियाँ। ये एक संगठन का अनुमान है, सरकारी आँकड़ा नहीं। लेकिन एक दिया जलता है, तो कुम्हार से मिठाई वाले तक, लाखों घरों में चूल्हा जलता है।",
+   "params": {
+    "kicker": "CLAIM · TRADERS' BODY ESTIMATE, NOT AN OFFICIAL FIGURE",
+    "big": "₹6.05 LAKH CRORE",
+    "sub": "CAIT's Diwali 2025 sales estimate: ₹5.40 lakh crore goods + ₹65,000 crore services · about 50 lakh temporary jobs",
+    "src": "SOURCE: CAIT PRESS RELEASE, 21 OCT 2025, AS REPORTED BY BUSINESS TODAY"
+   },
+   "phrases": [
+    {
+     "t": 0.8,
+     "text": "KUMHAR SE <b>MITHAI WALE</b> TAK"
+    }
+   ],
+   "photos": [
+    {
+     "src": null,
+     "at": 0
+    },
+    {
+     "src": "sweets",
+     "at": 0.62,
+     "kb": "in",
+     "label": "FILE PHOTO"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "id": "reflection",
+   "layout": "C",
+   "look": "photo",
+   "chapter": "05 · ROSHNI",
+   "shot": "B",
+   "direction": "The heart of the video. Slow. List the four things with a beat between each. Then quiet and sincere.",
+   "expression": "Close-up. Soft eyes. No smile until 'yeh bhi diye hain', then a small one.",
+   "text": "Toh Diwali kya hai? Ek fasal ka utsav. Ek raja ki ghar-wapsi. Ek guru ki rihaai. Ek devi ki puja. Alag-alag kahaniyan, baat ek hi: andhera kitna bhi gehra ho, ek chhota sa diya use haraa sakta hai. Aur yeh diya sirf mitti ka nahi hota. Kisi ki madad, kisi se phir se baat, kisi ko maafi: yeh bhi diye hain.",
+   "text_dev": "तो दिवाली क्या है? एक फ़सल का उत्सव। एक राजा की घर-वापसी। एक गुरु की रिहाई। एक देवी की पूजा। अलग-अलग कहानियाँ, बात एक ही: अँधेरा कितना भी गहरा हो, एक छोटा सा दिया उसे हरा सकता है। और ये दिया सिर्फ़ मिट्टी का नहीं होता। किसी की मदद, किसी से फिर से बात, किसी को माफ़ी: ये भी दिये हैं।",
+   "phrases": [
+    {
+     "t": 0.45,
+     "text": "EK CHHOTA SA <b>DIYA</b>"
+    },
+    {
+     "t": 0.86,
+     "text": "YEH BHI <b>DIYE</b> HAIN"
+    }
+   ],
+   "photos": [
+    {
+     "src": "diya",
+     "at": 0,
+     "kb": "out",
+     "label": "FILE PHOTO"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "id": "question",
+   "layout": "F",
+   "look": "question",
+   "chapter": "05 · ROSHNI",
+   "shot": "A",
+   "direction": "Direct ask to the viewer. Clear and short.",
+   "expression": "Voice only. Friendly, inviting.",
+   "text": "Aaj raat ek diya unke liye bhi jalaiye jo is waqt kaam par hain: doctor, police, delivery wale, hamare jawan. Aur comment mein bataiye: aapke ghar ki sabse khaas Diwali parampara kya hai?",
+   "text_dev": "आज रात एक दिया उनके लिए भी जलाइए जो इस वक़्त काम पर हैं: डॉक्टर, पुलिस, डिलीवरी वाले, हमारे जवान। और कमेंट में बताइए: आपके घर की सबसे ख़ास दिवाली परंपरा क्या है?",
+   "params": {
+    "kicker": "EK DIYA UNKE LIYE JO AAJ KAAM PAR HAIN",
+    "l1": "AAPKE GHAR KI",
+    "l1red": "PARAMPARA?",
+    "l2": "SABSE KHAAS DIWALI RIVAAZ",
+    "cta": "COMMENT MEIN BATAIYE ↓"
+   }
+  },
+  {
+   "n": 13,
+   "id": "wishes",
+   "layout": "C",
+   "look": "photo",
+   "chapter": "",
+   "shot": "B",
+   "direction": "Your wishes, from the heart. Smile. Hold the lens for a second after 'Happy Diwali'.",
+   "expression": "Close-up, warm smile throughout. Hands can come together in a namaste on 'shubhkaamnayein' if it feels natural.",
+   "text": "Meri taraf se aapko aur aapke parivaar ko Diwali ki dher saari shubhkaamnayein. Yeh Diwali aapke ghar mein roshni, sehat aur sukoon laaye. Main hoon Rahul Nishad, aur aap dekh rahe the Think With Rahul Nishad. Think Beyond Headlines! Happy Diwali!",
+   "text_dev": "मेरी तरफ़ से आपको और आपके परिवार को दिवाली की ढेर सारी शुभकामनाएँ। ये दिवाली आपके घर में रोशनी, सेहत और सुकून लाए। मैं हूँ राहुल निषाद, और आप देख रहे थे थिंक विद राहुल निषाद। थिंक बियॉन्ड हेडलाइंस! हैप्पी दिवाली!",
+   "phrases": [
+    {
+     "t": 0.05,
+     "text": "<b>SHUBH</b> DEEPAVALI"
+    }
+   ],
+   "photos": [
+    {
+     "src": "lamps_wb",
+     "at": 0,
+     "kb": "in",
+     "label": "FILE PHOTO"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "id": "end",
+   "layout": "F",
+   "look": "end",
+   "chapter": "",
+   "shot": "A",
+   "direction": "End card. Say the line once, plainly.",
+   "expression": "Voice only.",
+   "text": "Achhi lagi ho toh like, share aur subscribe kijiye. Shubh Deepavali.",
+   "text_dev": "अच्छी लगी हो तो लाइक, शेयर और सब्सक्राइब कीजिए। शुभ दीपावली।"
+  }
+ ]
+}

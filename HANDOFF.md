@@ -68,6 +68,10 @@ On macOS the renderer uses the GPU automatically. Set `RENDER_GPU=1` to force it
 - Style: presenter-led, one thing on screen at a time, key-phrase captions, charcoal/white/red, Anton + Inter, source lines on every fact.
 - Long video first; the vertical Short is not built yet. The product app waits until the skill has been proven on a few real videos.
 
+## 5b. Second video: Diwali (started 8 Nov 2026)
+
+`samples/diwali/`: 14-scene, ~4-minute script (`script.long.json`), `RECORDING_SCRIPT.md`, `STORYBOARD.jpg`, 15 licensed Commons photos with `CREDITS.md`, research table in `README.md`, and four proposed Flow clips in `FLOW_CLIP_PLAN.md` (not generated; the gate applies). Direction video not yet rendered. Same commands as fz1073, run inside `samples/diwali`.
+
 ## 6. Open items
 
 1. **Record the 24 clips** against the direction video and run §3.

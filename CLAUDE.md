@@ -3,7 +3,7 @@
 Read `HANDOFF.md` first. It has the current state, setup and the next steps.
 
 ## What this repo is
-A local, script-driven documentary video pipeline for the YouTube channel **Think With Rahul Nishad** (tagline: Think Beyond Headlines!). Claude directs; the code renders. The first production is `samples/fz1073` (flydubai FZ1073 cockpit attack, ~7.6 min, 16:9).
+A local, script-driven documentary video pipeline for the YouTube channel **Think With Rahul Nishad** (tagline: Think Beyond Headlines!). Claude directs; the code renders. The first production is `samples/fz1073` (flydubai FZ1073 cockpit attack, ~7.6 min, 16:9). The second is `samples/diwali` (Diwali history and wishes, ~4 min; its pipeline files are copies of fz1073's, with `node_modules` and `.venv` symlinked).
 
 ## Rules that always apply
 - **Script is the single source of truth:** `samples/fz1073/script.long.json`. `RECORDING_SCRIPT.md` and `STORYBOARD.jpg` are generated from it (`script_to_md.py`, `storyboard.py`). Never hand-edit the generated files.
