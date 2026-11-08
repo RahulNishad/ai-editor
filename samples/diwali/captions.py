@@ -18,9 +18,25 @@ def _norm(w):
     return re.sub(f"[{re.escape(PUNCT)}\\s]", "", w)
 
 
+def tidy(words):
+    """Whisper word-timing artefacts: a word repeated back to back within 0.35 s, and numbers split into fragments
+    (" 26", " ,17", " ,215" -> "26,17,215")."""
+    out = []
+    for w in words:
+        t = w["word"].strip()
+        if not t: continue
+        if out and _norm(t) and _norm(t) == _norm(out[-1]["word"]) and w["start"] - out[-1]["end"] < 0.35:
+            out[-1]["end"] = w["end"]; continue
+        if out and (t[0] in ",." and t[1:2].isdigit() or (t[0].isdigit() and out[-1]["word"][-1:] in ",.")):
+            out[-1] = dict(out[-1], word=out[-1]["word"] + t, end=w["end"]); continue
+        out.append(dict(w, word=t))
+    return out
+
+
 def correct(words, text_dev):
     """words: [{'start','end','word'}] from Whisper. Returns the same list with 'word' replaced by the script's spelling
     wherever the alignment says he spoke that script word; extra or changed words keep what Whisper heard."""
+    words = tidy(words)
     rec = [_norm(w["word"]) for w in words]
     script = text_dev.split()
     scr = [_norm(s) for s in script]
@@ -62,7 +78,13 @@ def correct(words, text_dev):
 # Whisper's usual Hindi slips on his voice (recognised -> what he says). Only applied to words the script does not contain.
 FIXES = {"गर": "घर", "कवी": "कभी", "कभ": "कब", "जिक": "ज़िक्र", "जिक्र": "ज़िक्र", "आस्ता": "आस्था", "दिपाली": "दिवाली", "पव": "पर्व",
          "बीडियो": "वीडियो", "विडियो": "वीडियो", "इस्कोलर": "स्कॉलर", "दोनो": "दोनों", "इरानिन": "ईरानी", "हाचार": "हज़ार", "मनता": "मान्यता",
-         "सुब": "शुभ", "सरी": "सारी", "रोसनी": "रोशनी", "हल्दी": "हेल्दी", "दिपावली": "दीपावली", "सेरेव": "सरयू", "आयोद्ध्धा": "अयोध्या"}
+         "सुब": "शुभ", "सुप": "शुभ", "सरी": "सारी", "रोसनी": "रोशनी", "हल्दी": "हेल्दी", "दिपावली": "दीपावली", "दिपाओली": "दीपावली", "सेरेव": "सरयू", "सैरेव": "सरयू",
+         "आयोद्ध्धा": "अयोध्या", "ऐयूध्या": "अयोध्या", "अध्यावासियों": "अयोध्यावासियों", "लाक": "लाख", "गाटो": "घाटों", "खातो": "घाटों", "तरब": "तरफ़",
+         "मुख्ख": "मुख्य", "किस्णा": "कृष्ण", "किस्ना": "कृष्ण", "लच्मी": "लक्ष्मी", "देबी": "देवी", "समसते": "समझते", "समचते": "समझते", "सुर्वाद": "शुरुआत",
+         "सुर्वात": "शुरुआत", "कामस्या": "अमावस्या", "कामस्स्या": "अमावस्या", "रीजन": "reason", "कम्पीट": "complete", "कंपीट": "complete",
+         "इंपूर्टेंट": "important", "पहुतेंट": "important", "प्रोस्परस": "prosperous", "प्रोसपरस": "prosperous", "अस्थाइ": "अस्थायी", "दोखर्यां": "नौकरियाँ",
+         "दंखर्यां": "नौकरियाँ", "कारवार": "कारोबार", "रूपय": "रुपये", "सम्रिदिकी": "समृद्धि की", "चटी": "छठी", "सत्वी": "सातवीं", "सतापदी": "शताब्दी",
+         "क्योकि": "क्योंकि", "क्योकी": "क्योंकि", "निरवाडा": "निर्वाण", "अदेरा": "अँधेरा", "कीजिये": "कीजिए"}
 
 
 def phrases(words):

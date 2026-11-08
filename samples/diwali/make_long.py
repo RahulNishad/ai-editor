@@ -147,9 +147,10 @@ def cut_presenter(take, info, segs, dst_mp4, dst_wav):
 
 
 def transcribe(wavs):
+    """Default model medium (downloaded 8 Nov 2026): small misheard too much Hindi. Override with WHISPER_MODEL."""
     os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
     from faster_whisper import WhisperModel
-    model = WhisperModel(os.environ.get("WHISPER_MODEL", "small"), device="cpu", compute_type="int8")
+    model = WhisperModel(os.environ.get("WHISPER_MODEL", "medium"), device="cpu", compute_type="int8")
     res = {}
     for n, w in wavs.items():
         segs, _ = model.transcribe(_resample16(w), language="hi", word_timestamps=True)
