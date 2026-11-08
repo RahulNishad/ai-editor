@@ -22,7 +22,7 @@ _Ek Sanskrit natak, ek Iranian scholar ki kitaab, Ayodhya ke 26 lakh diye: Diwal
 >
 > आज रात आपके घर में जो दिया जलेगा, मान्यता है कि उसकी परंपरा युगों पुरानी है: देवताओं के समय से। लेकिन लिखे हुए इतिहास में ये रात पहली बार कब आई? लगभग एक हज़ार साल पहले, एक ईरानी विद्वान की किताब में। और उससे भी पहले, एक संस्कृत नाटक में। तो आस्था और इतिहास, दोनों क्या कहते हैं? चलिए, हेडलाइंस से आगे चलते हैं।
 **Face:** Warm, curious. Small smile on the first line, then eyebrows up on 'ek hazaar saal pehle'. Hold the lens on the question.
-**On screen:** a clay diya, close-up (real photo)
+**On screen:** diyas flickering on stone steps (AI video clip) → a clay diya, close-up (real photo)
 _Direction: Curiosity hook. Slow first line, then pick up pace. The last line is a hand-off: say 'Chaliye' as if you are already walking into the story._
 
 **02.mp4** · Shot A · Full-screen graphic, only your voice
@@ -68,7 +68,7 @@ _Direction: Conversational. 'Sabse pehli, Ayodhya ki' is the hand-off: say it li
 >
 > सबसे मशहूर कहानी रामायण की है। चौदह साल का वनवास, रावण पर विजय, और श्री राम का अयोध्या लौटना। कहा जाता है, अयोध्या के लोगों ने उनके स्वागत में घर-घर दीप जलाए। इसी से बना शब्द 'दीप-आवली': दीपों की क़तार। लेकिन ये अकेली कहानी नहीं।
 **Face:** Voice only. Gentle, like telling a child the story.
-**On screen:** Rama, Sita and Lakshmana return to Ayodhya (17th-century painting) (real photo)
+**On screen:** Rama, Sita and Lakshmana return to Ayodhya (17th-century painting) (real photo) → a street of lamps lighting one by one (AI video clip)
 _Direction: Warm, familiar. 'Lekin yeh akeli kahani nahi' is a pivot: a small pause before it._
 
 **07.mp4** · Shot A · Full-screen graphic, only your voice
@@ -94,7 +94,7 @@ _Direction: One faith per sentence, equal weight. 'Itni purani, itni saajhi raat
 >
 > वापस वहीं, जहाँ से कहानी शुरू हुई थी: अयोध्या। उन्नीस अक्टूबर दो हज़ार पच्चीस को अयोध्या ने सरयू के छप्पन घाटों पर छब्बीस लाख सत्रह हज़ार दो सौ पंद्रह दिये जलाए। गिनती ड्रोन से हुई, और गिनीज़ वर्ल्ड रिकॉर्ड बना। और इन दियों के पीछे एक पूरी अर्थव्यवस्था है।
 **Face:** Voice only. A little awe in the voice on the number.
-**On screen:** Ram Ki Paidi ghat at night (real photo)
+**On screen:** aerial of lamp-covered ghats (AI video clip) → Ram Ki Paidi ghat at night (real photo)
 _Direction: 'Wapas wahin' ties the ring: Ayodhya again. Build to the number, say it slowly. End pointing to the economy._
 
 **10.mp4** · Shot A · You on the right, graphic on the left
@@ -112,7 +112,7 @@ _Direction: Matter-of-fact on numbers, clearly flag 'anumaan hai'. The last line
 >
 > एक फ़सल का उत्सव। एक राजा की घर-वापसी। एक गुरु की रिहाई। एक देवी की पूजा। अलग-अलग कहानियाँ, बात एक ही: अँधेरा कितना भी गहरा हो, एक छोटा सा दिया उसे हरा सकता है। और ये दिया सिर्फ़ मिट्टी का नहीं होता। किसी की मदद, किसी से फिर से बात, किसी को माफ़ी: ये भी दिये हैं। तो आज रात एक काम कीजिए।
 **Face:** Close-up. Soft eyes. No smile until 'yeh bhi diye hain', then a small one.
-**On screen:** a clay diya, close-up (real photo)
+**On screen:** a clay diya, close-up (real photo) → a single flame brightening (AI video clip)
 _Direction: The heart of the video. A beat between each of the four items. 'Toh aaj raat ek kaam kijiye' is a direct hand-off to the ask._
 
 **12.mp4** · Shot A · Full-screen graphic, only your voice
@@ -128,7 +128,7 @@ _Direction: Direct ask. 'Aur jaate-jaate...' trails off and the next clip comple
 >
 > ...मेरी तरफ़ से आपको और आपके परिवार को दिवाली की ढेर सारी शुभकामनाएँ। ये दिवाली आपके घर में रोशनी, सेहत और सुकून लाए। मैं हूँ राहुल निषाद, और आप देख रहे थे थिंक विद राहुल निषाद। थिंक बियॉन्ड हेडलाइंस! हैप्पी दिवाली!
 **Face:** Close-up, warm smile throughout. Hands can come together in a namaste on 'shubhkaamnayein' if it feels natural.
-**On screen:** rows of Diwali lamps at night (real photo)
+**On screen:** diyas flickering on stone steps (AI video clip) → rows of Diwali lamps at night (real photo)
 _Direction: Complete the sentence from clip 12 without a 'toh' or a breath. Warm smile. Hold the lens after 'Happy Diwali'._
 
 **14.mp4** · Shot A · Full-screen graphic, only your voice

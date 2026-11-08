@@ -2,7 +2,7 @@ import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 NAMES = {"diya": "a clay diya, close-up", "lamps_wb": "rows of Diwali lamps at night", "lakshmi": "Lakshmi, Raja Ravi Varma print", "rama_return": "Rama, Sita and Lakshmana return to Ayodhya (17th-century painting)",
          "naraka": "Krishna at Naraka's citadel (1775 folio)", "mahavira": "Mahavira statue, 1470", "golden_temple": "Golden Temple lit for Diwali", "gwalior": "Gurdwara Data Bandi Chhor, Gwalior",
-         "tihar": "Kathmandu during Tihar", "london": "Diwali at Trafalgar Square", "sweets": "Diwali sweets", "rangoli": "rangoli", "manuscript": "Sanskrit palm-leaf manuscript", "biruni": "a page in Al-Biruni's hand", "ayodhya_night": "Ram Ki Paidi ghat at night"}
+         "tihar": "Kathmandu during Tihar", "london": "Diwali at Trafalgar Square", "sweets": "Diwali sweets", "rangoli": "rangoli", "manuscript": "Sanskrit palm-leaf manuscript", "biruni": "a page in Al-Biruni's hand", "ayodhya_night": "Ram Ki Paidi ghat at night", "d_hook_diyas": "diyas flickering on stone steps", "d_deepavali": "a street of lamps lighting one by one", "d_ghats": "aerial of lamp-covered ghats", "d_one_diya": "a single flame brightening"}
 src, out = sys.argv[1], sys.argv[2]
 d = json.load(open(src))
 LAY = {"C": "You on screen, centred", "L": "You on the right, graphic on the left", "F": "Full-screen graphic, only your voice"}
