@@ -3,7 +3,7 @@
 usage: .venv/bin/python make_short.py --build ~/Movies/diwali-build --work ~/Movies/diwali-short [--scenes 1,6,9,11,13]
 
 Reuses the long build's trimmed presenter clips (pres/NN.mp4, keyed NN_key.mov) and voice (voice/NN.wav), so the takes
-are read once. Per the Shorts recipe: his frame scaled 1.4x and shifted down 280 px (face about 600-950 px, clear of the captions at 1230-1400), matted onto
+are read once. Per the Shorts recipe: his frame scaled 1.15x, not shifted (his takes are framed close, so the face sits around 230-800 px, clear of the captions at 1230-1400), matted onto
 the scene clip (dimmed, softened); full-screen scene for voice-only beats; word-synced captions at 62-70% of frame height;
 a short label at the top and the source line at the bottom. A scene can be cut after a given word (TRIM) so a lead-in to a
 dropped scene does not dangle.
@@ -41,7 +41,7 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: T,{captions.FONT},80,&H00FFFFFF,&H00FFFFFF,&H00141414,&H96000000,-1,0,0,0,100,100,0,0,1,3.4,0,2,60,60,520,1
-Style: TOP,Helvetica Neue,46,&H00FFFFFF,&H00FFFFFF,&H00141414,&H96000000,-1,0,0,0,100,100,2,0,1,2.6,0,8,60,60,150,1
+Style: TOP,Helvetica Neue,46,&H00FFFFFF,&H00FFFFFF,&H00141414,&H96000000,-1,0,0,0,100,100,2,0,1,2.6,0,8,60,60,64,1
 Style: SRC,Helvetica Neue,26,&H00C8CFD6,&H00FFFFFF,&H00101010,&H96000000,0,0,0,0,100,100,1,0,1,1.8,0,2,60,60,70,1
 
 [Events]
@@ -119,9 +119,9 @@ def main():
         inp = ["-stream_loop", "-1", "-framerate", str(ml.FPS), "-i", os.path.join(frames, "%05d.jpg")]
         if onscreen:
             pad = f"tpad=start_duration={t['pre']}:start_mode=clone:stop_duration={t['post'] + 0.5}:stop_mode=clone"
-            pv = (f"[1:v]{pad},scale={int(1080 * 1.4)}:{int(1920 * 1.4)},format=yuva420p,"
+            pv = (f"[1:v]{pad},scale={int(1080 * 1.15)}:{int(1920 * 1.15)},format=yuva420p,"
                   f"fade=t=in:st=0:d=0.3:alpha=1,fade=t=out:st={d - 0.25:.3f}:d=0.25:alpha=1[p]")
-            fc = f"{bg};{pv};[bg][p]overlay=-216:280:shortest=0:eof_action=pass[v0];[v0]subtitles={ass}[v]"
+            fc = f"{bg};{pv};[bg][p]overlay=-81:0:shortest=0:eof_action=pass[v0];[v0]subtitles={ass}[v]"
             sh([FF, "-y", "-loglevel", "error", *inp, "-i", pres[n], "-filter_complex", fc, "-map", "[v]", "-t", f"{d:.3f}",
                 "-c:v", "libx264", "-preset", "veryfast", "-crf", "17", "-pix_fmt", "yuv420p", "-an", out])
         else:
@@ -143,9 +143,10 @@ def main():
 
     print("4/4 export")
     import re
-    m = re.search(r"I:\s+(-?[\d.]+) LUFS", subprocess.run([FF, "-nostats", "-i", mix, "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr)
-    gain = -14.0 - float(m.group(1)) if m else 0.0
-    print(f"  mix {m.group(1) if m else '?'} LUFS -> {gain:+.1f} dB to -14")
+    ms = re.findall(r"I:\s+(-?[\d.]+) LUFS", subprocess.run([FF, "-nostats", "-i", mix, "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr)
+    lufs = float(ms[-1]) if ms else -14.0        # the last match is the summary; earlier ones are running values
+    gain = max(-6.0, min(6.0, -14.0 - lufs))
+    print(f"  mix {lufs:.1f} LUFS -> {gain:+.1f} dB to -14")
     final = os.path.join(work, "out", "short.mp4")
     sh([FF, "-y", "-loglevel", "error", "-i", video, "-i", mix, "-map", "0:v", "-map", "1:a", "-af", f"volume={gain:.2f}dB", "-c:v", "libx264", "-preset", "medium", "-crf", "20",
         "-maxrate", "9M", "-bufsize", "18M", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", final])
