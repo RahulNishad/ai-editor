@@ -72,6 +72,10 @@ On macOS the renderer uses the GPU automatically. Set `RENDER_GPU=1` to force it
 
 `samples/diwali/`: 14-scene, ~4-minute script (`script.long.json`), `RECORDING_SCRIPT.md`, `STORYBOARD.jpg`, 15 licensed Commons photos with `CREDITS.md`, research table in `README.md`, and four proposed Flow clips in `FLOW_CLIP_PLAN.md` (not generated; the gate applies). Direction video not yet rendered. Same commands as fz1073, run inside `samples/diwali`.
 
+## 5c. Third video: Panchkula school case (started 8 Nov 2026)
+
+`samples/panchkula/`: 24-scene, 1,193-word (~8.5 min) investigative script on the Panchkula school assault and the parenting question, written in its own session (commit 5a75de4). Children never identified; causes framed as lines of inquiry. `README.md` lists the blocked outlets (India Today, HT, Indian Express, TOI, NDTV) and the NCERT 81% figure (via Scroll/PTI) as pre-publish checks. Storyboard renders; direction video not yet rendered; four Flow clips proposed, not generated.
+
 ## 6. Open items
 
 1. **Record the 24 clips** against the direction video and run §3.

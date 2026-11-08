@@ -461,7 +461,7 @@ function photoLayer(sc,lt,d,mode){const P=sc.photos||[];const box=$('photo');
   const prevNull=i>0&&!P[i-1].src;box.style.background=prevNull?'transparent':'#000';
   B.style.opacity=!prevNull&&fa<1&&B.dataset.k&&i>0?1:0;if(B.dataset.k)kb(B,B.dataset.kb,(lt-parseFloat(B.dataset.s))/Math.max(parseFloat(B.dataset.e)-parseFloat(B.dataset.s),.1));
   const style=mode==='C'?'blur':(sc.photo_style||'full');
-  const FIL={full:'brightness(1.08) contrast(1.06) saturate(1.02)',dim:'brightness(.6) saturate(.85)',blur:'blur(14px) brightness(.72) saturate(.9)',
+  const FIL={full:'brightness(1.08) contrast(1.06) saturate(1.02)',dim:'brightness(.6) saturate(.85)',blur:'blur(7px) brightness(.92) saturate(1)',
     threat:'grayscale(1) sepia(1) hue-rotate(-40deg) saturate(3) brightness(.75) contrast(1.12)',bw:'grayscale(1) contrast(1.18) brightness(1)'};
   const f=FIL[style];
   let ff=f;if(sc.dim_at!=null&&style==='full'){const k=ease((lt-sc.dim_at*d)/.7);ff=`brightness(${lerp(1.08,.45,k)}) contrast(1.06) saturate(${lerp(1.02,.75,k)})`;}
@@ -675,7 +675,7 @@ window.renderFrame=function(f){
   let i=TL.scenes.findIndex(s=>t>=s.start&&t<s.start+s.dur);if(i<0)i=TL.scenes.length-1;
   const sc=TL.scenes[i],lt=t-sc.start,d=sc.dur;
   const mode=sc.layout||'F';document.body.classList.toggle('modeL',mode==='L');document.body.classList.toggle('modeC',mode==='C');
-  $('gl').style.filter=mode==='C'?'blur(16px) brightness(.72)':'none';
+  $('gl').style.filter=mode==='C'?'blur(8px) brightness(.9)':'none';
   LOOKS[sc.look](lt,d,f,sc);
   if(photoLayer(sc,lt,d,mode)&&sc.look.startsWith('map'))$('ov_map').classList.add('hide');
   // chapter tag
