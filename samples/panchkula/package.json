@@ -1,0 +1,14 @@
+{
+ "name": "fz1073-sample",
+ "private": true,
+ "dependencies": {
+  "three": "0.170.0",
+  "@fontsource/anton": "5.1.0",
+  "@fontsource/inter": "5.1.0",
+  "@fontsource/noto-sans-devanagari": "5.1.0",
+  "world-atlas": "2.0.2",
+  "topojson-client": "3.1.0",
+  "d3-geo": "3.1.1",
+  "playwright": "1.63.0"
+ }
+}
