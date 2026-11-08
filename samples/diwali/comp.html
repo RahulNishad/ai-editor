@@ -474,7 +474,7 @@ function photoLayer(sc,lt,d,mode){const P=sc.photos||[];const box=$('photo');
   const al=sc.alarm!=null&&u>=sc.alarm?((Math.floor(lt*3)%2)?.55:1):0;$('alarm').style.opacity=al;
   const c=CREDITS[cur.src];
   if(c&&c.video&&style!=='blur'){$('credit').innerHTML=`<div class="ptag">${cur.label||'REAL FOOTAGE · REPRESENTATIVE'}</div><br>VIDEO: ${c.artist.replace(/\s+/g,' ').slice(0,50)} · WIKIMEDIA COMMONS · ${c.license}`;document.body.classList.add('hasCredit');}
-  else if(((c&&c.ai)||cur.src.startsWith('ai/'))&&style!=='blur'){$('credit').innerHTML=`<div class="ptag">${cur.label||'AI RECONSTRUCTION'}</div><br>AI-GENERATED ILLUSTRATION · NOT ACTUAL FOOTAGE OF THE INCIDENT`;document.body.classList.add('hasCredit');}
+  else if(((c&&c.ai)||cur.src.startsWith('ai/'))&&style!=='blur'){$('credit').innerHTML=`<div class="ptag">${cur.label||'AI RECONSTRUCTION'}</div><br>AI-GENERATED ILLUSTRATION · NOT A REAL PHOTOGRAPH OR FOOTAGE`;document.body.classList.add('hasCredit');}
   else if(c&&style!=='blur'){const by=c.artist.replace(/\s+/g,' ').slice(0,60);$('credit').innerHTML=`${cur.label?`<div class="ptag">${cur.label}</div><br>`:''}PHOTO: ${by} · WIKIMEDIA COMMONS · ${c.license}`;document.body.classList.add('hasCredit');}
   else{const lb=cur.label&&style!=='blur';$('credit').innerHTML=lb?`<div class="ptag">${cur.label}</div>`:'';document.body.classList.toggle('hasCredit',!!lb);}
   return true;}
