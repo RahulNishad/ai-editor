@@ -39,7 +39,39 @@ def probe(path):
     rot = int(v.get("tags", {}).get("rotate", rot))
     if abs(rot) % 180 == 90:
         w, h = h, w
-    return {"w": w, "h": h, "dur": float(j["format"]["duration"]), "has_audio": any(s["codec_type"] == "audio" for s in j["streams"])}
+    return {"w": w, "h": h, "dur": float(j["format"]["duration"]), "has_audio": any(s["codec_type"] == "audio" for s in j["streams"]),
+            "hdr": v.get("color_transfer") in ("arib-std-b67", "smpte2084") or v.get("color_primaries") == "bt2020"}
+
+
+FF_FULL = next((f for f in ("/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg", "/usr/local/opt/ffmpeg-full/bin/ffmpeg") if os.path.exists(f)), "ffmpeg")
+# Phone HDR takes (HLG, BT.2020, 10-bit) must become SDR BT.709 before x264 or the colours wash out and the green key fails.
+# zscale's direct HLG->709 conversion looked right on Rahul's takes; the tonemap=hable chain was too dark.
+HDR_TO_SDR = "zscale=tin=arib-std-b67:min=bt2020nc:pin=bt2020:rin=tv:t=bt709:m=bt709:p=bt709:r=tv:npl=1000,format=yuv420p"
+
+
+def is_green_screen(mp4):
+    """True when the left border strip of the conformed clip is the lime cloth (see key_presenter.is_green)."""
+    import key_presenter as kp
+    raw = sh([FF_FULL, "-loglevel", "error", "-ss", "1", "-i", mp4, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], text=False).stdout
+    rgb = np.frombuffer(raw, np.uint8).reshape(kp.H, kp.W, 3).astype(np.float32)
+    ycc = kp.ycc_from_rgb(rgb[:kp.H // 2, :kp.STRIP])      # top half only: his arms reach the edge lower down
+    return kp.is_green(ycc).mean() > 0.4
+
+
+def key_presenters(pres, scenes, work, workers):
+    """Key the green cloth out of every on-screen scene (layouts C and L): ProRes 4444 with alpha, 4 takes at a time."""
+    from concurrent.futures import ThreadPoolExecutor
+    todo = [s["n"] for s in scenes if s.get("layout", "F") in ("C", "L")]
+    out = dict(pres)
+    def one(n):
+        dst = os.path.join(work, "pres", f"{n:02d}_key.mov")
+        if not (os.path.exists(dst) and os.path.getmtime(dst) > os.path.getmtime(pres[n]) and os.path.getmtime(dst) > os.path.getmtime(os.path.join(HERE, "key_presenter.py"))):
+            sh([sys.executable, os.path.join(HERE, "key_presenter.py"), pres[n], dst])
+        return n, dst
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as ex:
+        for n, dst in ex.map(one, todo):
+            out[n] = dst; print(f"  keyed {n:02d}", flush=True)
+    return out
 
 
 def pick_takes(folder, scenes):
@@ -105,8 +137,9 @@ def cut_presenter(take, info, segs, dst_mp4, dst_wav):
     vert = info["h"] >= info["w"]
     frame = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920" if vert \
         else "crop=ih*9/16:ih,scale=1080:1920"
-    fc.append("".join(parts) + f"concat=n={len(segs)}:v=1:a=1[cv][ca];[cv]{frame},fps={FPS},format=yuv420p[vo];[ca]aresample={SR},pan=mono|c0=c0[ao]")
-    sh(["ffmpeg", "-y", "-loglevel", "error", "-i", take, "-filter_complex", ";".join(fc),
+    tm = HDR_TO_SDR + "," if info.get("hdr") else ""
+    fc.append("".join(parts) + f"concat=n={len(segs)}:v=1:a=1[cv][ca];[cv]{tm}{frame},fps={FPS},format=yuv420p[vo];[ca]aresample={SR},pan=mono|c0=c0[ao]")
+    sh([FF_FULL if tm else "ffmpeg", "-y", "-loglevel", "error", "-i", take, "-filter_complex", ";".join(fc),
         "-map", "[vo]", "-map", "[ao]", "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
         "-c:a", "pcm_s16le", "-ar", str(SR), dst_mp4])
     sh(["ffmpeg", "-y", "-loglevel", "error", "-i", dst_mp4, "-vn", "-ac", "1", "-ar", str(SR), dst_wav])
@@ -114,13 +147,16 @@ def cut_presenter(take, info, segs, dst_mp4, dst_wav):
 
 
 def transcribe(wavs):
+    """Default model medium (downloaded 8 Nov 2026): small misheard too much Hindi. Override with WHISPER_MODEL."""
     os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
     from faster_whisper import WhisperModel
-    model = WhisperModel(os.environ.get("WHISPER_MODEL", "small"), device="cpu", compute_type="int8")
+    model = WhisperModel(os.environ.get("WHISPER_MODEL", "medium"), device="cpu", compute_type="int8")
     res = {}
     for n, w in wavs.items():
-        segs, _ = model.transcribe(_resample16(w), language="hi")
-        res[n] = [{"start": s.start, "end": s.end, "text": s.text.strip()} for s in segs]
+        segs, _ = model.transcribe(_resample16(w), language="hi", word_timestamps=True)
+        segs = list(segs)
+        res[n] = {"segs": [{"start": s.start, "end": s.end, "text": s.text.strip()} for s in segs],
+                  "words": [{"start": x.start, "end": x.end, "word": x.word} for s in segs for x in (s.words or []) if x.word.strip()]}
     return res
 
 
@@ -134,7 +170,8 @@ def srt_time(t):
     return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
 
-def build_timeline(scenes, durs):
+def build_timeline(scenes, durs, captions=False):
+    """captions=True: the word-synced transcript replaces the scripted key phrases (mandatory rule, Nov 2026)."""
     t, out = 0.0, []
     for s in scenes:
         pre, post = PRE.get(s["id"], 0.35), POST.get(s["id"], 0.5)
@@ -145,7 +182,7 @@ def build_timeline(scenes, durs):
             ph = s.get("fallback_photos", ph if not s.get("fallback_look") else [])
             look = s.get("fallback_look", look); style = s.get("fallback_style", style)
         out.append({"n": s["n"], "id": s["id"], "look": look, "layout": s.get("layout", "F"),
-                    "chapter": s.get("chapter", ""), "phrases": s.get("phrases", []), "params": s.get("params"),
+                    "chapter": s.get("chapter", ""), "phrases": [] if captions else s.get("phrases", []), "params": s.get("params"),
                     "source": s.get("source", ""), "photos": ph, "photo_style": style, "alarm": s.get("alarm"), "dim_at": s.get("dim_at"), "start": round(t, 3), "dur": round(dur, 3),
                     "vo_at": round(t + pre, 3), "vo_dur": round(durs[s["n"]], 3), "pre": pre, "post": post})
         t += dur
@@ -168,7 +205,9 @@ def render_frames(work, tl_name, out_dir, workers):
     return total
 
 
-def composite(work, tl, frames_dir, pres):
+def composite(work, tl, frames_dir, pres, caps=None):
+    """caps: {scene n: phrases} from captions.py; burned in AFTER the presenter overlay so the words sit on top of him."""
+    import captions
     segs = []
     for s in tl["scenes"]:
         f0, f1 = round(s["start"] * FPS), round((s["start"] + s["dur"]) * FPS)
@@ -176,21 +215,30 @@ def composite(work, tl, frames_dir, pres):
         g = ["-framerate", str(FPS), "-start_number", str(f0), "-i", os.path.join(HERE, frames_dir, "%05d.jpg")]
         common = ["-frames:v", str(f1 - f0), "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-pix_fmt", "yuv420p", "-an", out]
         lay = s["layout"]
+        sub = ""
+        if caps and caps.get(s["n"]):
+            ass = captions.ass(os.path.join(work, "seg", f"{s['n']:02d}.ass"), caps[s["n"]], offset=s["pre"])
+            sub = "subtitles=" + ass.replace(":", "\\:")
         if lay == "F":
-            sh(["ffmpeg", "-y", "-loglevel", "error", *g, *common])
+            sh([FF_FULL, "-y", "-loglevel", "error", *g, *(["-vf", sub] if sub else []), *common])
         else:
             d = s["dur"]
             pad = f"tpad=start_duration={s['pre']}:start_mode=clone:stop_duration={s['post'] + 0.5}:stop_mode=clone"
+            keyed = pres[s["n"]].endswith(".mov")      # green cloth removed: alpha channel present
+            fades = f"fade=t=in:st=0:d=0.3:alpha=1,fade=t=out:st={d - 0.25:.3f}:d=0.25:alpha=1[p]"
             if lay == "L":
-                pv = (f"[1:v]{pad},scale={CARD_W}:{CARD_H},pad={CARD_W + 8}:{CARD_H}:8:0:color=0xe0312e,format=yuva420p,"
-                      f"fade=t=in:st=0:d=0.3:alpha=1,fade=t=out:st={d - 0.25:.3f}:d=0.25:alpha=1[p]")
-                x, y = 1920 - CARD_W - 8 - 84, (1080 - CARD_H) // 2
+                if keyed:   # matted straight onto the dimmed scene (Rahul, 8 Nov 2026): no card, no red edge
+                    pv = f"[1:v]{pad},scale={CARD_W}:{CARD_H},format=yuva420p,{fades}"
+                    x, y = 1920 - CARD_W - 84, 1080 - CARD_H
+                else:
+                    pv = f"[1:v]{pad},scale={CARD_W}:{CARD_H},pad={CARD_W + 8}:{CARD_H}:8:0:color=0xe0312e,format=yuva420p,{fades}"
+                    x, y = 1920 - CARD_W - 8 - 84, (1080 - CARD_H) // 2
             else:
-                pv = (f"[1:v]{pad},scale={C_W}:{C_H},format=yuva420p,"
-                      f"fade=t=in:st=0:d=0.3:alpha=1,fade=t=out:st={d - 0.25:.3f}:d=0.25:alpha=1[p]")
+                pv = f"[1:v]{pad},scale={C_W}:{C_H},format=yuva420p,{fades}"
                 x, y = (1920 - C_W) // 2, 0
-            sh(["ffmpeg", "-y", "-loglevel", "error", *g, "-i", pres[s["n"]], "-filter_complex",
-                f"{pv};[0:v][p]overlay={x}:{y}:shortest=0:eof_action=pass[v]", "-map", "[v]", *common])
+            tail = f"[v0];[v0]{sub}[v]" if sub else "[v]"
+            sh([FF_FULL, "-y", "-loglevel", "error", *g, "-i", pres[s["n"]], "-filter_complex",
+                f"{pv};[0:v][p]overlay={x}:{y}:shortest=0:eof_action=pass{tail}", "-map", "[v]", *common])
         segs.append(out)
     lst = os.path.join(work, "seg", "list.txt")
     open(lst, "w").write("".join(f"file '{p}'\n" for p in segs))
@@ -205,6 +253,8 @@ def main():
     ap.add_argument("--scenes", default="")
     ap.add_argument("--workers", type=int, default=3)
     ap.add_argument("--skip-render", action="store_true")
+    ap.add_argument("--key", default="auto", choices=["auto", "on", "off"], help="green-screen keying of the presenter (auto: detect the cloth)")
+    ap.add_argument("--no-captions", dest="captions", action="store_false", help="skip the word-synced on-screen transcript")
     a = ap.parse_args()
     work = os.path.abspath(a.work)
     for d in ("pres", "voice", "seg", "out"):
@@ -237,11 +287,21 @@ def main():
         report.append((n, os.path.basename(take), info["dur"], durs[n], len(segs), expect, flag))
         print(f"  {n:02d} {os.path.basename(take)}: {info['dur']:.1f}s -> {durs[n]:.1f}s ({flag})")
 
-    print("3/6 transcribing with Whisper")
+    on_screen = [s for s in scenes if s.get("layout", "F") in ("C", "L")]
+    if a.key == "on" or (a.key == "auto" and on_screen and is_green_screen(pres[on_screen[0]["n"]])):
+        print("2b/6 keying the green cloth out of the on-screen scenes")
+        pres = key_presenters(pres, scenes, work, a.workers)
+
+    print("3/6 transcribing with Whisper (word timings)")
     trans = transcribe(wavs)
+    import captions
+    caps = {}
+    if a.captions:
+        for s in scenes:
+            caps[s["n"]] = captions.phrases(captions.correct(trans[s["n"]]["words"], s.get("text_dev") or s["text"]))
 
     print("4/6 building timeline and rendering graphics")
-    tl = build_timeline(scenes, durs)
+    tl = build_timeline(scenes, durs, captions=a.captions)
     tl_name = "timeline.long.json"
     json.dump(tl, open(os.path.join(HERE, tl_name), "w"), indent=1)
     frames_dir = "frames_long"
@@ -253,22 +313,28 @@ def main():
         render_frames(work, tl_name, frames_dir, a.workers)
 
     print("5/6 compositing presenter and graphics")
-    lst = composite(work, tl, frames_dir, pres)
+    lst = composite(work, tl, frames_dir, pres, caps)
     video = os.path.join(work, "out", "video.mp4")
     sh(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", video])
 
     print("6/6 sound design, mix, export")
     sh([sys.executable, os.path.join(HERE, "sound2.py"), os.path.join(HERE, tl_name), os.path.join(work, "voice"), os.path.join(work, "out")])
     final = os.path.join(work, "out", "final.mp4")
+    ms = re.findall(r"I:\s+(-?[\d.]+) LUFS", subprocess.run(["ffmpeg", "-nostats", "-i", os.path.join(work, "out", "mix.wav"), "-af", "ebur128", "-f", "null", "-"],
+                                                           capture_output=True, text=True).stderr)
+    gain = max(-6.0, min(6.0, -14.0 - float(ms[-1]))) if ms else 0.0      # last match is the summary; land the mix on -14 LUFS
     sh(["ffmpeg", "-y", "-loglevel", "error", "-i", video, "-i", os.path.join(work, "out", "mix.wav"),
-        "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-maxrate", "6.5M", "-bufsize", "13M",
+        "-map", "0:v", "-map", "1:a", "-af", f"volume={gain:.2f}dB", "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-maxrate", "6.5M", "-bufsize", "13M",
         "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", final])
 
     # subtitles (Whisper text, Devanagari) and chapters
     srt, i = [], 1
     for s in tl["scenes"]:
-        for seg in trans.get(s["n"], []):
-            srt.append(f"{i}\n{srt_time(s['vo_at'] + seg['start'])} --> {srt_time(s['vo_at'] + seg['end'])}\n{seg['text']}\n"); i += 1
+        if caps.get(s["n"]):
+            cues, i = captions.srt_lines(caps[s["n"]], s["vo_at"], i); srt += cues
+        else:
+            for seg in trans[s["n"]]["segs"]:
+                srt.append(f"{i}\n{srt_time(s['vo_at'] + seg['start'])} --> {srt_time(s['vo_at'] + seg['end'])}\n{seg['text']}\n"); i += 1
     open(os.path.join(work, "out", "subtitles.srt"), "w").write("\n".join(srt))
     ch, seen = ["0:00 Intro"], set()
     for s in tl["scenes"]:
@@ -279,7 +345,8 @@ def main():
     open(os.path.join(work, "out", "chapters.txt"), "w").write("\n".join(ch) + "\n")
     rep = ["| Scene | Take | Raw s | Cut s | Pieces | Expected s | Check |", "| --- | --- | --- | --- | --- | --- | --- |"]
     rep += [f"| {n:02d} | {t} | {r:.1f} | {c:.1f} | {p} | {e:.1f} | {f} |" for n, t, r, c, p, e, f in report]
-    rep += ["", "## Whisper transcript per scene", ""] + [f"- **{n:02d}**: " + " ".join(x["text"] for x in trans[n]) for n in sorted(trans)]
+    rep += ["", "## On-screen transcript per scene (Whisper words, corrected against the script where he said the script)", ""]
+    rep += [f"- **{n:02d}**: " + (" | ".join(" ".join(w["word"] for w in p) for p in caps[n]) if caps.get(n) else " ".join(x["text"] for x in trans[n]["segs"])) for n in sorted(trans)]
     open(os.path.join(work, "out", "report.md"), "w").write("\n".join(rep) + "\n")
     print("done:", final, f"{os.path.getsize(final) / 1e6:.0f} MB, {tl['total']:.1f}s")
 
