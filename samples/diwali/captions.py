@@ -34,36 +34,40 @@ def tidy(words):
 
 
 def correct(words, text_dev):
-    """words: [{'start','end','word'}] from Whisper. Returns the same list with 'word' replaced by the script's spelling
+    """words: [{'start','end','word'}] from Whisper. Returns a new list with 'word' replaced by the script's spelling
     wherever the alignment says he spoke that script word; extra or changed words keep what Whisper heard."""
     words = tidy(words)
     rec = [_norm(w["word"]) for w in words]
     script = text_dev.split()
     scr = [_norm(s) for s in script]
-    out = [dict(w, word=w["word"].strip()) for w in words]
-    matched = [False] * len(out)
+    res, matched = [], []
     sm = difflib.SequenceMatcher(None, rec, scr, autojunk=False)
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
         if tag == "equal":
-            for k in range(i2 - i1): out[i1 + k]["word"] = script[j1 + k]; matched[i1 + k] = True
+            for k in range(i2 - i1): res.append(dict(words[i1 + k], word=script[j1 + k])); matched.append(True)
         elif tag == "replace":
             # whole run first: Whisper splits or merges words ("चब भीस" for "छब्बीस"); if the run sounds like the script span,
             # take the span's words and share the run's time by character count
             rrun, srun = "".join(rec[i1:i2]), "".join(scr[j1:j2])
             if rrun and srun and difflib.SequenceMatcher(None, rrun, srun).ratio() >= 0.5 and abs(len(rrun) - len(srun)) <= max(4, len(srun) // 3):
                 t0, t1 = words[i1]["start"], words[i2 - 1]["end"]
-                total = sum(len(x) for x in scr[j1:j2]) or 1; acc = 0.0; new = []
+                total = sum(len(x) for x in scr[j1:j2]) or 1; acc = 0.0
                 for j in range(j1, j2):
                     a = t0 + (t1 - t0) * acc / total; acc += len(scr[j]); b = t0 + (t1 - t0) * acc / total
-                    new.append({"start": a, "end": b, "word": script[j]})
-                out[i1:i2] = new; matched[i1:i2] = [True] * len(new)
+                    res.append({"start": a, "end": b, "word": script[j]}); matched.append(True)
                 continue
             # else pair them up in order; accept the script word when the sounds are close enough
-            for k in range(min(i2 - i1, j2 - j1)):
-                if difflib.SequenceMatcher(None, rec[i1 + k], scr[j1 + k]).ratio() >= 0.45:
-                    out[i1 + k]["word"] = script[j1 + k]; matched[i1 + k] = True
-    # ad-libbed words follow the voice, but Whisper's spelling is not his: the script's own vocabulary first, then known slips
-    vocab = {_norm(s): s.strip(PUNCT) for s in script}
+            for k in range(i2 - i1):
+                w = dict(words[i1 + k], word=words[i1 + k]["word"].strip()); ok = False
+                if k < j2 - j1 and difflib.SequenceMatcher(None, rec[i1 + k], scr[j1 + k]).ratio() >= 0.45:
+                    w["word"] = script[j1 + k]; ok = True
+                res.append(w); matched.append(ok)
+        elif tag == "delete":
+            for k in range(i1, i2): res.append(dict(words[k], word=words[k]["word"].strip())); matched.append(False)
+        # 'insert': script words he did not say are left out; the transcript follows the voice
+    out = res
+    # ad-libbed words follow the voice, but Whisper's spelling is not his: known slips first, then the script's own vocabulary
+    vocab = {_norm(x): x.strip(PUNCT) for x in script}
     for i, w in enumerate(out):
         if matched[i]: continue
         key = _norm(w["word"])
@@ -90,7 +94,8 @@ FIXES = {"गर": "घर", "कवी": "कभी", "कभ": "कब", "ज�
          "सुर्वात": "शुरुआत", "कामस्या": "अमावस्या", "कामस्स्या": "अमावस्या", "रीजन": "reason", "कम्पीट": "complete", "कंपीट": "complete",
          "इंपूर्टेंट": "important", "पहुतेंट": "important", "प्रोस्परस": "prosperous", "प्रोसपरस": "prosperous", "अस्थाइ": "अस्थायी", "दोखर्यां": "नौकरियाँ",
          "दंखर्यां": "नौकरियाँ", "कारवार": "कारोबार", "रूपय": "रुपये", "सम्रिदिकी": "समृद्धि की", "चटी": "छठी", "सत्वी": "सातवीं", "सतापदी": "शताब्दी",
-         "क्योकि": "क्योंकि", "क्योकी": "क्योंकि", "निरवाडा": "निर्वाण", "अदेरा": "अँधेरा", "कीजिये": "कीजिए"}
+         "क्योकि": "क्योंकि", "क्योकी": "क्योंकि", "निरवाडा": "निर्वाण", "अदेरा": "अँधेरा", "कीजिये": "कीजिए", "ग़र": "घर", "परम्प्रा": "परंपरा",
+         "जादा": "ज़्यादा", "सैयोंग": "संयोग", "सुचा": "सोचा", "2020": "2026", "मात": "बात", "दिपा": "दिवाली"}
 
 
 def phrases(words):
