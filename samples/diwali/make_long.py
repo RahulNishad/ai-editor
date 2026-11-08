@@ -39,7 +39,39 @@ def probe(path):
     rot = int(v.get("tags", {}).get("rotate", rot))
     if abs(rot) % 180 == 90:
         w, h = h, w
-    return {"w": w, "h": h, "dur": float(j["format"]["duration"]), "has_audio": any(s["codec_type"] == "audio" for s in j["streams"])}
+    return {"w": w, "h": h, "dur": float(j["format"]["duration"]), "has_audio": any(s["codec_type"] == "audio" for s in j["streams"]),
+            "hdr": v.get("color_transfer") in ("arib-std-b67", "smpte2084") or v.get("color_primaries") == "bt2020"}
+
+
+FF_FULL = next((f for f in ("/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg", "/usr/local/opt/ffmpeg-full/bin/ffmpeg") if os.path.exists(f)), "ffmpeg")
+# Phone HDR takes (HLG, BT.2020, 10-bit) must become SDR BT.709 before x264 or the colours wash out and the green key fails.
+# zscale's direct HLG->709 conversion looked right on Rahul's takes; the tonemap=hable chain was too dark.
+HDR_TO_SDR = "zscale=tin=arib-std-b67:min=bt2020nc:pin=bt2020:rin=tv:t=bt709:m=bt709:p=bt709:r=tv:npl=1000,format=yuv420p"
+
+
+def is_green_screen(mp4):
+    """True when the left border strip of the conformed clip is the lime cloth (see key_presenter.is_green)."""
+    import key_presenter as kp
+    raw = sh([FF_FULL, "-loglevel", "error", "-ss", "1", "-i", mp4, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], text=False).stdout
+    rgb = np.frombuffer(raw, np.uint8).reshape(kp.H, kp.W, 3).astype(np.float32)
+    ycc = kp.ycc_from_rgb(rgb[:kp.H // 2, :kp.STRIP])      # top half only: his arms reach the edge lower down
+    return kp.is_green(ycc).mean() > 0.4
+
+
+def key_presenters(pres, scenes, work, workers):
+    """Key the green cloth out of every on-screen scene (layouts C and L): ProRes 4444 with alpha, 4 takes at a time."""
+    from concurrent.futures import ThreadPoolExecutor
+    todo = [s["n"] for s in scenes if s.get("layout", "F") in ("C", "L")]
+    out = dict(pres)
+    def one(n):
+        dst = os.path.join(work, "pres", f"{n:02d}_key.mov")
+        if not (os.path.exists(dst) and os.path.getmtime(dst) > os.path.getmtime(pres[n]) and os.path.getmtime(dst) > os.path.getmtime(os.path.join(HERE, "key_presenter.py"))):
+            sh([sys.executable, os.path.join(HERE, "key_presenter.py"), pres[n], dst])
+        return n, dst
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as ex:
+        for n, dst in ex.map(one, todo):
+            out[n] = dst; print(f"  keyed {n:02d}", flush=True)
+    return out
 
 
 def pick_takes(folder, scenes):
@@ -105,8 +137,9 @@ def cut_presenter(take, info, segs, dst_mp4, dst_wav):
     vert = info["h"] >= info["w"]
     frame = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920" if vert \
         else "crop=ih*9/16:ih,scale=1080:1920"
-    fc.append("".join(parts) + f"concat=n={len(segs)}:v=1:a=1[cv][ca];[cv]{frame},fps={FPS},format=yuv420p[vo];[ca]aresample={SR},pan=mono|c0=c0[ao]")
-    sh(["ffmpeg", "-y", "-loglevel", "error", "-i", take, "-filter_complex", ";".join(fc),
+    tm = HDR_TO_SDR + "," if info.get("hdr") else ""
+    fc.append("".join(parts) + f"concat=n={len(segs)}:v=1:a=1[cv][ca];[cv]{tm}{frame},fps={FPS},format=yuv420p[vo];[ca]aresample={SR},pan=mono|c0=c0[ao]")
+    sh([FF_FULL if tm else "ffmpeg", "-y", "-loglevel", "error", "-i", take, "-filter_complex", ";".join(fc),
         "-map", "[vo]", "-map", "[ao]", "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
         "-c:a", "pcm_s16le", "-ar", str(SR), dst_mp4])
     sh(["ffmpeg", "-y", "-loglevel", "error", "-i", dst_mp4, "-vn", "-ac", "1", "-ar", str(SR), dst_wav])
@@ -181,13 +214,17 @@ def composite(work, tl, frames_dir, pres):
         else:
             d = s["dur"]
             pad = f"tpad=start_duration={s['pre']}:start_mode=clone:stop_duration={s['post'] + 0.5}:stop_mode=clone"
+            keyed = pres[s["n"]].endswith(".mov")      # green cloth removed: alpha channel present
+            fades = f"fade=t=in:st=0:d=0.3:alpha=1,fade=t=out:st={d - 0.25:.3f}:d=0.25:alpha=1[p]"
             if lay == "L":
-                pv = (f"[1:v]{pad},scale={CARD_W}:{CARD_H},pad={CARD_W + 8}:{CARD_H}:8:0:color=0xe0312e,format=yuva420p,"
-                      f"fade=t=in:st=0:d=0.3:alpha=1,fade=t=out:st={d - 0.25:.3f}:d=0.25:alpha=1[p]")
-                x, y = 1920 - CARD_W - 8 - 84, (1080 - CARD_H) // 2
+                if keyed:   # matted straight onto the dimmed scene (Rahul, 8 Nov 2026): no card, no red edge
+                    pv = f"[1:v]{pad},scale={CARD_W}:{CARD_H},format=yuva420p,{fades}"
+                    x, y = 1920 - CARD_W - 84, 1080 - CARD_H
+                else:
+                    pv = f"[1:v]{pad},scale={CARD_W}:{CARD_H},pad={CARD_W + 8}:{CARD_H}:8:0:color=0xe0312e,format=yuva420p,{fades}"
+                    x, y = 1920 - CARD_W - 8 - 84, (1080 - CARD_H) // 2
             else:
-                pv = (f"[1:v]{pad},scale={C_W}:{C_H},format=yuva420p,"
-                      f"fade=t=in:st=0:d=0.3:alpha=1,fade=t=out:st={d - 0.25:.3f}:d=0.25:alpha=1[p]")
+                pv = f"[1:v]{pad},scale={C_W}:{C_H},format=yuva420p,{fades}"
                 x, y = (1920 - C_W) // 2, 0
             sh(["ffmpeg", "-y", "-loglevel", "error", *g, "-i", pres[s["n"]], "-filter_complex",
                 f"{pv};[0:v][p]overlay={x}:{y}:shortest=0:eof_action=pass[v]", "-map", "[v]", *common])
@@ -205,6 +242,7 @@ def main():
     ap.add_argument("--scenes", default="")
     ap.add_argument("--workers", type=int, default=3)
     ap.add_argument("--skip-render", action="store_true")
+    ap.add_argument("--key", default="auto", choices=["auto", "on", "off"], help="green-screen keying of the presenter (auto: detect the cloth)")
     a = ap.parse_args()
     work = os.path.abspath(a.work)
     for d in ("pres", "voice", "seg", "out"):
@@ -236,6 +274,11 @@ def main():
         flag = "CHECK" if not (0.6 * expect <= durs[n] <= 1.6 * expect) else "ok"
         report.append((n, os.path.basename(take), info["dur"], durs[n], len(segs), expect, flag))
         print(f"  {n:02d} {os.path.basename(take)}: {info['dur']:.1f}s -> {durs[n]:.1f}s ({flag})")
+
+    on_screen = [s for s in scenes if s.get("layout", "F") in ("C", "L")]
+    if a.key == "on" or (a.key == "auto" and on_screen and is_green_screen(pres[on_screen[0]["n"]])):
+        print("2b/6 keying the green cloth out of the on-screen scenes")
+        pres = key_presenters(pres, scenes, work, a.workers)
 
     print("3/6 transcribing with Whisper")
     trans = transcribe(wavs)
