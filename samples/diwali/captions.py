@@ -72,7 +72,13 @@ def correct(words, text_dev):
         best = max(vocab, key=lambda v: difflib.SequenceMatcher(None, key, v).ratio(), default=None)
         if best and len(key) >= 3 and difflib.SequenceMatcher(None, key, best).ratio() >= 0.8:
             out[i]["word"] = vocab[best]
-    return out
+    # the alignment can map two heard tokens onto the same script word: drop the second when it follows at once
+    final = []
+    for w in out:
+        if final and _norm(w["word"]) and _norm(w["word"]) == _norm(final[-1]["word"]) and w["start"] - final[-1]["end"] < 0.6:
+            final[-1]["end"] = w["end"]; continue
+        final.append(w)
+    return final
 
 
 # Whisper's usual Hindi slips on his voice (recognised -> what he says). Only applied to words the script does not contain.

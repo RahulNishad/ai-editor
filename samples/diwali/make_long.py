@@ -320,8 +320,11 @@ def main():
     print("6/6 sound design, mix, export")
     sh([sys.executable, os.path.join(HERE, "sound2.py"), os.path.join(HERE, tl_name), os.path.join(work, "voice"), os.path.join(work, "out")])
     final = os.path.join(work, "out", "final.mp4")
+    ms = re.findall(r"I:\s+(-?[\d.]+) LUFS", subprocess.run(["ffmpeg", "-nostats", "-i", os.path.join(work, "out", "mix.wav"), "-af", "ebur128", "-f", "null", "-"],
+                                                           capture_output=True, text=True).stderr)
+    gain = max(-6.0, min(6.0, -14.0 - float(ms[-1]))) if ms else 0.0      # last match is the summary; land the mix on -14 LUFS
     sh(["ffmpeg", "-y", "-loglevel", "error", "-i", video, "-i", os.path.join(work, "out", "mix.wav"),
-        "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-maxrate", "6.5M", "-bufsize", "13M",
+        "-map", "0:v", "-map", "1:a", "-af", f"volume={gain:.2f}dB", "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-maxrate", "6.5M", "-bufsize", "13M",
         "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", final])
 
     # subtitles (Whisper text, Devanagari) and chapters
