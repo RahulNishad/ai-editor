@@ -152,8 +152,10 @@ def transcribe(wavs):
     model = WhisperModel(os.environ.get("WHISPER_MODEL", "small"), device="cpu", compute_type="int8")
     res = {}
     for n, w in wavs.items():
-        segs, _ = model.transcribe(_resample16(w), language="hi")
-        res[n] = [{"start": s.start, "end": s.end, "text": s.text.strip()} for s in segs]
+        segs, _ = model.transcribe(_resample16(w), language="hi", word_timestamps=True)
+        segs = list(segs)
+        res[n] = {"segs": [{"start": s.start, "end": s.end, "text": s.text.strip()} for s in segs],
+                  "words": [{"start": x.start, "end": x.end, "word": x.word} for s in segs for x in (s.words or []) if x.word.strip()]}
     return res
 
 
@@ -167,7 +169,8 @@ def srt_time(t):
     return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
 
-def build_timeline(scenes, durs):
+def build_timeline(scenes, durs, captions=False):
+    """captions=True: the word-synced transcript replaces the scripted key phrases (mandatory rule, Nov 2026)."""
     t, out = 0.0, []
     for s in scenes:
         pre, post = PRE.get(s["id"], 0.35), POST.get(s["id"], 0.5)
@@ -178,7 +181,7 @@ def build_timeline(scenes, durs):
             ph = s.get("fallback_photos", ph if not s.get("fallback_look") else [])
             look = s.get("fallback_look", look); style = s.get("fallback_style", style)
         out.append({"n": s["n"], "id": s["id"], "look": look, "layout": s.get("layout", "F"),
-                    "chapter": s.get("chapter", ""), "phrases": s.get("phrases", []), "params": s.get("params"),
+                    "chapter": s.get("chapter", ""), "phrases": [] if captions else s.get("phrases", []), "params": s.get("params"),
                     "source": s.get("source", ""), "photos": ph, "photo_style": style, "alarm": s.get("alarm"), "dim_at": s.get("dim_at"), "start": round(t, 3), "dur": round(dur, 3),
                     "vo_at": round(t + pre, 3), "vo_dur": round(durs[s["n"]], 3), "pre": pre, "post": post})
         t += dur
@@ -201,7 +204,9 @@ def render_frames(work, tl_name, out_dir, workers):
     return total
 
 
-def composite(work, tl, frames_dir, pres):
+def composite(work, tl, frames_dir, pres, caps=None):
+    """caps: {scene n: phrases} from captions.py; burned in AFTER the presenter overlay so the words sit on top of him."""
+    import captions
     segs = []
     for s in tl["scenes"]:
         f0, f1 = round(s["start"] * FPS), round((s["start"] + s["dur"]) * FPS)
@@ -209,8 +214,12 @@ def composite(work, tl, frames_dir, pres):
         g = ["-framerate", str(FPS), "-start_number", str(f0), "-i", os.path.join(HERE, frames_dir, "%05d.jpg")]
         common = ["-frames:v", str(f1 - f0), "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-pix_fmt", "yuv420p", "-an", out]
         lay = s["layout"]
+        sub = ""
+        if caps and caps.get(s["n"]):
+            ass = captions.ass(os.path.join(work, "seg", f"{s['n']:02d}.ass"), caps[s["n"]], offset=s["pre"])
+            sub = "subtitles=" + ass.replace(":", "\\:")
         if lay == "F":
-            sh(["ffmpeg", "-y", "-loglevel", "error", *g, *common])
+            sh([FF_FULL, "-y", "-loglevel", "error", *g, *(["-vf", sub] if sub else []), *common])
         else:
             d = s["dur"]
             pad = f"tpad=start_duration={s['pre']}:start_mode=clone:stop_duration={s['post'] + 0.5}:stop_mode=clone"
@@ -226,8 +235,9 @@ def composite(work, tl, frames_dir, pres):
             else:
                 pv = f"[1:v]{pad},scale={C_W}:{C_H},format=yuva420p,{fades}"
                 x, y = (1920 - C_W) // 2, 0
-            sh(["ffmpeg", "-y", "-loglevel", "error", *g, "-i", pres[s["n"]], "-filter_complex",
-                f"{pv};[0:v][p]overlay={x}:{y}:shortest=0:eof_action=pass[v]", "-map", "[v]", *common])
+            tail = f"[v0];[v0]{sub}[v]" if sub else "[v]"
+            sh([FF_FULL, "-y", "-loglevel", "error", *g, "-i", pres[s["n"]], "-filter_complex",
+                f"{pv};[0:v][p]overlay={x}:{y}:shortest=0:eof_action=pass{tail}", "-map", "[v]", *common])
         segs.append(out)
     lst = os.path.join(work, "seg", "list.txt")
     open(lst, "w").write("".join(f"file '{p}'\n" for p in segs))
@@ -243,6 +253,7 @@ def main():
     ap.add_argument("--workers", type=int, default=3)
     ap.add_argument("--skip-render", action="store_true")
     ap.add_argument("--key", default="auto", choices=["auto", "on", "off"], help="green-screen keying of the presenter (auto: detect the cloth)")
+    ap.add_argument("--no-captions", dest="captions", action="store_false", help="skip the word-synced on-screen transcript")
     a = ap.parse_args()
     work = os.path.abspath(a.work)
     for d in ("pres", "voice", "seg", "out"):
@@ -280,11 +291,16 @@ def main():
         print("2b/6 keying the green cloth out of the on-screen scenes")
         pres = key_presenters(pres, scenes, work, a.workers)
 
-    print("3/6 transcribing with Whisper")
+    print("3/6 transcribing with Whisper (word timings)")
     trans = transcribe(wavs)
+    import captions
+    caps = {}
+    if a.captions:
+        for s in scenes:
+            caps[s["n"]] = captions.phrases(captions.correct(trans[s["n"]]["words"], s.get("text_dev") or s["text"]))
 
     print("4/6 building timeline and rendering graphics")
-    tl = build_timeline(scenes, durs)
+    tl = build_timeline(scenes, durs, captions=a.captions)
     tl_name = "timeline.long.json"
     json.dump(tl, open(os.path.join(HERE, tl_name), "w"), indent=1)
     frames_dir = "frames_long"
@@ -296,7 +312,7 @@ def main():
         render_frames(work, tl_name, frames_dir, a.workers)
 
     print("5/6 compositing presenter and graphics")
-    lst = composite(work, tl, frames_dir, pres)
+    lst = composite(work, tl, frames_dir, pres, caps)
     video = os.path.join(work, "out", "video.mp4")
     sh(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", video])
 
@@ -310,8 +326,11 @@ def main():
     # subtitles (Whisper text, Devanagari) and chapters
     srt, i = [], 1
     for s in tl["scenes"]:
-        for seg in trans.get(s["n"], []):
-            srt.append(f"{i}\n{srt_time(s['vo_at'] + seg['start'])} --> {srt_time(s['vo_at'] + seg['end'])}\n{seg['text']}\n"); i += 1
+        if caps.get(s["n"]):
+            cues, i = captions.srt_lines(caps[s["n"]], s["vo_at"], i); srt += cues
+        else:
+            for seg in trans[s["n"]]["segs"]:
+                srt.append(f"{i}\n{srt_time(s['vo_at'] + seg['start'])} --> {srt_time(s['vo_at'] + seg['end'])}\n{seg['text']}\n"); i += 1
     open(os.path.join(work, "out", "subtitles.srt"), "w").write("\n".join(srt))
     ch, seen = ["0:00 Intro"], set()
     for s in tl["scenes"]:
@@ -322,7 +341,8 @@ def main():
     open(os.path.join(work, "out", "chapters.txt"), "w").write("\n".join(ch) + "\n")
     rep = ["| Scene | Take | Raw s | Cut s | Pieces | Expected s | Check |", "| --- | --- | --- | --- | --- | --- | --- |"]
     rep += [f"| {n:02d} | {t} | {r:.1f} | {c:.1f} | {p} | {e:.1f} | {f} |" for n, t, r, c, p, e, f in report]
-    rep += ["", "## Whisper transcript per scene", ""] + [f"- **{n:02d}**: " + " ".join(x["text"] for x in trans[n]) for n in sorted(trans)]
+    rep += ["", "## On-screen transcript per scene (Whisper words, corrected against the script where he said the script)", ""]
+    rep += [f"- **{n:02d}**: " + (" | ".join(" ".join(w["word"] for w in p) for p in caps[n]) if caps.get(n) else " ".join(x["text"] for x in trans[n]["segs"])) for n in sorted(trans)]
     open(os.path.join(work, "out", "report.md"), "w").write("\n".join(rep) + "\n")
     print("done:", final, f"{os.path.getsize(final) / 1e6:.0f} MB, {tl['total']:.1f}s")
 
