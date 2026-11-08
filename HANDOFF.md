@@ -70,7 +70,7 @@ On macOS the renderer uses the GPU automatically. Set `RENDER_GPU=1` to force it
 
 ## 5b. Second video: Diwali (started 8 Nov 2026)
 
-`samples/diwali/`: 14-scene, ~4-minute script (`script.long.json`), `RECORDING_SCRIPT.md`, `STORYBOARD.jpg`, 15 licensed Commons photos with `CREDITS.md`, research table in `README.md`, and four proposed Flow clips in `FLOW_CLIP_PLAN.md` (not generated; the gate applies). Direction video not yet rendered. Same commands as fz1073, run inside `samples/diwali`.
+`samples/diwali/`: 14-scene, ~4-minute script (`script.long.json`), `RECORDING_SCRIPT.md`, `STORYBOARD.jpg`, 15 licensed Commons photos with `CREDITS.md`, research table in `README.md`, and four proposed Flow clips in `FLOW_CLIP_PLAN.md` (not generated; the gate applies). Rahul recorded the 14 clips on 8 Nov 2026 (HDR phone takes on the lime green cloth); `make_long.py` now converts HLG to SDR and keys the cloth out (`key_presenter.py`), matting him onto the scenes with no card. Final: `~/Movies/diwali-build/out/final.mp4` (6:28, 325 MB, -14 LUFS) with `subtitles.srt`, `chapters.txt`, `report.md`. Same commands as fz1073, run inside `samples/diwali`; add `--key on` if the cloth is not auto-detected.
 
 ## 5c. Third video: Panchkula school case (started 8 Nov 2026)
 
