@@ -74,7 +74,7 @@ On macOS the renderer uses the GPU automatically. Set `RENDER_GPU=1` to force it
 
 ## 5c. Third video: Panchkula school case (started 8 Nov 2026)
 
-`samples/panchkula/`: 24-scene, 1,193-word (~8.5 min) investigative script on the Panchkula school assault and the parenting question, written in its own session (commit 5a75de4). Children never identified; causes framed as lines of inquiry. `README.md` lists the blocked outlets (India Today, HT, Indian Express, TOI, NDTV) and the NCERT 81% figure (via Scroll/PTI) as pre-publish checks. Storyboard renders; direction video not yet rendered; four Flow clips proposed, not generated.
+`samples/panchkula/`: 24-scene, 1,193-word (~8.5 min) investigative script on the Panchkula school assault and the parenting question, written in its own session (commit 5a75de4). Children never identified; causes framed as lines of inquiry. `README.md` lists the blocked outlets (India Today, HT, Indian Express, TOI, NDTV) and the NCERT 81% figure (via Scroll/PTI) as pre-publish checks. Storytelling rewrite (9 Nov, 1,256 words, first person, commits 33c86da/fcb0375); direction video rendered to `~/Movies/panchkula-direction/out/direction.mp4` (9:53). Four Flow clips proposed, not generated. **Short (10 Nov):** `script.short.json` (7 scenes, 270 words, ~1:50 at his pace) + `RECORDING_SCRIPT.short.md` + `make_short.py` (builds the vertical Short straight from Short takes, or a `--direction` preview; preview at `~/Movies/panchkula-short-direction/out/short_direction.mp4`). Reviewed twice; awaiting his recording.
 
 ## 6. Open items
 

@@ -85,6 +85,16 @@ python3 script_to_md.py script.long.json RECORDING_SCRIPT.md
 .venv/bin/python make_long.py --takes ~/Movies/panchkula-takes --work ~/Movies/panchkula-build --workers 4
 ```
 
+### Short (independent script, 10 Nov 2026)
+
+`script.short.json` is a separate 7-scene vertical Short (270 words; about 1:50 at Rahul's pace, 2:11 with the Piper voice), recorded on its own into a `panchkula-short` folder as `01.mp4 … 07.mp4`. It tells the long video's story through two "aaine" (ghar: UNICEF 40 crore; school: NCERT 81% and "counsellor anivarya nahi") and ends on the comment question and the sign-off; a 2.5 s end card carries like/share/subscribe. Every fact and attribution is the long script's; reviewed twice (facts, craft) before the direction preview was rendered. For a 75-second cut, drop the JJB sentence from scene 02 and the NCERT sentence from scene 05 (then its `top` becomes `COUNSELLOR · ANIVARYA NAHI`).
+
+```bash
+python3 script_to_md.py script.short.json RECORDING_SCRIPT.short.md
+.venv/bin/python make_short.py --direction --work ~/Movies/panchkula-short-direction     # scratch voice + YOUR CLIP slots, ~1 min
+.venv/bin/python make_short.py --takes ~/Movies/panchkula-short-takes --work ~/Movies/panchkula-short   # final: key, Whisper captions, -14 LUFS
+```
+
 Note: on this Mac, run the Python helpers with `PYTHONUTF8=1` (or `python3 -X utf8`) if the shell locale is not UTF-8; the Devanagari in the script otherwise trips a `SyntaxError`/`UnicodeEncodeError`.
 
 ## Storytelling pass (9 Nov 2026)

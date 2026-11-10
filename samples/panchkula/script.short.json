@@ -1,0 +1,163 @@
+{
+ "title": "Achha insaan kaun banayega? (Short)",
+ "subtitle": "Independent vertical Short (~100-110 s as written; a 75-s cut drops the NCERT and JJB sentences), recorded separately from the long video. One idea: Panchkula ke baad har maa-baap ka ek sawaal, told through two 'aaine' (ghar, school). Facts and attributions are the long script's; nothing new is claimed here.",
+ "fps": 30,
+ "target_seconds": 100,
+ "recording": {
+  "format": "Phone vertical 9:16, 1080x1920 or 4K, 30 fps, eye level on tripod, head-to-chest framing, green cloth filling the frame. Same dark or neutral shirt as the long video. Sensitive topic: no festive colours, no props.",
+  "files": "One clip per scene in a separate folder (panchkula-short): 01.mp4 ... 07.mp4. A retake of scene 03 is 03_2.mp4; the highest number wins. Record every scene, including the two voice-only fact scenes (04, 05).",
+  "silence": "Stay silent for 2 seconds before and after each line. The pipeline trims it.",
+  "shots": "Shot B (close-up, face fills the frame) for scenes 01, 03 and 07; Shot A (chest up) for the rest. In a Short your face is the thumbnail: close and steady.",
+  "expression": "Faster than the long video but never hurried: a Short is one thought said to one person. Look into the lens the whole time. No smile until the sign-off. No anger at the child, the family or the school: you are a worried parent thinking aloud. Each clip's last line hands over to the next one; hold your eyes on the lens for a beat after it.",
+  "transitions": "No 'doston', no channel intro, no 'is video mein jaaniye'. The first line is the hook. Keep one energy across the seven clips: no new 'toh', no breath, no re-greeting."
+ },
+ "scenes": [
+  {
+   "n": 1,
+   "id": "hook",
+   "layout": "C",
+   "look": "photo",
+   "shot": "B",
+   "text": "Aath saal ka bachcha. Chhe saal ki bachchi. Ek band kamra. 28 October, Panchkula ka ek sarkari school. Tab se ek hi sawaal hai: doctor, engineer toh hum bana lenge… achha insaan kaun banayega?",
+   "text_dev": "आठ साल का बच्चा। छह साल की बच्ची। एक बंद कमरा। अट्ठाईस अक्टूबर, पंचकूला का एक सरकारी स्कूल। तब से एक ही सवाल है: डॉक्टर, इंजीनियर तो हम बना लेंगे… अच्छा इंसान कौन बनाएगा?",
+   "expression": "Close-up. Serious, steady eyes, no blink-heavy nervousness. The three short lines with a beat between each, voice flat and quiet. On 'achha insaan kaun banayega' a small shake of the head, then hold the lens.",
+   "direction": "The first two seconds are the whole Short: start speaking the moment the clip starts (after your 2 s silence), no breath, no 'toh'. 'Doctor, engineer toh hum bana lenge' slightly lighter, then the question slow.",
+   "top": "PANCHKULA · 28 OCT 2026",
+   "photos": [
+    {
+     "src": "classroom_empty",
+     "at": 0,
+     "kb": "in",
+     "label": "FILE PHOTO · AN EMPTY CLASSROOM, GOA · NOT THE SCHOOL INVOLVED"
+    }
+   ],
+   "source": "FILE PHOTO · NOT THE SCHOOL INVOLVED"
+  },
+  {
+   "n": 2,
+   "id": "what",
+   "layout": "C",
+   "look": "photo",
+   "shot": "A",
+   "text": "Tribune ne likha: ek aath saal ka bachcha KG ki bachchi ko ek khaali kamre mein le gaya. Parivaar ke mutabik bachchi lagbhag do ghante baad mili: sar par taanke, naak ki haddi tooti. Juvenile Justice Board ne zamaanat di; maata-pita ne likhit bharosa diya: counselling hogi. Kyunki kanoon mein bachche ke liye zamaanat niyam hai, apvaad nahi. Yeh kahani saza ki nahi… sudhaar ki hai.",
+   "text_dev": "ट्रिब्यून ने लिखा: एक आठ साल का बच्चा केजी की बच्ची को एक ख़ाली कमरे में ले गया। परिवार के मुताबिक़ बच्ची लगभग दो घंटे बाद मिली: सर पर टाँके, नाक की हड्डी टूटी। जुवेनाइल जस्टिस बोर्ड ने ज़मानत दी; माता-पिता ने लिखित भरोसा दिया: काउंसलिंग होगी। क्योंकि क़ानून में बच्चे के लिए ज़मानत नियम है, अपवाद नहीं। यह कहानी सज़ा की नहीं… सुधार की है।",
+   "expression": "Medium shot. Reporting voice, eyes steady, no emotion on the injuries; a tiny pause before 'sar par taanke'. 'Sudhaar ki hai' calm, as a fact, not a complaint.",
+   "direction": "Fastest scene of the Short, but every attribution stays: 'Tribune ne likha', 'parivaar ke mutabik', 'maata-pita ne likhit bharosa diya'. No detail of what happened inside the room beyond what is written here. 'Saza ki nahi… sudhaar ki hai' is your reading of the Juvenile Justice Act (bail is the rule for a child, sec. 12), said calmly.",
+   "top": "SIRF REPORTS KE MUTABIK",
+   "photos": [
+    {
+     "src": "classroom_kerala",
+     "at": 0,
+     "kb": "out",
+     "label": "FILE PHOTO · A GOVERNMENT SCHOOL CLASSROOM, KERALA · NOT THE SCHOOL INVOLVED"
+    }
+   ],
+   "source": "SOURCE: THE TRIBUNE, 31 OCT–4 NOV 2026 · JUVENILE JUSTICE ACT 2015, SEC. 12"
+  },
+  {
+   "n": 3,
+   "id": "why",
+   "layout": "C",
+   "look": "photo",
+   "shot": "B",
+   "text": "Lekin aath saal ka bachcha aisa seekh kar paida nahi hota. Toh seekha kahan se? Us bachche par main koi faisla nahi sunaunga, jaanch chal rahi hai. Main ek aaina dikhaunga. Us bachche ka nahi… humara.",
+   "text_dev": "लेकिन आठ साल का बच्चा ऐसा सीख कर पैदा नहीं होता। तो सीखा कहाँ से? उस बच्चे पर मैं कोई फ़ैसला नहीं सुनाऊँगा, जाँच चल रही है। मैं एक आईना दिखाऊँगा। उस बच्चे का नहीं… हमारा।",
+   "expression": "Close-up. Eyebrows up on 'seekha kahan se?', then a plain, honest face for 'koi faisla nahi sunaunga'. 'Us bachche ka nahi… humara' slow, a small nod, hold the lens.",
+   "direction": "The turn of the Short: from the case to us. Say 'jaanch chal rahi hai' as a promise, not a disclaimer. The pause before 'humara' is real; it is the word the next two scenes hang on.",
+   "top": "FAISLA NAHI · AAINA",
+   "photos": [
+    {
+     "src": "classroom_empty",
+     "at": 0,
+     "kb": "in",
+     "label": "FILE PHOTO · AN EMPTY CLASSROOM, GOA · NOT THE SCHOOL INVOLVED"
+    }
+   ],
+   "source": "FILE PHOTO · NOT THE SCHOOL INVOLVED"
+  },
+  {
+   "n": 4,
+   "id": "stat_home",
+   "layout": "F",
+   "look": "photo",
+   "shot": "A",
+   "text": "Pehla aaina: ghar. UNICEF, 2024: paanch saal se chhote lagbhag 40 crore bachche ghar par maar ya daant-phatkaar jhelte hain. Har dus mein se chhe. Aur bachcha jo dekhta hai… wahi dohraata hai.",
+   "text_dev": "पहला आईना: घर। यूनिसेफ़, दो हज़ार चौबीस: पाँच साल से छोटे लगभग चालीस करोड़ बच्चे घर पर मार या डाँट-फटकार झेलते हैं। हर दस में से छह। और बच्चा जो देखता है… वही दोहराता है।",
+   "expression": "Voice only (your clip is heard, not shown). 'Pehla aaina: ghar' like a chapter title. Numbers clean and slow: 'chaalis crore', 'har dus mein se chhe'. 'Wahi dohraata hai' quiet.",
+   "direction": "Say the number exactly as written; the card shows it. A beat after 'dekhta hai' before 'wahi dohraata hai'.",
+   "top": "PEHLA AAINA: GHAR · UNICEF 2024 · 40 CRORE",
+   "photos": [
+    {
+     "src": "shoes",
+     "at": 0,
+     "kb": "in",
+     "label": "FILE PHOTO · SCHOOL FOOTWEAR, TAMIL NADU · REPRESENTATIVE"
+    }
+   ],
+   "source": "SOURCE: UNICEF PRESS RELEASE, 11 JUNE 2024 · UNDER-5s, VIOLENT DISCIPLINE AT HOME · FILE PHOTO"
+  },
+  {
+   "n": 5,
+   "id": "stat_marks",
+   "layout": "F",
+   "look": "photo",
+   "shot": "A",
+   "text": "Doosra aaina: school. Hum poochte hain: 'Test mein kitne aaye?' NCERT, 2022: 81 pratishat bachchon ki sabse badi chinta padhai, exam aur result. Aur school mein counsellor? Lok Sabha mein sarkar ka jawab: anivarya… nahi hai.",
+   "text_dev": "दूसरा आईना: स्कूल। हम पूछते हैं: 'टेस्ट में कितने आए?' एनसीईआरटी, दो हज़ार बाईस: इक्यासी प्रतिशत बच्चों की सबसे बड़ी चिंता पढ़ाई, एग्ज़ाम और रिज़ल्ट। और स्कूल में काउंसलर? लोकसभा में सरकार का जवाब: अनिवार्य… नहीं है।",
+   "expression": "Voice only (your clip is heard, not shown). 'Test mein kitne aaye?' in a parent's everyday tone, not mocking. '81 pratishat' clear. 'Anivarya… nahi hai' with the pause, flat, no sarcasm.",
+   "direction": "This is the revelation of the Short: two facts back to back, no comment between them. Let the pause before 'nahi hai' do the work.",
+   "top": "DOOSRA AAINA: SCHOOL · NCERT 2022 · 81%",
+   "photos": [
+    {
+     "src": "classroom_kerala",
+     "at": 0,
+     "kb": "out",
+     "label": "FILE PHOTO · A GOVERNMENT SCHOOL CLASSROOM, KERALA · NOT THE SCHOOL INVOLVED"
+    }
+   ],
+   "source": "SOURCE: NCERT SURVEY 2022 (3.79 LAKH STUDENTS), AS REPORTED BY SCROLL.IN/PTI · LOK SABHA UNSTARRED Q. 941, MINISTRY OF EDUCATION, 2 DEC 2024"
+  },
+  {
+   "n": 6,
+   "id": "advice",
+   "layout": "C",
+   "look": "photo",
+   "shot": "A",
+   "text": "Toh bachta kaun hai? Hum. Experts kehte hain: Gusse ko naam do: 'tum gusse mein ho, theek hai, lekin maarna theek nahi.' Khud wahi karo jo bachche se chahte ho. Aur roz paanch minute, bina phone: 'aaj tumhe kis baat par gussa aaya?'",
+   "text_dev": "तो बचता कौन है? हम। एक्सपर्ट्स कहते हैं: ग़ुस्से को नाम दो: 'तुम ग़ुस्से में हो, ठीक है, लेकिन मारना ठीक नहीं।' ख़ुद वही करो जो बच्चे से चाहते हो। और रोज़ पाँच मिनट, बिना फ़ोन: 'आज तुम्हें किस बात पर ग़ुस्सा आया?'",
+   "expression": "Medium shot, warmer eyes now, still no smile. Count the three points with a small change of tone, not fingers. The last question soft, as if to your own child.",
+   "direction": "The quoted lines are spoken as a parent would say them at home, slower than the rest. 'Bina phone' gets a tiny emphasis.",
+   "top": "EXPERTS KI TEEN BAATEIN",
+   "photos": [
+    {
+     "src": "counsel_room",
+     "at": 0,
+     "kb": "in",
+     "label": "FILE PHOTO · A COUNSELLING ROOM, TOKYO · REPRESENTATIVE"
+    }
+   ],
+   "source": "SOURCE: UNICEF PARENTING GUIDANCE · NIMHANS · GENERAL ADVICE, NOT ABOUT ANY PARTICULAR CHILD"
+  },
+  {
+   "n": 7,
+   "id": "question",
+   "layout": "C",
+   "look": "photo",
+   "shot": "B",
+   "text": "Aapke ghar mein gusse ka niyam kya hai? Comment mein imaandari se likhiye, main padhunga. Main hoon Rahul Nishad. Think Beyond Headlines!",
+   "text_dev": "आपके घर में ग़ुस्से का नियम क्या है? कमेंट में ईमानदारी से लिखिए, मैं पढ़ूँगा। मैं हूँ राहुल निषाद। थिंक बियॉन्ड हेडलाइंस!",
+   "expression": "Close-up. The question straight into the lens, eyebrows slightly up. A small, warm half-smile only on 'Main hoon Rahul Nishad', then the tagline steady. Hold the lens for a full second after it.",
+   "direction": "Loops back to the hook: the question is about the viewer's home, not the case. No 'like, share, subscribe' speech; the end card carries that.",
+   "top": "AAPKE GHAR MEIN GUSSE KA NIYAM?",
+   "photos": [
+    {
+     "src": "classroom_empty",
+     "at": 0,
+     "kb": "out",
+     "label": "FILE PHOTO · REPRESENTATIVE"
+    }
+   ],
+   "source": "THINK WITH RAHUL NISHAD · THINK BEYOND HEADLINES!"
+  }
+ ]
+}
